@@ -7,47 +7,38 @@ public class Program
         Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
         Console.Write("\n===================================================\n\n");
-
-        Console.WriteLine("[AULA 6 - 9: VARIÁVEIS]: Tipos e Declaração de variáveis");
+        Console.WriteLine(
+            "[AULA 6 - 9: VARIÁVEIS]: Tipos e Declaração de variáveis");
         Console.Write("\n===================================================\n\n");
 
-        // TÓPICO 1 - Tipos e Declaração de variáveis em C#
-
         /*
+        bool - 1 bit, valores true ou false
         byte - 8 bits, valores de 0 a 255 é util
         sbyte - 8 bits, valores de -128 a 127
         short - 16 bits, valores de -32.768 a 32.767
-        int - 32 bits, valores de -2.147.483.648 a 2.147.483.647
-        long - 64 bits, valores de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807
-        float - 32 bits, precisão simples, usado para números decimais
-        double - 64 bits, precisão dupla, usado para números decimais com maior precisão
-        bool - 1 bit, valores true ou false
         char - 16 bits, representa um único caractere Unicode
+        int - 32 bits, valores de -2.147.483.648 a 2.147.483.647
+        float - 32 bits, precisão simples, usado para números decimais
+        long - 64 bits, valores de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807
+        double - 64 bits, precisão dupla, usado para números decimais com maior precisão
+        var - tipo implícito, o compilador infere o tipo com base no valor atribuído
         string - uma sequência de caracteres Unicode
+        decimal - 128 bits, usado para valores monetários e alta precisão
+        object - tipo base para todos os tipos em C#
         */
-
-        // Atribuição de valores na Declaração de variáveis em C#
-        int numero = 10;
-        float decimalNumero = 20.5f;
-        string texto = "Este é um texto em C#";
-        bool booleano = true;
-        var numeroVar = 100; // O compilador infere o tipo da variável de acordo com o valor atribuído
-        var textoVar = "IDELFRIDES JORGE FERNANDES PAPAI";
-        char caractere = 'I'; // Exemplo de variável do tipo char que representa um único caractere
-        byte byteNumero = 255; // Exemplo de variável do tipo byte
 
         /* 
-        ------ NOTA SOBRE 'var' EM C# ------
-        Em C#, 'var' é usado para declaração implícita de variáveis. O compilador determina o tipo da variável com base no valor atribuído a ela no momento da declaração.
-        Por esse motivo, o uso de 'var' requer obrigatoriamente que a variável seja inicializada no momento da declaração.
+       ------ NOTA SOBRE 'var' EM C# ------
+       Em C#, 'var' é usado para declaração implícita de variáveis. O compilador determina o tipo da variável com base no valor atribuído a ela no momento da declaração.
+       Por esse motivo, o uso de 'var' requer obrigatoriamente que a variável seja inicializada no momento da declaração.
 
-        RECOMENDAÇÃO DE USO DO TIPO 'var':
-        1 -> É recomendado usar 'var' quando o tipo da variável é óbvio a   partir do valor atribuído, ou quando o tipo é complexo e longo, como em coleções genéricas.
-        2 -> O uso do 'var' é útil para simplificar o código, mas deve levar me conta as restrições de tipo 'var'. Por exemplo, não se pode atribuir a uma variável do tipo 'var um valor de outro tipo posteriormente.
-        */
+       RECOMENDAÇÃO DE USO DO TIPO 'var':
+       1 -> É recomendado usar 'var' quando o tipo da variável é óbvio a   partir do valor atribuído, ou quando o tipo é complexo e longo, como em coleções genéricas.
+       2 -> O uso do 'var' é útil para simplificar o código, mas deve levar me conta as restrições de tipo 'var'. Por exemplo, não se pode atribuir a uma variável do tipo 'var um valor de outro tipo posteriormente.
+       */
 
         // numeroVar = "IJDEV PRO"; // Isso causará um erro de compilação, pois 'numeroVar' foi inferido como 'int' inicialmente.
-    
+
         /// <summary>
         /// Este é um comentário XML em C# 
         /// inicia com três barras /// e é usado para documentação
@@ -59,33 +50,101 @@ public class Program
         /// fim do comentário XML
         /// </summary>  
 
+        // Atribuição de valores na Declaração de variáveis em C#
+        short numeroShort = 25;
+        int numero = 10;
+        float decimalNumero = 20.598f;
+        string texto = "Este é um texto em C#";
+        bool booleano = true;
+        var numeroVar = 100; // O compilador infere o tipo da variável de acordo com o valor atribuído
+        var textoVar = "BRASIL";
+        char caractere = 'I'; // Exemplo de variável do tipo char que representa um único caractere
+        char numericoConvertido = (char)65; // Atribuição de valor numérico convertido para char (representa 'A')
+        char caractereSimbolo = '#'; // Exemplo de variável do tipo char com um símbolo
+        // char variavelChar = "P"; // Isso causará um erro de compilação, pois aspas duplas são usadas para strings, não para char
+
+        byte byteNumero = 255; // Exemplo de variável do tipo byte
+        long numeroLongo = 12345678901234L;
+        object objetoQualquer = "Eu sou um objeto em C#";
+        object numeroComoObjeto = 500;
+        object booleanoComoObjeto = false;
+        object caractereComoObjeto = 'C';
+        object decimalComoObjeto = 99.99m;
+        object floatComoObjeto = 123.45f;
+
+
         // Declaração SEM atribuir valores ás variáveis em C#
-        float decimalSemf;
+        float numeroFloat;
+        decimal numeroDecimal;
         double numeroGrande;
         bool booleanFalse;
         string outroTexto;
 
-        decimalSemf = 54.77f;
+        numeroFloat = 98.77f;
         numeroGrande = 123456789.12345;
         booleanFalse = false;
         outroTexto = "Outro texto em C# que não foi atribuído na declaração";
+        numeroDecimal = 1000.50m; // O sufixo 'm' indica que é um valor decimal
+        // decimal decimalSemf = 500.75; // Isso causará um erro de compilação, pois o sufixo 'f' é obrigatório para float
 
-        Console.WriteLine("\t O número é: " + numero);
-        Console.WriteLine("\t O número decimal é: " + decimalNumero);
-        Console.WriteLine("\t O texto é: " + texto);
-        Console.WriteLine("\t O número grande é: " + numeroGrande);
-        Console.WriteLine("\t O valor booleano é: " + booleano);
-        Console.WriteLine("\t O valor booleano falso é: " + booleanFalse);
-        Console.WriteLine("\t O outro texto é: " + outroTexto);
-        Console.WriteLine("\t O decimal sem f NO FINAL NÃO é PERMITIDO PELO COMPILADOR DO .NET:  " + decimalSemf);
-        Console.WriteLine("\t O número com var é: " + numeroVar);
-        Console.WriteLine("\t O texto com var é: " + textoVar);
-        Console.WriteLine("\t O caractere é: " + caractere);
-        Console.WriteLine("\t O número do tipo byte é: " + byteNumero);
+        // System.String mensagem = "Mensagem usando o namespace System"; // System.String é equivalente a string em C#
+        // string saudacao = "Olá, Mundo!";
 
-        Console.Write("\n\n\n================== FIM DE APP ==================\n\n\n\n");
+        // Int32 numeroInt32 = 42; // Int32 é um alias para o tipo int em C#
+        // int inteiro = numeroInt32; // Atribuição de Int32 a int
 
 
+        Console.WriteLine("\t número é: " + numero);
+        Console.WriteLine("\t número decimal é: " + decimalNumero);
+        Console.WriteLine("\t texto é: " + texto);
+        Console.WriteLine("\t número grande é: " + numeroGrande);
+        Console.WriteLine("\t valor booleano é: " + booleano);
+        Console.WriteLine("\t valor booleano falso é: " + booleanFalse);
+        Console.WriteLine("\t outro texto é: " + outroTexto);
+        Console.WriteLine("\t decimal/float sem f NO FINAL NÃO é PERMITIDO PELO COMPILADOR DO .NET:  " + numeroFloat);
+        Console.WriteLine("\t número com var é: " + numeroVar);
+        Console.WriteLine("\t texto com var é: " + textoVar);
+        Console.WriteLine("\t caractere é: " + caractere);
+        Console.WriteLine("\t número do tipo byte é: " + byteNumero);
+        Console.WriteLine("\t número longo do tipo long é: " + numeroLongo);
+        Console.WriteLine("\t Número short: " + numeroShort);
+        Console.WriteLine("\t Número decimal do tipo decimal: " + numeroDecimal);
+        Console.WriteLine("\t Caractere convertido de número 65 para char é: " + numericoConvertido);
+        Console.WriteLine("\t Caractere símbolo é: " + caractereSimbolo);
+        Console.WriteLine("\t Objeto qualquer é: " + objetoQualquer);
+        Console.WriteLine("\t Número como objeto é: " + numeroComoObjeto);
+        Console.WriteLine("\t Booleano como objeto é: " + booleanoComoObjeto);
+        Console.WriteLine("\t Caractere como objeto é: " + caractereComoObjeto);
+        Console.WriteLine("\t Decimal como objeto é: " + decimalComoObjeto);
+        Console.WriteLine("\t Float como objeto é: " + floatComoObjeto);
+
+        Console.WriteLine("\n\t ===== CONVERSÕES DE TIPOS DE VARIÁVEIS EM C# =====");
+        
+        // parse : converter string para int
+        string numeroString = "957";
+        int numeroParte = int.Parse(numeroString);
+        Console.WriteLine("\t Número convertido de <string> para <int> utilizando o metodo Parse() é: " + numeroParte); 
+
+        // usando Convert : converter string para int, double, float, long, decimal        
+        int numeroConvertido = Convert.ToInt32("850");
+        double doubleConvertido = Convert.ToDouble("12345.67");
+        float floatConvertido = Convert.ToSingle("345.67");
+
+        Console.WriteLine("\t convertido de <string> para <int> usando Convert.ToInt32() é: " + numeroConvertido);
+        Console.WriteLine("\t convertido de <string> para <double> usando Convert.ToDouble() é: " + doubleConvertido);
+        Console.WriteLine("\t convertido de <string> para <float> usando Convert.ToSingle() é: " + floatConvertido);
+        Console.WriteLine("\t convertido de <string> para <long> usando Convert.ToInt64() é: " + Convert.ToInt64("9876543210"));
+        Console.WriteLine("\t convertido de <string> para <decimal> usando Convert.ToDecimal() é: " + Convert.ToDecimal("7567.29"));
+
+        Console.WriteLine("\n\t ******* CONVERTENDO DE INT PARA STRING *******");
+        // ToString : converter int para string
+        int numeroParaConverter = 200;
+        // string numeroConvertidoParaString = numeroParaConverter.ToString();
+        // string numeroConvertidoParaString = int.ToString(200); // Outra forma de usar ToString
+        Console.WriteLine("\t convertido de <int> para <string> usando ToString() é: " + numeroParaConverter.ToString()); 
+        
+
+        Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
     }
 }
 
