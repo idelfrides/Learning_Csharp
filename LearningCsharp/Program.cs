@@ -301,8 +301,56 @@ namespace LearningCsharp
                     break;
             }
 
+            // uso de while em C#
+            Console.Write("\n=====================================\n\n"); 
+            Console.WriteLine("Exemplo de uso do WHILE em C#:");
+            Console.Write("\n=====================================\n\n");
 
-            // --------------------------------------------------------------------
+            Console.Write("DIGITE O NÚMERO MAXIMO DA CONTAGEM ::>>  ");
+            var inputContador = Console.ReadLine() ?? string.Empty; 
+            int maximoContagem = Convert.ToInt32(inputContador);
+           
+            int contador = 1;
+            while (contador <= maximoContagem)
+            {
+                Console.WriteLine($"\t Contador WHILE é: {contador}");
+                contador++;
+            }
+
+            // uso de for em C#
+            Console.Write("\n=====================================\n\n");   
+            Console.WriteLine("Exemplo de uso do FOR em C#:");
+            Console.Write("\n=====================================\n\n");
+            
+            Console.Write("DIGITE O NÚMERO MAXIMO DA CONTAGEM ::>>  ");
+            
+            var inputContadorFor = Console.ReadLine() ?? string.Empty;
+            int maximoContagemFor = Convert.ToInt32(inputContadorFor);
+
+            for (int i = 1; i <= maximoContagemFor; i++)
+            {
+                Console.WriteLine($"\t Contador FOR é: {i}");
+            }
+
+            // USO DO DO...WHILE EM C#
+            Console.Write("\n=====================================\n\n");
+            Console.WriteLine("Exemplo de uso do DO...WHILE em C#:");
+            Console.Write("\n=====================================\n\n");
+            
+            Console.Write("DIGITE O MAXIMO DA CONTAGEM ::>>  ");
+
+            var inputContadorDoWhile = Console.ReadLine() ?? string.Empty;
+            int maximoContagemDoWhile = Convert.ToInt32(inputContadorDoWhile);
+            int contadorDoWhile = 1;
+
+            do
+            {
+                Console.WriteLine($"\t Contador DO...WHILE é: {contadorDoWhile}");
+                contadorDoWhile++;
+            } while (contadorDoWhile <= maximoContagemDoWhile);
+
+
+            // ----------------------- FIM DE APP ------------------------
 
             Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair...");
 
