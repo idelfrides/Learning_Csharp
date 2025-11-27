@@ -185,8 +185,22 @@ public class Program
         // if em C#
         Console.WriteLine("\n\t Exemplo de uso do if em C#:\n\n");
 
-        int idade = 17;
-        Console.WriteLine($"\t Sua idade é: {idade}");
+        Console.Write("\t Digite seu NOME ::>>  ");
+
+        var inputNome = Console.ReadLine();
+        var currentDatetime = DateTime.Now;
+
+        Console.WriteLine("\n\tOlá, " + inputNome + "!\n\tSeja bem-vindo(a) ao meu app em C#!");
+        Console.WriteLine("\tHoje é " + currentDatetime.ToString("dd/MM/yyyy") + " e agora são " + currentDatetime.ToString("HH:mm:ss")
+        );
+
+        Console.Write("\n\n\t Informe sua IDADE ::>>  ");
+        var inputIdade = Console.ReadLine();
+
+        // Console.WriteLine(typeof(inputIdade)); // string
+        int idade = Convert.ToInt32(inputIdade);
+        Console.WriteLine($"\n\t {inputNome}, Sua idade é: {idade}");
+
         if (idade >= 18)
         {
             Console.WriteLine("\t Você é maior de idade.");
@@ -194,8 +208,11 @@ public class Program
         else
         {
             Console.WriteLine("\t Você é menor de idade.");
-        }   
+        }
 
+        Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair...");
+
+        Console.ReadKey(true);
 
         Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
 
