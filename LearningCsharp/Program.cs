@@ -141,10 +141,64 @@ public class Program
         int numeroParaConverter = 200;
         // string numeroConvertidoParaString = numeroParaConverter.ToString();
         // string numeroConvertidoParaString = int.ToString(200); // Outra forma de usar ToString
-        Console.WriteLine("\t convertido de <int> para <string> usando ToString() é: " + numeroParaConverter.ToString()); 
-        
+        Console.WriteLine("\t convertido de <int> para <string> usando ToString() é: " + numeroParaConverter.ToString());
+
+
+        // AULA 18 - OPERADOREES LOGICOS E DE COMPARAÇÃO
+        Console.Write("\n===================================================\n\n");
+        Console.WriteLine("AULA 18 - OPERADOREES LOGICOS E DE COMPARAÇÃO");
+        Console.Write("\n===================================================\n\n");
+
+        // Operadores logicos: && (E), || (OU), ! (NÃO)
+        int a = 10;
+        int b = 20; 
+        bool resultadoE = (a < b) && (b > 15); // true && true -> true
+        bool resultadoOu = (a > b) || (b > 15); // false || true -> true
+        bool resultadoNao = !(a > b); // !(false) -> true    
+
+        // Operadores de comparação: 
+        // IGUAL : ==
+        // DIFERENTE : !=
+        // MAIOR : >
+        // MENOR : <
+        // MAIOR OU IGUAL : >=
+        // MENOR OU IGUAL : <=  
+
+        bool igual = (a == b); // false
+        bool diferente = (a != b); // true
+        bool maior = (b > a); // true
+        bool menor = (a < b); // true
+        bool maiorOuIgual = (b >= 20); // true
+        bool menorOuIgual = (a <= 10); // true
+
+        Console.WriteLine("\t Resultados dos operadores lógicos e de comparação:\n\n");
+        Console.WriteLine($"\t Resultado do operador E (&&): {resultadoE}");
+        Console.WriteLine($"\t Resultado do operador OU (||): {resultadoOu}"); 
+        Console.WriteLine($"\t Resultado do operador NÃO (!): {resultadoNao}");
+        Console.WriteLine($"\t Resultado do operador IGUAL (==): {igual}");
+        Console.WriteLine($"\t Resultado do operador DIFERENTE (!=): {diferente}");
+        Console.WriteLine($"\t Resultado do operador MAIOR (>): {maior}");
+        Console.WriteLine($"\t Resultado do operador MENOR (<): {menor}");
+        Console.WriteLine($"\t Resultado do operador MAIOR OU IGUAL (>=): {maiorOuIgual}");
+        Console.WriteLine($"\t Resultado do operador MENOR OU IGUAL (<=): {menorOuIgual}"); 
+
+        // if em C#
+        Console.WriteLine("\n\t Exemplo de uso do if em C#:\n\n");
+
+        int idade = 17;
+        Console.WriteLine($"\t Sua idade é: {idade}");
+        if (idade >= 18)
+        {
+            Console.WriteLine("\t Você é maior de idade.");
+        }
+        else
+        {
+            Console.WriteLine("\t Você é menor de idade.");
+        }   
+
 
         Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+
     }
 }
 
