@@ -8,7 +8,7 @@ public class Program
 
         Console.Write("\n===================================================\n\n");
 
-        Console.WriteLine("[AULA 6: VARIÁVEIS]: Tipos e Declaração de variáveis");
+        Console.WriteLine("[AULA 6 - 9: VARIÁVEIS]: Tipos e Declaração de variáveis");
         Console.Write("\n===================================================\n\n");
 
         // TÓPICO 1 - Tipos e Declaração de variáveis em C#
