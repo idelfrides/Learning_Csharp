@@ -18,18 +18,6 @@ public class Program
         Console.WriteLine("O texto é: " + texto);
         Console.WriteLine("O número grande é: " + numeroGrande);
         Console.WriteLine("O valor booleano é: " + booleano);
-
-        Console.WriteLine("Digite seu nome::>>   ");
-        var inputContent = Console.ReadLine();
-        var currentDatetime = DateTime.Now;
-        Console.WriteLine("Olá, " + inputContent + "! Hoje é " + currentDatetime.ToString("dd/MM/yyyy") + " e são " + 
-        currentDatetime.ToString("HH:mm:ss")
-        );
-        
-        Console.Write($"{Environment.NewLine}Pressione qualquer tecla para sair...");
-
-        Console.ReadKey(true);
-
     }
 }
 
