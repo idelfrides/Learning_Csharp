@@ -5,8 +5,39 @@ using System;
 namespace LearningCsharp
 {   
     public class Program
-    {
-        public static void Main(string[] args)
+    {   
+        enum EnumStatusRelacioModerno
+        {
+            Viuvo=12,
+            Divorciado=11,
+            Casado=10,
+            UniaoEstavel=9,
+            RelacionamentoAberto=8,
+            Solteiro=7,
+            FicantePremium=6,
+            Ficante=5,
+            AmigoColorido=4,
+            Contatinho=3,
+            Conversante=2,
+            Visualizante=1
+        }
+
+        struct PessoaRelacioModerno
+        {
+            public PessoaRelacioModerno(EnumStatusRelacioModerno pStatusRelac)
+            {
+                this.pStatusRelac = pStatusRelac;
+                Nome = string.Empty;   
+                Idade = 0;
+                genero = 'O';
+            }
+            public string Nome;
+            public int Idade;
+            public char genero; // M = Masculino, F = Feminino, O = Outro
+            public EnumStatusRelacioModerno pStatusRelac;
+        }
+
+        public static void Main01(string[] args)
         {
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
@@ -32,14 +63,14 @@ namespace LearningCsharp
             */
 
             /* 
-        ------ NOTA SOBRE 'var' EM C# ------
-        Em C#, 'var' é usado para declaração implícita de variáveis. O compilador determina o tipo da variável com base no valor atribuído a ela no momento da declaração.
-        Por esse motivo, o uso de 'var' requer obrigatoriamente que a variável seja inicializada no momento da declaração.
+            ------ NOTA SOBRE 'var' EM C# ------
+            Em C#, 'var' é usado para declaração implícita de variáveis. O compilador determina o tipo da variável com base no valor atribuído a ela no momento da declaração.
+            Por esse motivo, o uso de 'var' requer obrigatoriamente que a variável seja inicializada no momento da declaração.
 
-        RECOMENDAÇÃO DE USO DO TIPO 'var':
-        1 -> É recomendado usar 'var' quando o tipo da variável é óbvio a   partir do valor atribuído, ou quando o tipo é complexo e longo, como em coleções genéricas.
-        2 -> O uso do 'var' é útil para simplificar o código, mas deve levar me conta as restrições de tipo 'var'. Por exemplo, não se pode atribuir a uma variável do tipo 'var um valor de outro tipo posteriormente.
-        */
+            RECOMENDAÇÃO DE USO DO TIPO 'var':
+            1 -> É recomendado usar 'var' quando o tipo da variável é óbvio a   partir do valor atribuído, ou quando o tipo é complexo e longo, como em coleções genéricas.
+            2 -> O uso do 'var' é útil para simplificar o código, mas deve levar me conta as restrições de tipo 'var'. Por exemplo, não se pode atribuir a uma variável do tipo 'var um valor de outro tipo posteriormente.
+            */
 
             // numeroVar = "IJDEV PRO"; // Isso causará um erro de compilação, pois 'numeroVar' foi inferido como 'int' inicialmente.
 
@@ -191,7 +222,7 @@ namespace LearningCsharp
 
             Console.Write("\t Digite seu NOME ::>>  ");
 
-            var inputNome = Console.ReadLine();
+            var inputNome = Console.ReadLine() ?? string.Empty  ;
             var currentDatetime = DateTime.Now;
 
             Console.WriteLine("\n\tOlá, " + inputNome + "!\n\tSeja bem-vindo(a) ao meu app em C#!");
@@ -348,6 +379,7 @@ namespace LearningCsharp
                 Console.WriteLine($"\t Contador DO...WHILE é: {contadorDoWhile}");
                 contadorDoWhile++;
             } while (contadorDoWhile <= maximoContagemDoWhile);
+
 
 
             // ----------------------- FIM DE APP ------------------------
