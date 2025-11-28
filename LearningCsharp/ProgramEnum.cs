@@ -1,10 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System;
-
-namespace LearningCsharp
+﻿namespace LearningCsharp
 {   
-    public class ProgramEnum
+    public class ProgramEnum5
     {   
         /*
         EnumStatusRelacioModerno - Enumeração que representa diferentes status de relacionamento em um contexto moderno.
@@ -93,6 +89,8 @@ namespace LearningCsharp
 
         struct PessoaRelacioModerno
         {
+
+            // Construtor da struct que inicializa o status de relacionamento
             public PessoaRelacioModerno(EStatusRelModerno pStatusRelac)
             {
                 this.pStatusRelac = pStatusRelac;
@@ -106,7 +104,7 @@ namespace LearningCsharp
             public EStatusRelModerno pStatusRelac;
         }
         
-        public static void MainEnum(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine($"\n\n\tHello!{Environment.NewLine} My name is IJDEV PRO.\n\tYou are welcome to this small app. Today we are going to experiment the usage of enum (enumerations) in C-Sharp programming language.");
 
@@ -122,17 +120,27 @@ namespace LearningCsharp
             var inputGenero = Console.ReadLine() ?? string.Empty;
             char genero = string.IsNullOrEmpty(inputGenero) ? 'O' : inputGenero[0];
 
+            Console.WriteLine("\n\n\t Agora, escolha seu STATUS DE RELACIONAMENTO entre as opções abaixo:\n");
+            foreach (EStatusRelModerno status in Enum.GetValues(typeof(EStatusRelModerno)))
+            {
+                Console.WriteLine($"\t {(int)status} - {status}");
+            }
+            
             Console.Write("\n\n\t Informe UM NÚMERO DE 1 A 13 ::>>  ");
             var inputStatus = Console.ReadLine() ?? string.Empty;
 
             int statusNumero = Convert.ToInt32(inputStatus);
+
+            // Converter o número inteiro para o valor correspondente da enumeração EStatusRelModerno
             EStatusRelModerno statusRelac = (EStatusRelModerno)statusNumero;
+
+            // Criar uma instância da struct PessoaRelacioModerno usando o construtor
             var pessoa1 = new PessoaRelacioModerno(statusRelac);
             pessoa1.Nome = inputNome;
             pessoa1.Idade = idade;
             pessoa1.genero = genero;
 
-            Console.WriteLine("\n\n\t Agora, vamos exibir as informações que você forneceu:\n");
+            Console.WriteLine("\n\n\t Informações que você forneceu:\n");
 
             Console.WriteLine($"\n\n\t Olá, {pessoa1.Nome}! Como está hoje?");
             Console.WriteLine($"\n\t Você tem {pessoa1.Idade} anos de idade e seu gênero é '{pessoa1.genero}'.");

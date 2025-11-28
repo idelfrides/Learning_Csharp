@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System;
-
-namespace LearningCsharp
+﻿namespace LearningCsharp
 {   
     public class Program
     {   

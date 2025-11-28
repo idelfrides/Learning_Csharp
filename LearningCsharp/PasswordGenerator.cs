@@ -1,14 +1,11 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System;
-using PasswordGenerator;
+﻿using PasswordGenerator;
 
 namespace LearningCsharp
 {   
     public class PasswordGenerator
     {   
                 
-        public static void Main(string[] args)
+        public static void MainPG(string[] args)
         {
             Console.WriteLine($"\n\n\tHello!{Environment.NewLine}\tMy name is IJDEV PRO.\n\tYou are welcome to this app. Today we are going to experiment the usage of a nuget package - PasswordGenerator - in C-Sharp programming language.");
 
