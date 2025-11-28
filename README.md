@@ -26,3 +26,20 @@ NuGet é um gerenciador de pacotes do .NET
 - [NuGet](https://www.nuget.org)
 
 
+##### COMANDOS C#
+
+1 - Criar e inicializar um app/projeto
+
+`dotnet new console -o NOME_PROJETO`
+
+-> Exempplo deste projeto: 
+    dotnet new console -o LearningCsharp 
+
+2 - Rodar a aplicação localmente 
+
+`dotnet run`
+
+
+
+
+

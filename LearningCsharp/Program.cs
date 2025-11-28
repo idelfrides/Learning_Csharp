@@ -2,37 +2,6 @@
 {   
     public class Program
     {   
-        enum EnumStatusRelacioModerno
-        {
-            Viuvo=12,
-            Divorciado=11,
-            Casado=10,
-            UniaoEstavel=9,
-            RelacionamentoAberto=8,
-            Solteiro=7,
-            FicantePremium=6,
-            Ficante=5,
-            AmigoColorido=4,
-            Contatinho=3,
-            Conversante=2,
-            Visualizante=1
-        }
-
-        struct PessoaRelacioModerno
-        {
-            public PessoaRelacioModerno(EnumStatusRelacioModerno pStatusRelac)
-            {
-                this.pStatusRelac = pStatusRelac;
-                Nome = string.Empty;   
-                Idade = 0;
-                genero = 'O';
-            }
-            public string Nome;
-            public int Idade;
-            public char genero; // M = Masculino, F = Feminino, O = Outro
-            public EnumStatusRelacioModerno pStatusRelac;
-        }
-
         public static void Main01(string[] args)
         {
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
@@ -151,12 +120,14 @@
 
             Console.WriteLine("\n\t ===== CONVERSÕES DE TIPOS DE VARIÁVEIS EM C# =====");
             
-            // parse : converter string para int
+            // parse : converter string para int ou para o tipo desejado
+            Console.WriteLine("\n\t ******* CONVERTENDO DE STRING PARA INT *******");
             string numeroString = "957";
             int numeroParte = int.Parse(numeroString);
             Console.WriteLine("\t Número convertido de <string> para <int> utilizando o metodo Parse() é: " + numeroParte); 
 
-            // usando Convert : converter string para int, double, float, long, decimal        
+            // usando Convert : converter string para int, double, float, long, decimal
+            Console.WriteLine("\n\t ******* CONVERTENDO DE STRING PARA OUTROS TIPOS *******");        
             int numeroConvertido = Convert.ToInt32("850");
             double doubleConvertido = Convert.ToDouble("12345.67");
             float floatConvertido = Convert.ToSingle("345.67");

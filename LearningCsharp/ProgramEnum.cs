@@ -104,7 +104,7 @@
             public EStatusRelModerno pStatusRelac;
         }
         
-        public static void Main(string[] args)
+        public static void MainEnum(string[] args)
         {
             Console.WriteLine($"\n\n\tHello!{Environment.NewLine} My name is IJDEV PRO.\n\tYou are welcome to this small app. Today we are going to experiment the usage of enum (enumerations) in C-Sharp programming language.");
 
@@ -157,6 +157,6 @@
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
 
         }
-    }
+    }   
 }
 
