@@ -3,7 +3,7 @@
     public class ProgramArrays
     {   
 
-        public static void Main(string[] args)
+        public static void MainArrays(string[] args)
         {
             // ----------------------- INÍCIO DE APP ------------------------
             Console.Write("\n===================================================\n\n");
