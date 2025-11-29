@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices.Marshalling;
+﻿using System.Reflection;
+using System.Runtime.InteropServices.Marshalling;
+
 
 namespace LearningCsharp
 {   
@@ -13,10 +15,11 @@ namespace LearningCsharp
         public string currentLocation;
         public string ownerName;
         public string status; // Possible values: "Stopped", "Moving"
+        public string licensePlateNumber;
         public string destination = "No where";
 
         // Default constructor        
-        public MyClassOfCars(string color, string brand, string model, int year, int maxSpeed, int currentSpeed, string currentLocation, string ownerName, string status,  string destination)
+        public MyClassOfCars(string color, string brand, string model, int year, int maxSpeed, int currentSpeed, string currentLocation, string ownerName, string status,  string destination, string licensePlateNumber)
         {
             this.color = color;
             this.brand = brand;
@@ -28,70 +31,93 @@ namespace LearningCsharp
             this.ownerName = ownerName;
             this.status = status;
             this.destination = destination;
+            this.licensePlateNumber = licensePlateNumber;
         }
 
         // Method to display the car status and details
         public void CarDetails()
         {
-            Console.WriteLine("\n\n\t ******* CAR STATUS AND DETAILS *******\n");
+            Console.WriteLine("\n\n\t******* CAR STATUS AND DETAILS *******\n");
 
             MyClassOfCars obj = this;
 
-            Console.WriteLine($"\n\t Car owner: {obj.ownerName}");
-            Console.WriteLine($"\n\t Car brand: {obj.brand}");
-            Console.WriteLine($"\n\t Car model: {obj.model}");
-            Console.WriteLine($"\n\t Car color: {obj.color}");
-            Console.WriteLine($"\n\t Car year: {obj.year}");
-            Console.WriteLine($"\n\t Car max speed: {obj.maxSpeed} km/h");
-            Console.WriteLine($"\n\t Current location: {obj.currentLocation}");
-            Console.WriteLine($"\n\t Current status: {obj.status}");
-            Console.WriteLine($"\n\t The car is moving to: {obj.destination}");
-            Console.WriteLine($"\n\t Current speed: {obj.currentSpeed} km/h");
-
+            Console.WriteLine($"\n\t Car Owner: {obj.ownerName}");
+            Console.WriteLine($"\n\t Car Brand: {obj.brand}");
+            Console.WriteLine($"\n\t Car Model: {obj.model}");
+            Console.WriteLine($"\n\t Car License Plate Number: {obj.licensePlateNumber}");
+            Console.WriteLine($"\n\t Car Color: {obj.color}");
+            Console.WriteLine($"\n\t Car Year: {obj.year}");
+            Console.WriteLine($"\n\t Car Max Speed: {obj.maxSpeed} km/h");
+            Console.WriteLine($"\n\t Current Location: {obj.currentLocation}");
+            Console.WriteLine($"\n\t Current Status: {obj.status}");
+            Console.WriteLine($"\n\t Car is moving to: {obj.destination}");
+            Console.WriteLine($"\n\t Current Speed: {obj.currentSpeed} km/h");
         }
 
         public void StopCar()
         {
-            Console.Write($"\n\tGoint to STOP the car {this.brand} - {this.model} ...\n\n");
-            this.status = "Stopped";
-            this.currentSpeed = 0;
-            this.destination = "No where";
-            Console.WriteLine($"\n\t The car {this.brand}: {this.model} has stopped.");
+            if (this.currentSpeed > 0)  // Car is moving, so it can be stopped
+            {
+                Console.Write($"\n\tGoint to STOP the car {this.brand} - {this.licensePlateNumber} ...\n\n");
+                this.status = "Stopped";
+                this.currentSpeed = 0;
+                this.destination = "No where";
+                Console.WriteLine($"\n\t The car {this.brand}: {this.licensePlateNumber} has stopped.");
+            }else
+            {
+                Console.Write($"\n\t[NOTICE]: The car {this.brand} - {this.licensePlateNumber} is already STOPPED at {this.currentLocation}\n");
+            }
         }
 
         public void StartCar(string newDestination, int speed)
         {
-            Console.Write($"\n\tGoint to START the car {this.brand} - {this.model} ...\n\n");
+            if (this.status.Trim().ToUpperInvariant() == "STOPPED")
+            {
+                Console.Write($"\n\tGoint to START the car {this.brand} - {this.licensePlateNumber} ...\n\n");
 
-            this.status = "Moving";
-            this.currentSpeed = speed;
-            this.destination = newDestination;
-            Console.WriteLine($"\n\t The car {this.brand}: {this.model} is now moving to {this.destination} at {this.currentSpeed} km/h.");
+                this.status = "Moving";
+                this.currentSpeed = speed;
+                this.destination = newDestination;
+                Console.WriteLine($"\n\t The car {this.brand}: {this.licensePlateNumber} is now moving to {this.destination} at {this.currentSpeed} km/h.");
+            }
+            else
+            {
+                Console.Write($"\n\t[NOTICE]: The car {this.brand} - {this.licensePlateNumber} is already moving to {this.destination}\n");               
+            }
         }
 
         public void Accelerate(int increaseSpeed)
         {
-            Console.Write($"\n\tGoing to ACELERATE car {this.brand} - {this.model} ...\n\n");
+            if (this.currentSpeed > 0)  // Car is moving, so the speed can be increased
+            {
+                Console.Write($"\n\tGoing to ACELERATE the car {this.brand} - {this.licensePlateNumber} ...\n\n");
 
-            this.currentSpeed += increaseSpeed;
-            Console.WriteLine($"\n\t The car {this.brand} - {this.model} has accelerated to {this.currentSpeed} km/h."); 
-            this.SpeedVerification();
+                this.currentSpeed += increaseSpeed;
+                Console.WriteLine($"\n\t The car {this.brand}- {this.licensePlateNumber} has accelerated to {this.currentSpeed} km/h."); 
+                this.SpeedVerification();
+            }else
+            {
+                Console.WriteLine($"\n\t [NOTICE]: The car {this.brand}-{this.licensePlateNumber} is already STOPPED at {this.currentLocation} with speed {this.currentSpeed}");
+            }
         }
 
         public void SpeedVerification()
         {
-            Console.Write($"\n\tSpeedVerification for {this.brand} - {this.model} ...\n\n");
+            Console.Write($"\n\tSpeedVerification for {this.brand} - {this.licensePlateNumber} ...\n\n");
 
-            if (this.currentSpeed > this.maxSpeed)
+            if (this.currentSpeed == 0)
             {
-                Console.WriteLine($"\n\t Warning: The car {this.brand} - {this.model} is exceeding the maximum speed of {this.maxSpeed} km/h!");
+                Console.WriteLine($"\n\t The car {this.brand}-{this.licensePlateNumber} is already STOPPED at {this.currentLocation} with speed {this.currentSpeed}");
             }
-            else
+            else if (this.currentSpeed > this.maxSpeed)
             {
-                Console.WriteLine($"\n\t The car {this.brand} -     {this.model} is within the speed limit.");
+                Console.WriteLine($"\n\t WARNING: The car {this.brand} - {this.licensePlateNumber} is exceeding the maximum speed of {this.maxSpeed} km/h!");
             }
-        }
-                
+            else if (this.currentSpeed > 0 || this.currentSpeed <= this.maxSpeed)
+            {
+                Console.WriteLine($"\n\t The car {this.brand}-{this.licensePlateNumber} is within the speed limit.");
+            }  
+        }   
     }
 }
 

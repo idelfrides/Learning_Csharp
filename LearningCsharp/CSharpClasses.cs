@@ -28,7 +28,6 @@
                 4 - OOP makes it possible to create full reusable applications with less code and shorter development time
 
             Tip: The "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. You should extract out the codes that are common for the application, and place them at a single place and reuse them instead of repeating it.
-
             */
 
             // Create an object of the MyClassOfCars class called audi
@@ -36,7 +35,7 @@
                 brand: "Audi", model: "Audi A6", year: 2022, color: "green", 
                 maxSpeed:300, currentSpeed: 110, currentLocation: "Highway",
                 ownerName: "Alice Smith",
-                status: "Moving", destination: "City Center"
+                status: "Moving", destination: "City Center", licensePlateNumber: "AW7QY84"
             );
             audi.CarDetails();  // Call the CarDetails method of the audi object
 
@@ -46,7 +45,7 @@
                 color: "white", year: 2021,
                 maxSpeed: 280, currentSpeed: 90,
                 currentLocation: "Downtown", ownerName: "Bob Johnson",
-                status: "Moving", destination: "Airport"
+                status: "Moving", destination: "Airport", licensePlateNumber: "CDR2Z03"
             );
             tesla.SpeedVerification();  
 
@@ -56,33 +55,29 @@
                 brand:"BMW", model: "BMW X5",
                 year: 2020, maxSpeed: 250, status: "Moving",
                 currentSpeed:100, currentLocation: "Suburbs",
-                destination: "Office"
+                destination: "Office", licensePlateNumber: "LRT3P57"
             );
             bmw.Accelerate(80);
             bmw.Accelerate(100);
 
-
             // Create an object of the MyClassOfCars class called ferrari
             MyClassOfCars ferrari = new MyClassOfCars(
-                "red", "Ferrari", "Ferrari 488", 2023, 350, 200, 
-                "Showroom", "Emma Brown", "Moving", "Racetrack"
+                "red", "Ferrari", "Ferrari 488", 2023, 350, 0, 
+                "Showroom", "Emma Brown", "stopped", "No where", "LQU7V61"
             );
             ferrari.StopCar();
-            // ferrari.CarDetails();
             ferrari.StartCar("Mountain Cabin", 100);
             ferrari.Accelerate(200);
             ferrari.CarDetails();
-
 
             // Create an object of the MyClassOfCars class called lamborghini
             MyClassOfCars lamborghini = new MyClassOfCars(
                 "yellow", "Lamborghini", "Lamborghini Aventador",
                 2022, 340, 80, "Highway", "Liam Wilson", "Moving", 
-                "Beach Resort"
+                "Beach Resort", "WMS5F93"
             );
-            lamborghini.StopCar();
-            // lamborghini.CarDetails();
             lamborghini.StartCar("Mountain Cabin", 100);
+            lamborghini.StopCar();
             lamborghini.Accelerate(50);
             lamborghini.CarDetails(); 
 
