@@ -38,7 +38,7 @@
                 ownerName: "Alice Smith",
                 status: "Moving", destination: "City Center"
             );
-            audi.CarStatus();  // Call the CarStatus method of the audi object
+            audi.CarDetails();  // Call the CarDetails method of the audi object
 
             // Create an object of the MyClassOfCars class called tesla
             MyClassOfCars tesla = new MyClassOfCars(   
@@ -48,17 +48,18 @@
                 currentLocation: "Downtown", ownerName: "Bob Johnson",
                 status: "Moving", destination: "Airport"
             );
-            tesla.CarStatus();  // Call the CarStatus method of the tesla object
+            tesla.SpeedVerification();  
 
             // Create an object of the MyClassOfCars class called bmw
             MyClassOfCars bmw = new MyClassOfCars(    
                 ownerName: "John Doe", color:"blue",
                 brand:"BMW", model: "BMW X5",
                 year: 2020, maxSpeed: 250, status: "Moving",
-                currentSpeed: 120, currentLocation: "Suburbs",
+                currentSpeed:100, currentLocation: "Suburbs",
                 destination: "Office"
             );
-            bmw.CarStatus();  // Call the CarStatus method of the bmw object
+            bmw.Accelerate(80);
+            bmw.Accelerate(100);
 
 
             // Create an object of the MyClassOfCars class called ferrari
@@ -66,16 +67,24 @@
                 "red", "Ferrari", "Ferrari 488", 2023, 350, 200, 
                 "Showroom", "Emma Brown", "Moving", "Racetrack"
             );
-            ferrari.CarStatus();  // Call the CarStatus method of the ferrari object
+            ferrari.StopCar();
+            // ferrari.CarDetails();
+            ferrari.StartCar("Mountain Cabin", 100);
+            ferrari.Accelerate(200);
+            ferrari.CarDetails();
+
 
             // Create an object of the MyClassOfCars class called lamborghini
             MyClassOfCars lamborghini = new MyClassOfCars(
                 "yellow", "Lamborghini", "Lamborghini Aventador",
-                2022, 340, 150, "Highway", "Liam Wilson", "Moving", 
+                2022, 340, 80, "Highway", "Liam Wilson", "Moving", 
                 "Beach Resort"
             );
-            // Call the CarStatus method of the lamborghini object
-            lamborghini.CarStatus();  
+            lamborghini.StopCar();
+            // lamborghini.CarDetails();
+            lamborghini.StartCar("Mountain Cabin", 100);
+            lamborghini.Accelerate(50);
+            lamborghini.CarDetails(); 
 
             // ----------------------- FIM DE APP ------------------------
 
