@@ -3,7 +3,7 @@
     public class CSharpClasses   
     {   
   
-        public static void Main(string[] args)
+        public static void Main02(string[] args)
         {
             // ----------------------- INÍCIO DE APP ------------------------
             Console.Write("\n===================================================\n\n");
