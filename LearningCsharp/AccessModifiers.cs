@@ -68,11 +68,11 @@ namespace LearningCsharp
 
     public class AccessModifiers
     { 
-        public static void Main(string[] args)
+        public static void Main04(string[] args)
         {
             // ----------------------- INÍCIO DE APP ------------------------
             Console.Write("\n===================================================\n\n");
-            Console.WriteLine($"ESTUDANDO MODIFICADORES DE ACESSO EM C#!\nMAIN CLASSE:  AccessModifiers\nEXTENAL CLASSE:  USACars");
+            Console.WriteLine($"ESTUDANDO MODIFICADORES DE ACESSO EM C#!\nMAIN CLASSE:  AccessModifiers\nEXTENAL CLASS:  USACars");
             Console.Write("\n===================================================\n\n");
 
             USACars myObj = new USACars();
@@ -99,6 +99,7 @@ namespace LearningCsharp
             Console.WriteLine($"MAX SPEED IS : {myObj.maxSpeed}");
 
             // Calling private fields of class 'USACars'
+            /*
             myObj.model = "Chiron";
             myObj.destination = "CHICAGO";
             myObj.currentSpeed = 150;
@@ -108,7 +109,7 @@ namespace LearningCsharp
             Console.WriteLine($"DESTINTION TO : {myObj.destination}");
             Console.WriteLine($"CURRENT SPEED IS : {myObj.currentSpeed}");
             Console.WriteLine($"MAX SPEE IS : {myObj.licensePlateNumber}");
-            
+            */
 
             // ------------------------ FIM DE APP -----------------------------
 
