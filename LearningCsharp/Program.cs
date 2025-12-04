@@ -4,13 +4,16 @@
     {   
         public static void Main01(string[] args)
         {
+            #region bloco de introdução 
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
             Console.Write("\n===================================================\n\n");
             Console.WriteLine(
                 "[AULA 6 - 9: VARIÁVEIS]: Tipos e Declaração de variáveis");
             Console.Write("\n===================================================\n\n");
+            #endregion
 
+            #region bloco de comentários de documentação
             /*
             bool - 1 bit, valores true ou false
             byte - 8 bits, valores de 0 a 255 é util
@@ -49,8 +52,10 @@
             /// mais uma linha do comentário XML
             /// fim do comentário XML
             /// </summary>  
+            
+            #endregion
 
-            // Atribuição de valores na Declaração de variáveis em C#
+            #region Atribuição de valores na Declaração de variáveis em C#
             short numeroShort = 25;
             int numero = 10;
             float decimalNumero = 20.598f;
@@ -72,14 +77,17 @@
             object decimalComoObjeto = 99.99m;
             object floatComoObjeto = 123.45f;
 
+            #endregion
 
-            // Declaração SEM atribuir valores ás variáveis em C#
+            #region Declaração SEM atribuir valores ás variáveis em C#
             float numeroFloat;
             decimal numeroDecimal;
             double numeroGrande;
             bool booleanFalse;
             string outroTexto;
+            #endregion
 
+            #region atribuir valores às variáveis após a declaração da mesmas
             numeroFloat = 98.77f;
             numeroGrande = 123456789.12345;
             booleanFalse = false;
@@ -92,8 +100,9 @@
 
             // Int32 numeroInt32 = 42; // Int32 é um alias para o tipo int em C#
             // int inteiro = numeroInt32; // Atribuição de Int32 a int
+            #endregion
 
-
+            #region apresentação de valores em console
             Console.WriteLine("\t número é: " + numero);
             Console.WriteLine("\t número decimal é: " + decimalNumero);
             Console.WriteLine("\t texto é: " + texto);
@@ -117,6 +126,8 @@
             Console.WriteLine("\t Caractere como objeto é: " + caractereComoObjeto);
             Console.WriteLine("\t Decimal como objeto é: " + decimalComoObjeto);
             Console.WriteLine("\t Float como objeto é: " + floatComoObjeto);
+            #endregion
+            
 
             Console.WriteLine("\n\t ===== CONVERSÕES DE TIPOS DE VARIÁVEIS EM C# =====");
             
