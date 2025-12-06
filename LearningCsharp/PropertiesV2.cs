@@ -35,14 +35,11 @@ Now we can use the Name property to access and update the private field of the P
 
 */
 
-
-using Microsoft.VisualBasic;
-
 namespace LearningCsharp
 {
 
-    /*
-    class WMSuperCars
+    #region classe wmsupercars está aqui
+    /*    class WMSuperCars
     {
         public string brand = "Ford";
         private string model;
@@ -61,8 +58,8 @@ namespace LearningCsharp
         // property for private field 'color' 
         public string Color { get; set; }
 
-    }
-    */
+    }*/
+    #endregion
 
     class Personv2
     {
@@ -95,12 +92,16 @@ namespace LearningCsharp
 
     public class Propertiesv2
     {
-        public static void Main(string[] args)
+        public static void Main05(string[] args)
         {
-            // ----------------------- INÍCIO DE APP --------------------------
+
+            #region bloco introdução: ------------- INICIO APP ----------------
             Console.Write("\n===================================================\n\n");
             Console.WriteLine($"ESTUDANDO PROPORTIES EM C#!\nMAIN CLASSE:  Properties\nAUXILIAR CLASS 01: PersonV2\nAUXILIAR CLASS 02 : PersonWithPropertiesV2");
             Console.Write("\n===================================================\n\n");
+            #endregion
+
+            #region bloco de código da app
 
             PersonWithPropertiesv2 myObj3 = new PersonWithPropertiesv2();
 
@@ -110,16 +111,15 @@ namespace LearningCsharp
             Console.WriteLine($"\n\nPERSON NAME IS :  {myObj3.Name}");
             Console.WriteLine($"\nPERSON AGE IS : {myObj3.Age}");
             Console.WriteLine($"\nPERSON GENDER IS : {myObj3.Gender}");
+            #endregion
 
-
-
-            // ------------------------ FIM DE APP -----------------------------
-
+            #region bloco ---------------- FIM DE APP --------------------
             Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
 
             Console.ReadKey(true);
 
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            #endregion
         }
     }
 
