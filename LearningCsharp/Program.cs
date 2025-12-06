@@ -1,10 +1,12 @@
-﻿namespace LearningCsharp
+﻿using System.Text;
+
+namespace LearningCsharp
 {   
     public class Program
     {   
-        public static void Main01(string[] args)
+        public static void Main(string[] args)
         {
-            #region bloco de introdução 
+            #region bloco introdução: ------------- INICIO APP ----------------
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
             Console.Write("\n===================================================\n\n");
@@ -110,7 +112,7 @@
             Console.WriteLine("\t valor booleano é: " + booleano);
             Console.WriteLine("\t valor booleano falso é: " + booleanFalse);
             Console.WriteLine("\t outro texto é: " + outroTexto);
-            Console.WriteLine("\t decimal/float sem f NO FINAL NÃO é PERMITIDO PELO COMPILADOR DO .NET:  " + numeroFloat);
+            Console.WriteLine("\t float sem f NO FINAL NÃO é PERMITIDO PELO COMPILADOR DO .NET:  " + numeroFloat);
             Console.WriteLine("\t número com var é: " + numeroVar);
             Console.WriteLine("\t texto com var é: " + textoVar);
             Console.WriteLine("\t caractere é: " + caractere);
@@ -127,8 +129,8 @@
             Console.WriteLine("\t Decimal como objeto é: " + decimalComoObjeto);
             Console.WriteLine("\t Float como objeto é: " + floatComoObjeto);
             #endregion
-            
 
+            #region bloco de varias aulas 
             Console.WriteLine("\n\t ===== CONVERSÕES DE TIPOS DE VARIÁVEIS EM C# =====");
             
             // parse : converter string para int ou para o tipo desejado
@@ -200,7 +202,7 @@
 
             Console.Write("\t Digite seu NOME ::>>  ");
 
-            var inputNome = Console.ReadLine() ?? string.Empty  ;
+            var inputNome = Console.ReadLine() ?? string.Empty;
             var currentDatetime = DateTime.Now;
 
             Console.WriteLine("\n\tOlá, " + inputNome + "!\n\tSeja bem-vindo(a) ao meu app em C#!");
@@ -209,6 +211,7 @@
 
             Console.Write("\n\n\t Informe sua IDADE ::>>  ");
             var inputIdade = Console.ReadLine() ?? string.Empty;
+            // var inputIdade = Console.ReadLine() ?? "20";
 
             // Console.WriteLine(typeof(inputIdade)); // string
             int idade = Convert.ToInt32(inputIdade);
@@ -250,8 +253,7 @@
                 case "ESTADOS UNIDOS" or "EUA" or "USA":
                     Console.WriteLine($"\n\t {inputNome}, você nasceu nos Estados Unidos!");
                     break;
-                case "BRASIL":
-                case "BRAZIL":
+                case "BRASIL" or "BRAZIL" or "BR" or "BRA":
                     Console.WriteLine($"\n\t {inputNome}, você nasceu no Brasil!");
                     break;
                 case "CANADÁ" or "CANADA":
@@ -358,15 +360,94 @@
                 contadorDoWhile++;
             } while (contadorDoWhile <= maximoContagemDoWhile);
 
+            #endregion
+
+            #region estudando e testando constante em C# (C-Sharp ) 
+            Console.Write("\n================================================\n\n");
+            Console.Write("Estudando e testando constante em C# (C-Sharp)");
+            Console.Write("\n\n=================================================\n\n");
+
+            // Console.WriteLine("A seguir digite um valor (textual e em seguida numérico) para constantes do seu endereço resumido ... ");
+            // Console.Write("Digite o nome da sua rua aqui ::>>  ");
+            // string inputValue = Console.ReadLine() ?? string.Empty;
+            // const var varConst = inputValue;
+
+            const string constAutor = "IDELFRIDES JORGE FERNANDES PAPAI";
+            // const string constAutor;  // uma constante em C# requer atribuição de valor a ela no momento de declaração. erro CS0145
+            const string strNname = "strNname";
+            var varNname = "varNname";
+            // constAutor = strNname;  // não é permitido. erro CS0131
+            // constAutor = varNname;  // não é permitido. erro CS0131
+            
+            const string streetName = "RUA INACIO DE ARAUJO";
+            const int houseNumber = 20;
+
+            Console.WriteLine($"NOME DO AUTOR: {constAutor}");
+            Console.WriteLine($"NOME DA RUA É: {streetName}");
+            Console.WriteLine($"NÚMERO DE CASA É: {houseNumber}");
+            #endregion
+
+            #region INTERPOLAÇÃO DE INTRING EM C# 
+            Console.Write("\n================================================\n\n");
+            Console.Write("Estudando e testando INTERPOLAÇÃO DE INTRING EM C# (C-Sharp)");
+            Console.Write("\n\n=================================================\n\n");
 
 
-            // ----------------------- FIM DE APP ------------------------
+            // Console.WriteLine($"inputNome GetType --> {inputNome.GetType}");
+            // TODO 1: Como saber o tipo de um dado vindo do console em C# ?
+            // TODO 2: criar uma classe gerenciador de menu e de dados de entrada
+            // TODO 3: criar um projeto/app calculadora para treinar
 
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair...");
+
+            /*
+                MANEIRAS:
+                1- string.Format
+                2- $ "{...}"
+                3- Concatenação
+                    3.1- Operador "+"  
+                    3.2- string.Concat
+                    3.3- string.Builder
+            */
+            var tipoInterpolacao = "string.Format";
+            Console.WriteLine(string.Format("Tipo interpolação é -> {0}", tipoInterpolacao));
+            
+            tipoInterpolacao = "$'{ ... }'";
+            Console.WriteLine($"Tipo interpolação é -> {tipoInterpolacao}");
+
+            tipoInterpolacao = "Concatenação: Operador '+'";
+            Console.WriteLine("Tipo interpolação é -> " + tipoInterpolacao);
+
+            tipoInterpolacao = "Concatenação: string.Concat"; 
+            Console.WriteLine(
+                string.Concat("Tipo interpolação é -> ", tipoInterpolacao));
+
+            /* 
+                UTILIZAÇÃO DE tringBuilder em sistemas reais
+
+                StringBuilder é mias indicado para trabalhar com 
+                - textos extremamente grandes, 
+                - arquivos com milhões de linhas 
+                - é o tipo nativo do C# e por isso mesmo é mais performático e recomendado para situções listadas acima
+            */
+            tipoInterpolacao = "Concatenação: StringBuilder";
+            StringBuilder myStrBuilder = new StringBuilder();
+            myStrBuilder.Append("OLÁ! ");
+            myStrBuilder.Append(inputNome);
+            myStrBuilder.Append("\nÉ UMA HONRA TE VER AQUI.  ");
+            myStrBuilder.Append("\nTipo interpolação é -> ");
+            myStrBuilder.Append(tipoInterpolacao);
+
+            Console.WriteLine(myStrBuilder.ToString());          
+            #endregion
+
+            #region bloco ---------------- FIM DE APP --------------------
+
+            Console.Write($"{Environment.NewLine}\n\nPressione qualquer tecla para sair...");
 
             Console.ReadKey(true);
 
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            #endregion
 
         }
     }
