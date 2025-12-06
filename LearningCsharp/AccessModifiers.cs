@@ -68,15 +68,16 @@ namespace LearningCsharp
 
     public class AccessModifiers
     { 
-        public static void Main04(string[] args)
+        public static void Main05(string[] args)
         {
-            // ----------------------- INÍCIO DE APP ------------------------
+
+            #region bloco introdução: ------------- INICIO APP ----------------
             Console.Write("\n===================================================\n\n");
             Console.WriteLine($"ESTUDANDO MODIFICADORES DE ACESSO EM C#!\nMAIN CLASSE:  AccessModifiers\nEXTENAL CLASS:  USACars");
             Console.Write("\n===================================================\n\n");
+            #endregion
 
-            USACars myObj = new USACars();
-
+            #region meu comentário explicando o erro CS0122 do C#
             /*
                 'AccessModifiers.USACars.model' is inaccessible due to its protection level (CS0122) 
                 
@@ -87,8 +88,12 @@ namespace LearningCsharp
                 MENSAGEM AO EXECUTAR: error CS0122: "AccessModifiers.USACars.model" é inacessível devido ao seu nível de proteção que é 'private' 
                 Isso significa que um campo ou classe ou método com modificar 'private' dentro de uma classe não pode ser acessado fora dessa classe. Neste caso concreto, a instrução `Console.WriteLine(myObj.model);` tenta acessar o campo 'model' que faz parte (pertence) à clasee USACars dentro do método Main(...) que não pertence à classe USACars. O método Main pertence à class 'AccessModifiers' .
             */
+            #endregion
 
-            // myObj.brand = "BUGATTI";
+            #region bloco de código da app
+            USACars myObj = new USACars();
+
+            // myObj.brand = "LAMNBORGUINI";
             myObj.year = 2025;
             myObj.color = "LIGHT Green";
             myObj.maxSpeed = 300;
@@ -97,8 +102,9 @@ namespace LearningCsharp
             Console.WriteLine($"YAER IS : {myObj.year}");
             Console.WriteLine($"COLOR IS : {myObj.color}");
             Console.WriteLine($"MAX SPEED IS : {myObj.maxSpeed}");
+            #endregion
 
-            // Calling private fields of class 'USACars'
+            #region Calling private fields of class 'USACars'
             /*
             myObj.model = "Chiron";
             myObj.destination = "CHICAGO";
@@ -110,14 +116,16 @@ namespace LearningCsharp
             Console.WriteLine($"CURRENT SPEED IS : {myObj.currentSpeed}");
             Console.WriteLine($"MAX SPEE IS : {myObj.licensePlateNumber}");
             */
+            #endregion
 
-            // ------------------------ FIM DE APP -----------------------------
+            #region bloco ---------------- FIM DE APP --------------------
 
             Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
 
             Console.ReadKey(true);
 
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            #endregion
         }
     }
 
