@@ -42,10 +42,10 @@
             // Create an object of the MyClassOfCars class called tesla
             MyClassOfCars tesla = new MyClassOfCars(   
                 brand: "Tesla", model: "Tesla Model S",
-                color: "white", year: 2021,
+                color: "white", year: 2021, status: "Moving",
                 maxSpeed: 280, currentSpeed: 90,
                 currentLocation: "Downtown", ownerName: "Bob Johnson",
-                status: "Moving", destination: "Airport", licensePlateNumber: "CDR2Z03"
+                destination: "Airport", licensePlateNumber: "CDR2Z03"
             );
             tesla.SpeedVerification();  
 

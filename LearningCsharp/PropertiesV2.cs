@@ -38,29 +38,6 @@ Now we can use the Name property to access and update the private field of the P
 namespace LearningCsharp
 {
 
-    #region classe wmsupercars está aqui
-    /*    class WMSuperCars
-    {
-        public string brand = "Ford";
-        private string model;
-        // string model;   // private field by default: model
-
-        // Explicit Properties(Long Hand)for field 'model'
-        public string Model
-        {
-            get {return model; }
-            set {model = value; }
-        }
-
-        // Automatic Properties (Short Hand) for private field 'year' 
-        public int Year {get; set; }
-
-        // property for private field 'color' 
-        public string Color { get; set; }
-
-    }*/
-    #endregion
-
     class Personv2
     {
         private string name;         // private field
