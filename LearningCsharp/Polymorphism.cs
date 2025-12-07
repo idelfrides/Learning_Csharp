@@ -61,7 +61,7 @@ class Polymorphism
 
     class Program
     {
-        public static void Main(string[] args)
+        public static void MainPM(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             Console.Write
