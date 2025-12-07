@@ -37,13 +37,12 @@ class Abstraction
         }
     }
 
-    class Pig : Animal
+    class Pig : Animal  // Derived class (inherit from Animal)
     {
         public override void animalSound()
         {
             // The body of animalSound() is provided here
             Console.WriteLine("The pig says: wee wee");
-            // throw new NotImplementedException();
         }
     }
     
@@ -57,7 +56,6 @@ class Abstraction
         #endregion
 
         // Cannot create an instance of the abstract type or interface 'Abstraction.Animal' ( CS0144 )
-        
         // Animal myObj = new Animal();
 
         Pig myPig = new Pig();  // Create a Pig object
