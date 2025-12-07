@@ -49,7 +49,6 @@ namespace LearningCsharp
         }
     }
 
-
     class PersonWithPropertiesv2
     {
         private string name;         // private field

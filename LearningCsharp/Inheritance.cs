@@ -70,7 +70,7 @@ class Inheritance
 class InheritanceMainClass
 {
 
-    public static void Main(string[] args)
+    public static void Main06(string[] args)
     {
 
         #region bloco introdução: ------------- INICIO APP ----------------
