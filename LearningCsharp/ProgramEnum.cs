@@ -1,4 +1,41 @@
-﻿namespace LearningCsharp
+﻿/*
+-----------------------
+C# Enum
+-----------------------
+
+>>> C# Enums
+An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
+
+To create an enum, use the enum keyword (instead of class or interface), and separate the enum items with a comma:
+
+You can access enum items with the dot syntax:
+
+Enum is short for "enumerations", which means "specifically listed".
+---
+
+>>> Enum inside a Class
+You can also have an enum inside a class:
+---
+
+>>> Enum Values
+By default, the first item of an enum has the value 0. The second has the value 1, and so on.
+
+To get the integer value from an item, you must explicitly convert the item to an int:
+
+You can also assign your own enum values, and the next items will update their numbers accordingly:
+---
+
+>>> Enum in a Switch Statement
+Enums are often used in switch statements to check for corresponding values:
+
+---
+>> Why And When To Use Enums?
+Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+*/
+
+
+namespace LearningCsharp
 {   
     public class ProgramEnum5
     {   
@@ -53,7 +90,7 @@
         40. Enum e Boas Práticas de Codificação: Siga boas práticas de codificação ao trabalhar com enums, incluindo nomeação clara, documentação adequada e consideração cuidadosa do design e uso dentro do sistema.
         41. Enum e Evolução do Software: Considere como os enums podem evoluir ao longo do tempo à medida que o software cresce e muda, garantindo que eles permaneçam relevantes e úteis para o design do sistema.
         */
-        enum EStatusRelModerno
+enum EStatusRelModerno
         {
             Viuvo=13,
             Divorciado=12,
