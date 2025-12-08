@@ -1,8 +1,8 @@
 /*
 
-------------------------------
+----------------------------
 C# Abstraction
-------------------------------
+----------------------------
 
 Abstract Classes and Methods
 Data abstraction is the process of hiding certain details and showing only essential information to the user.
@@ -14,7 +14,8 @@ Abstract class: is a restricted class that cannot be used to create objects (to 
 
 Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the derived class (inherited from).
 An abstract class can have both abstract and regular methods:
---------------
+
+---------------
 
 Why And When To Use Abstract Classes and Methods?
 To achieve security - hide certain details and only show the important details of an object.
@@ -23,9 +24,12 @@ Note: Abstraction can also be achieved with Interfaces, which you will learn mor
 
 */
 
+
 class Abstraction
 {
- 
+   
+
+    // public abstract void animalSound4();
     abstract class Animal   // Abstract class
     {
         // animalSound -> Abstract method (does not have a body)
@@ -45,8 +49,8 @@ class Abstraction
             Console.WriteLine("The pig says: wee wee");
         }
     }
-    
-    public static void Main(string[] args)
+
+    public static void MainAbst(string[] args)
     {
         #region bloco introdução: ------------- INICIO APP ----------------
         Console.Write
@@ -61,6 +65,10 @@ class Abstraction
         Pig myPig = new Pig();  // Create a Pig object
         myPig.animalSound();    // Call the abstract method
         myPig.sleep();          // Call the regular method
+
+        // ------- Multi interface ---------
+
+
 
 
         #region bloco ---------------- FIM DE APP --------------------
