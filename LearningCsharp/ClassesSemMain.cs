@@ -1,5 +1,10 @@
 ﻿using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
+using System.Threading.Tasks;
+using System;
+
 
 
 namespace LearningCsharp
@@ -119,5 +124,59 @@ namespace LearningCsharp
             }  
         }   
     }
+
+    public class IJDEVLibs
+    {
+
+        public IJDEVLibs()
+        {
+            Console.WriteLine("CONSTRUTOR <IJDEVLibs>");
+        }
+        // print('#'*40)
+        public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace=3, int hspace=0)
+        { 
+            if (vspace > 0)
+            {
+                this.BuildSpaces("vertical", vspace);
+
+            }else if (hspace > 0)
+            {
+                this.BuildSpaces("horizontal", hspace);
+            }
+            string lineFormatted = new string(lineShape, lineLen);
+
+            Console.WriteLine($"\t{lineFormatted}");
+            Console.WriteLine($"\t{info}");
+            Console.WriteLine($"\t{lineFormatted}");
+        }
+
+        public void BuildSpaces(string spOrientation, int spLen)
+        {
+            switch (spOrientation)
+            {
+                case "vertical":
+                    string vspace = new string('\n', spLen);
+                    Console.Write(vspace);
+                    break;
+                case "horizontal":
+                    string hspace = new string('\t', spLen);
+                    Console.WriteLine(hspace);
+                    break;
+                default:
+                    Console.WriteLine("DEFAULT");
+                    break;
+            }
+        }
+
+        public async Task EsperarAsync(int tempoSegundos)
+            {
+                Console.WriteLine($"Aguardando {tempoSegundos}s assincronamente para executar ação solicitada . . .");
+                
+                // O valor é em milissegundos
+                await Task.Delay(TimeSpan.FromSeconds(tempoSegundos)); 
+
+                Console.WriteLine("Pausa assíncrona terminada.");
+            }
+        }
 }
 
