@@ -39,7 +39,7 @@ The throw statement is used together with an exception class. There are many exc
 Some of them are: ArithmeticException, FileNotFoundException, IndexOutOfRangeException, TimeOutException, etc:
 */
 
-
+using System;
 using LearningCsharp;      //include the System.IO namespace
 
 class TryCatch
@@ -62,10 +62,19 @@ class TryCatch
 
             #region bloco da app propriamente dita
 
+            int[] myNumbers = {1, 2, 3, 7, 9, 15, 87, 65, 10}; // Length 9
+            Random random = new Random();
+
+            /*
+            Gera um número inteiro aleatório dentro de um intervalo específico (ex: 1 a 12)
+            O limite superior é exclusivo, então 13 produz números até 12
+            */
+            int indexArr = random.Next(0, myNumbers.Length+1);
+            Console.WriteLine($"Número aleatório [0; {myNumbers.Length}]: {indexArr}");
+
             try
             {
-                int[] myNumbers = {1, 2, 3, 7, 9, 15, 87, 65, 10};
-                Console.WriteLine(myNumbers[1]);
+                Console.WriteLine(myNumbers[indexArr]);
             }
             catch (Exception e)
             {
@@ -82,7 +91,6 @@ class TryCatch
             ijlibs.CheckAge(18);      // success
             ijlibs.CheckAge(22);      // success
             #endregion
-
 
             #region bloco ---------------- FIM DE APP --------------------
             Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
