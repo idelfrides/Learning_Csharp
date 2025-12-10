@@ -169,14 +169,25 @@ namespace LearningCsharp
         }
 
         public async Task EsperarAsync(int tempoSegundos)
-            {
-                Console.WriteLine($"Aguardando {tempoSegundos}s assincronamente para executar ação solicitada . . .");
-                
-                // O valor é em milissegundos
-                await Task.Delay(TimeSpan.FromSeconds(tempoSegundos)); 
+        {
+            Console.WriteLine($"Aguardando {tempoSegundos}s assincronamente para executar ação solicitada . . .");
+            
+            // O valor é em milissegundos
+            await Task.Delay(TimeSpan.FromSeconds(tempoSegundos)); 
 
-                Console.WriteLine("Pausa assíncrona terminada.");
+            Console.WriteLine("Pausa assíncrona terminada.");
+        }
+    
+        public void CheckAge(int age)
+        {
+            if (age < 18)
+            {
+                throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+            } else
+            {
+                Console.WriteLine("Access granted - You are old enough!");
             }
         }
+    }
 }
 
