@@ -39,14 +39,14 @@ class ManageFiles
     class ManageFilesMainClass
     {
         
-        public static async Task Main(string[] args)
+        public static async Task MainFiles(string[] args)
         {
         
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "ESTUDANDO GERENCIAMENTO DE ARQUIVOS EM C#!\n\tMAIN CLASS:  ManageFilesMainClass\n\tAUXILIAR CLASS: ";
 
             IJDEVLibs ijlibs = new IJDEVLibs();
-            
+
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
