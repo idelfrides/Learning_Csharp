@@ -81,7 +81,7 @@ class Interface
 
     class Program
     {   
-        public static void Main(string[] args)
+        public static void MainInterface(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             Console.Write
