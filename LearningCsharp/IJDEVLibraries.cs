@@ -1,13 +1,4 @@
-﻿using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Threading.Tasks;
-using System;
-
-
-
-namespace LearningCsharp
+﻿namespace LearningCsharp
 {   
     public class MyClassOfCars    
     {   
@@ -128,6 +119,7 @@ namespace LearningCsharp
     public class IJDEVLibs
     {
 
+        // IJDEVLibraries
         public IJDEVLibs()
         {
             Console.WriteLine("CONSTRUTOR <IJDEVLibs>");
@@ -135,18 +127,23 @@ namespace LearningCsharp
         // print('#'*40)
         public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace=3, int hspace=0)
         { 
+            this.BuildLines(lineShape, lineLen, vspace, hspace);
+            Console.WriteLine($"\t{info}");
+            this.BuildLines(lineShape, lineLen, 0, hspace);
+        }
+
+        public void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0)
+        {
             if (vspace > 0)
             {
                 this.BuildSpaces("vertical", vspace);
-
-            }else if (hspace > 0)
+            }
+            else if (hspace > 0)
             {
                 this.BuildSpaces("horizontal", hspace);
             }
-            string lineFormatted = new string(lineShape, lineLen);
+            string lineFormatted = new string(lineShape, lineLength);
 
-            Console.WriteLine($"\t{lineFormatted}");
-            Console.WriteLine($"\t{info}");
             Console.WriteLine($"\t{lineFormatted}");
         }
 
