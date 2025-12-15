@@ -1,18 +1,22 @@
-﻿using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Text;
 
 namespace LearningCsharp
 {   
     public class Program
     {   
-        public static void Main09(string[] args)
+        public static void Main(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
-            Console.Write("\n===================================================\n\n");
-            Console.WriteLine(
-                "[AULA 6 - 9: VARIÁVEIS]: Tipos e Declaração de variáveis");
-            Console.Write("\n===================================================\n\n");
+            var infos = "ESTUDANDO .NET E C# EM DEZEMBRO DE 2025!\n\tNAMESPACE: LearningCsharp\n\tMAIN CLASS: Program\n\tAUXILIAR CLASS: ";
+
+            IJDEVLibs ijlibs = new IJDEVLibs();
+
+            char lineShape = '=';
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco de comentários de documentação
@@ -209,13 +213,29 @@ namespace LearningCsharp
             Console.WriteLine("\tHoje é " + currentDatetime.ToString("dd/MM/yyyy") + " e agora são " + currentDatetime.ToString("HH:mm:ss")
             );
 
-            Console.Write("\n\n\t Informe sua IDADE ::>>  ");
-            var inputIdade = Console.ReadLine() ?? string.Empty;
+            int idade;
+            int idade2;
+
+            try
+            {
+                Console.Write("\n\n\t Informe sua IDADE ::>>  ");
+                var inputIdade = Console.ReadLine();
+                idade = Convert.ToInt32(inputIdade);
+                int.TryParse(inputIdade, out idade2);
+
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine($"Something went wrong. ---> {e.Message}");
+                idade = 0;
+                idade2 = 0;
+                throw new DataException("\n\n\n IDADE INFORMA INCORRETA!!!!\n\n\n");
+            }
             // var inputIdade = Console.ReadLine() ?? "20";
 
             // Console.WriteLine(typeof(inputIdade)); // string
-            int idade = Convert.ToInt32(inputIdade);
             Console.WriteLine($"\n\t {inputNome}, Sua idade é: {idade}");
+            Console.WriteLine($"\n\t {inputNome}, Sua idade2 é: {idade2}");
 
             if (idade >= 18)
             {
@@ -437,19 +457,62 @@ namespace LearningCsharp
             myStrBuilder.Append("\nTipo interpolação é -> ");
             myStrBuilder.Append(tipoInterpolacao);
 
-            Console.WriteLine(myStrBuilder.ToString());          
+            Console.WriteLine(myStrBuilder.ToString());
+            #endregion
+
+            #region Type Casting : Implicit Casting, Explicit Casting
+            infos = """
+            C# Type Casting
+            Type casting is when you assign a value of one data type to another type.
+
+            In C#, there are two types of casting:
+
+            >> Implicit Casting (automatically) - converting a smaller type to a larger type size
+            char -> int -> long -> float -> double
+
+            >> Explicit Casting (manually) - converting a larger type to a smaller size type
+            double -> float -> long -> int -> char
+            """;
+
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+
+            // IMPLICIT CASTING:  smaller type to a larger type 
+            int myIntV = 7;
+            float myFV = myIntV;         // Automatic casting: int to float
+            double myDV = myFV;          // Automatic casting: float to double
+
+            Console.WriteLine($"ORIGINAL INT VALUE IS {myIntV}");
+            Console.WriteLine($"Automatic casting: int to float  {myFV}");
+            Console.WriteLine($"Automatic casting: float to double  {myDV}");
+
+            // EXPLICIT CASTING: larger type to a smaller size
+            double myD2 = 789.59;
+            float myFV2 = (float)myD2;     // Manual casting: double to float
+            int myInt2 = (int)myFV2;       // Manual casting: float to int
+
+            Console.WriteLine($"ORIGINAL double VALUE IS {myD2}");
+            Console.WriteLine($"Explicit casting: double to float  {myFV2}");
+            Console.WriteLine($"Explicit casting: float to int {myInt2}");
+
+            // Console.WriteLine(myD2);       // Outputs 98.75
+            // Console.WriteLine(myInt2);     // Outputs 98
+
+            Console.Write("Informe sua idade (uso de  int.TryParse) ::>>    ");
+            // int.TryParse(myD2, out int idade);
+            int.TryParse(Console.ReadLine(), out int fieldIdade);
+
+            Console.WriteLine($"IDADE INFORMADA É  {fieldIdade}");
+
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-
             Console.Write($"{Environment.NewLine}\n\nPressione qualquer tecla para sair...");
-
             Console.ReadKey(true);
-
-            Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            ijlibs.ShowPrettyInfo("FIM DE APP", lineShape, 60);
+            ijlibs.BuildSpaces("vertical", 5);
             #endregion
 
         }
-    }
+}
 }
 

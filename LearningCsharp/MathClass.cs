@@ -17,7 +17,7 @@ class MathClass
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainMC(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "STUDING MATH CLASS AND IT METHODS EM C#!\n\tMAIN CLASS:  Program\n\tAUXILIAR CLASS: MathClass";
