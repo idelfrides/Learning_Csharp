@@ -501,6 +501,9 @@ namespace LearningCsharp
             // int.TryParse(myD2, out int idade);
             int.TryParse(Console.ReadLine(), out int fieldIdade);
 
+            // operador ternário
+            fieldIdade = fieldIdade >= 18 ? fieldIdade : 0;
+
             Console.WriteLine($"IDADE INFORMADA É  {fieldIdade}");
 
             #endregion
@@ -513,6 +516,6 @@ namespace LearningCsharp
             #endregion
 
         }
-}
+    }
 }
 
