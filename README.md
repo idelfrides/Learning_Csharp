@@ -52,7 +52,7 @@ NuGet é um gerenciador de pacotes do .NET
 
 5 -  `Ctrl + G` -> leva o cursor para uma linha específica definida por você
 
-6 -  `Ctrl + T` -> buscar um elemento do seu projeto a partir de uma caixa de busca
+6 -  `Ctrl + T` -> buscar um elemento dentro do seu projeto a partir de uma caixa de busca
 
 7 -  `Alt + Seta Cima/Baixo` -> mover tudo que for selecionado (uma ou várias linhas de código) para cima ou para baixo
 
