@@ -124,7 +124,6 @@
         {
             Console.WriteLine("CONSTRUTOR <IJDEVLibs>");
         }
-        // print('#'*40)
         public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace=3, int hspace=0)
         { 
             this.BuildLines(lineShape, lineLen, vspace, hspace);
