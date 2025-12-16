@@ -503,8 +503,11 @@ namespace LearningCsharp
 
             // operador ternário
             fieldIdade = fieldIdade >= 18 ? fieldIdade : 0;
-
+            
             Console.WriteLine($"IDADE INFORMADA É  {fieldIdade}");
+
+            infos = "FAZENDO ESTA ALTERAÇÃO POR MEIO DO IDE VISUAL STUDIO COMMUNITY 2026";
+            ijlibs.ShowPrettyInfo(infos, lineShape, 67);
 
             #endregion
 
