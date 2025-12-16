@@ -90,7 +90,7 @@ namespace LearningCsharp
         40. Enum e Boas Práticas de Codificação: Siga boas práticas de codificação ao trabalhar com enums, incluindo nomeação clara, documentação adequada e consideração cuidadosa do design e uso dentro do sistema.
         41. Enum e Evolução do Software: Considere como os enums podem evoluir ao longo do tempo à medida que o software cresce e muda, garantindo que eles permaneçam relevantes e úteis para o design do sistema.
         */
-enum EStatusRelModerno
+        enum EStatusRelModerno
         {
             Viuvo=13,
             Divorciado=12,
@@ -108,8 +108,12 @@ enum EStatusRelModerno
         }
 
         /*
-        explcação técnica de structs em C#.
-        Structs em C# são tipos de valor que permitem agrupar dados relacionados em uma única unidade. Eles são definidos usando a palavra-chave 'struct' e são úteis para representar pequenos conjuntos de dados que não requerem a complexidade de uma classe. Structs são armazenados na pilha, o que pode oferecer vantagens de desempenho em comparação com classes, que são tipos de referência armazenados no heap. Eles podem conter campos, propriedades, métodos e construtores, mas não suportam herança. Structs são ideais para representar dados imutáveis ou pequenos objetos que serão frequentemente criados e destruídos.
+        Explicação técnica de structs em C#.
+        --------------------------------------
+        Structs em C# são tipos de valor que permitem agrupar dados relacionados em uma única unidade. Eles são definidos usando a palavra-chave 'struct' e são úteis para representar pequenos conjuntos de dados
+        que não requerem a complexidade de uma classe. Structs são armazenados na pilha, o que pode oferecer vantagens de desempenho em comparação com classes, que são tipos de referência armazenados no heap. 
+        Eles podem conter campos, propriedades, métodos e construtores, mas não suportam herança. Structs são ideais para representar dados imutáveis ou pequenos objetos que serão frequentemente criados e destruídos.
+        
         1. Definição de Structs: Em C#, uma struct é definida usando a palavra-chave 'struct' seguida pelo nome da struct e um bloco de código que contém seus membros.
         2. Tipo de Valor: Structs são tipos de valor, o que significa que eles são armazenados na pilha e copiados por valor quando atribuídos a uma nova variável ou passados como parâmetros para métodos.
         3. Membros: Structs podem conter campos, propriedades, métodos, construtores e eventos, permitindo encapsular dados e comportamentos relacionados.
