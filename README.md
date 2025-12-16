@@ -40,6 +40,19 @@ NuGet é um gerenciador de pacotes do .NET
 
 `dotnet run`
 
+### DICAS E ATALHOS DE PRODUTIVIDADE NO VISUAL STUDIO
+
+1 -  `tab tab` -> preenche/completa o códico para você automaticamente
+2 -  `Ctrl + Left Click` -> retorna/posiciona o cursor para a primeira ocorrência do objeto/entidade (classe, método, emun,  método, variáveis, etc)
+3 -  `Ctrl + M + O` -> colapsar (= fechar) todas os blocos de código : classes e métodos de um arquivo
+4 -  `Ctrl + M + P` -> descolapsar ( = abrir) todos os blocos de código : todas classes e métodos de um arquivo
+5 -  `Ctrl + G` -> leva o cursor para uma linha específica definida por você
+6 -  `Ctrl + T` -> buscar um elemento do seu projeto a partir de uma caixa de busca
+7 -  `Alt + Seta Cima/Baixo` -> mover tudo que for selecionado (uma ou várias linhas de código) para cima ou para baixo
+8 -  `Ctrl + R + R` -> renomear um nome de uma entidade (nomes de classe, de método, de arquivo, de variável, ...), substituindo todas as ocorrências daquela referência.
+9 -  `Ctrl + H` -> Abre uma caixa de substuição de valores
+10 - `Ctrl + F` -> Abre uma caixa de substuição de valores
+
 
 
 
