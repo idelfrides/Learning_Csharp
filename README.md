@@ -63,6 +63,14 @@ NuGet é um gerenciador de pacotes do .NET
 10 - `Ctrl + F` -> Abre uma caixa de substuição de valores
 
 
+### 🚀 TODO ( STUDY ) 
+
+1 -> PARALELISMO EN C#
+2 -> DICTIONAY , LISTS AND COILLECTIONS IN C#
+3 -> 
+
+
+
 
 
 
