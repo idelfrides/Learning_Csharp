@@ -17,7 +17,7 @@ class MathClass
 {
     class Program
     {
-        static void MainMC(string[] args)
+        static void Main009(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "STUDING MATH CLASS AND IT METHODS EM C#!\n\tMAIN CLASS:  Program\n\tAUXILIAR CLASS: MathClass";
@@ -47,6 +47,17 @@ class MathClass
 
             Console.WriteLine($"\n\tMAX ({randV1}, {randV2}) IS => {Math.Max(randV1, randV2)}");
             Console.WriteLine($"\n\tMIN ({randV1}, {randV2}) IS => {Math.Min(randV1, randV2)}");
+                     
+            /*
+             ->  converter seguntos para milissegundos
+             
+            Fórmula: multiplique o valor de tempo por 1000
+
+            */
+            int tempoSleepSegundos = 30;
+            Thread.Sleep(tempoSleepSegundos * 1000);
+            //Thread.Sleep(30000);
+
             Console.WriteLine($"\n\tSQUARE ROOT OF V1 IS => {Math.Sqrt(randV1)}");
             Console.WriteLine($"\n\tSQUARE ROOT OF V2 IS => {Math.Sqrt(randV2)}");
             Console.WriteLine($"\n\tABSOLUTE VALUE => {Math.Abs(randV)}");
@@ -77,5 +88,6 @@ class MathClass
             #endregion
 
         }
+
     }
 }

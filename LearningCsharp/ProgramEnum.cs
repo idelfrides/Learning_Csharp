@@ -186,8 +186,9 @@ namespace LearningCsharp
             Console.WriteLine($"\n\n\t Olá, {pessoa1.Nome}! Como está hoje?");
             Console.WriteLine($"\n\t Você tem {pessoa1.Idade} anos de idade e seu gênero é '{pessoa1.genero}'.");
             Console.WriteLine($"\n\t Seu status de relacionamento é: {pessoa1.pStatusRelac}.");
-            Console.WriteLine($"\n\t Seu código de status de relacionamento: {(int)pessoa1.pStatusRelac}");   
-            
+            Console.WriteLine($"\n\t Seu código de status de relacionamento: {(int)pessoa1.pStatusRelac}");
+
+         
 
             // ------------------------ FIM DE APP ---------------------------
 

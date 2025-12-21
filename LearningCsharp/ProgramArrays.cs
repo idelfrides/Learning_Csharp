@@ -8,7 +8,7 @@
             // ----------------------- INÍCIO DE APP ------------------------
             Console.Write("\n===================================================\n\n");
             Console.WriteLine($"ESTUDANDO ARRAYS EM C#!");
-            Console.Write   ("\n===================================================\n\n");
+            Console.Write("\n===================================================\n\n");
 
             // Declaração e Inicialização de um Array de inteiros com definição explícita de tamanho
             int[] numeros = new int[5] { 10, 20, 30, 40, 50 };  

@@ -6,7 +6,7 @@ namespace LearningCsharp
 {   
     public class Program
     {   
-        public static void Main(string[] args)
+        public static void Main0078(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
@@ -17,7 +17,7 @@ namespace LearningCsharp
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
-            #endregion
+            #endregion  
 
             #region bloco de comentários de documentação
             /*
@@ -339,7 +339,7 @@ namespace LearningCsharp
 
             Console.Write("DIGITE O NÚMERO MAXIMO DA CONTAGEM ::>>  ");
             var inputContador = Console.ReadLine() ?? string.Empty; 
-            int maximoContagem = Convert.ToInt32(inputContador);
+            int maximoContagem = Convert.ToInt32(inputContador);   
            
             int contador = 1;
             while (contador <= maximoContagem)

@@ -40,6 +40,7 @@ Some of them are: ArithmeticException, FileNotFoundException, IndexOutOfRangeExc
 */
 
 using System;
+using System.IO.Compression;
 using LearningCsharp;      //include the System.IO namespace
 
 class TryCatch
@@ -48,7 +49,7 @@ class TryCatch
     class TryCatchMainClass
     {
 
-        public static void MainTC(string[] args)
+        public static void Main(string[] args)
         {
 
             #region bloco introdução: ------------- INICIO APP ----------------
@@ -65,10 +66,17 @@ class TryCatch
             int[] myNumbers = {1, 2, 3, 7, 9, 15, 87, 65, 10}; // Length 9
             Random random = new Random();
 
+            // var itemsList = Enumerable.Range(1, 30);
+            // Console.WriteLine($"itemsList: {itemsList}");
+             int tempoSleepSegundos = 30;
+
+            // ijlibs.ShowPrettyInfo()
+
             /*
             Gera um número inteiro aleatório dentro de um intervalo específico (ex: 1 a 12)
             O limite superior é exclusivo, então 13 produz números até 12
             */
+
             int indexArr = random.Next(0, myNumbers.Length+10);
             
             Console.WriteLine("myNumbers: {1, 2, 3, 7, 9, 15, 87, 65, 10};");
@@ -89,9 +97,26 @@ class TryCatch
                 Console.WriteLine("The 'try catch' is finished. This is finally block");
             }
 
-            // ijlibs.CheckAge(17);   // will return error
+            int randAge = random.Next(1, 50);
+
+            infos = $"RAND AGE IS: {randAge}";
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+
+            try
+            {
+                ijlibs.CheckAgeCustom(randAge);
+            }
+            catch (IJCustomExceptions ex)
+            {
+                //Console.WriteLine($"CHECK AGE ===>>>  {ex.Message}");
+                Console.WriteLine($"{ex.ExCode} | {ex.Message}");
+                Thread.Sleep(tempoSleepSegundos * 1000);
+                return;
+            }
+
+            //ijlibs.CheckAge(17);    // will return error
+            //ijlibs.CheckAge(22);      // success
             ijlibs.CheckAge(18);      // success
-            ijlibs.CheckAge(22);      // success
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------

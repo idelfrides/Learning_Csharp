@@ -1,7 +1,7 @@
 ﻿namespace LearningCsharp
-{   
-    public class MyClassOfCars    
-    {   
+{
+    public class MyClassOfCars
+    {
         public string color;
         public string brand;
         public string model;
@@ -15,7 +15,7 @@
         public string destination = "No where";
 
         // Default constructor        
-        public MyClassOfCars(string color, string brand, string model, int year, int maxSpeed, int currentSpeed, string currentLocation, string ownerName, string status,  string destination, string licensePlateNumber)
+        public MyClassOfCars(string color, string brand, string model, int year, int maxSpeed, int currentSpeed, string currentLocation, string ownerName, string status, string destination, string licensePlateNumber)
         {
             this.color = color;
             this.brand = brand;
@@ -59,7 +59,7 @@
                 this.currentSpeed = 0;
                 this.destination = "No where";
                 Console.WriteLine($"\n\t The car {this.brand}: {this.licensePlateNumber} has stopped.");
-            }else
+            } else
             {
                 Console.Write($"\n\t[NOTICE]: The car {this.brand} - {this.licensePlateNumber} is already STOPPED at {this.currentLocation}\n");
             }
@@ -78,7 +78,7 @@
             }
             else
             {
-                Console.Write($"\n\t[NOTICE]: The car {this.brand} - {this.licensePlateNumber} is already moving to {this.destination}\n");               
+                Console.Write($"\n\t[NOTICE]: The car {this.brand} - {this.licensePlateNumber} is already moving to {this.destination}\n");
             }
         }
 
@@ -89,9 +89,9 @@
                 Console.Write($"\n\tGoing to ACELERATE the car {this.brand} - {this.licensePlateNumber} ...\n\n");
 
                 this.currentSpeed += increaseSpeed;
-                Console.WriteLine($"\n\t The car {this.brand}- {this.licensePlateNumber} has accelerated to {this.currentSpeed} km/h."); 
+                Console.WriteLine($"\n\t The car {this.brand}- {this.licensePlateNumber} has accelerated to {this.currentSpeed} km/h.");
                 this.SpeedVerification();
-            }else
+            } else
             {
                 Console.WriteLine($"\n\t [NOTICE]: The car {this.brand}-{this.licensePlateNumber} is already STOPPED at {this.currentLocation} with speed {this.currentSpeed}");
             }
@@ -112,8 +112,8 @@
             else if (this.currentSpeed > 0 || this.currentSpeed <= this.maxSpeed)
             {
                 Console.WriteLine($"\n\t The car {this.brand}-{this.licensePlateNumber} is within the speed limit.");
-            }  
-        }   
+            }
+        }
     }
 
     public class IJDEVLibs
@@ -124,8 +124,8 @@
         {
             Console.WriteLine("CONSTRUTOR <IJDEVLibs>");
         }
-        public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace=3, int hspace=0)
-        { 
+        public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0)
+        {
             this.BuildLines(lineShape, lineLen, vspace, hspace);
             Console.WriteLine($"\t{info}");
             this.BuildLines(lineShape, lineLen, 0, hspace);
@@ -167,13 +167,13 @@
         public async Task EsperarAsync(int tempoSegundos)
         {
             Console.WriteLine($"Aguardando {tempoSegundos}s assincronamente para executar ação solicitada . . .");
-            
+
             // O valor é em milissegundos
-            await Task.Delay(TimeSpan.FromSeconds(tempoSegundos)); 
+            await Task.Delay(TimeSpan.FromSeconds(tempoSegundos));
 
             Console.WriteLine("Pausa assíncrona terminada.");
         }
-        
+
         public void CheckAge(int age)
         {
             if (age < 18)
@@ -183,10 +183,38 @@
             {
                 Console.WriteLine("Access granted - You are old enough!");
             }
-           
         }
 
-        
+        public void CheckAgeCustom(int age)
+        {
+            if (age < 18)
+            {
+                throw new IJCustomExceptions(1, $"Access denied - You must be at least 18 years old. AGE: {age} < 18");
+            }
+            else if (18 <= age & age < 25)
+            {
+                 throw new IJCustomExceptions(2, $"IDADE PERMITIDA COM RESTRIÇÕES: IDADE '18 <= {age} < 25' ");
+            }
+            else
+            {
+                Console.WriteLine("Access granted - You are old enough!");
+            }
+        }
+
+
     }
+    public class IJCustomExceptions : Exception
+    {
+
+        public IJCustomExceptions(int code, string message) : base(message)
+        {
+            ExCode = code;
+            //this.ExMsg = message;
+
+        }
+
+        public int ExCode { get; }
+    }
+    
 }
 
