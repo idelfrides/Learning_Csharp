@@ -46,9 +46,9 @@ NuGet é um gerenciador de pacotes do .NET
 
 2 -  `Ctrl + Left Click` -> retorna/posiciona o cursor para a primeira ocorrência do objeto/entidade (classe, método, emun,  método, variáveis, etc)
 
-3 -  `Ctrl + M + O` -> colapsar (= fechar) todas os blocos de código : classes e métodos de um arquivo
+3 -  `Ctrl + M + O` -> colapsar (= fechar) todas os blocos de código : classes, métodos, structs, objects de um arquivo
 
-4 -  `Ctrl + M + P` -> descolapsar ( = abrir) todos os blocos de código : todas classes e métodos de um arquivo
+4 -  `Ctrl + M + P` -> descolapsar ( = abrir) todos os blocos de código : classes, métodos, structs, objects de um arquivo
 
 5 -  `Ctrl + G` -> leva o cursor para uma linha específica definida por você
 
@@ -63,14 +63,9 @@ NuGet é um gerenciador de pacotes do .NET
 10 - `Ctrl + F` -> Abre uma caixa de substuição de valores
 
 
-### 🚀 TODO ( STUDY ) 
+### 🚀 TODO ( NEXT STEPS ) 
 
 1 -> PARALELISMO EN C#
-2 -> DICTIONAY , LISTS AND COILLECTIONS IN C#
+2 -> OILLECTIONS IN C# : DICTIONAY , LISTS, ...
 3 -> 
-
-
-
-
-
 

@@ -31,10 +31,10 @@ class MathClass
             #region bloco da app propriamente dita
             Random rand = new Random();
 
-            int randV1 = rand.Next(100);
+            int randV1 = rand.Next(100); 
             int randV2 = rand.Next(100);
             int randV = rand.Next(10, 1000);
-
+            
             double randDV = rand.NextDouble();
 
             double randDVx = rand.NextDouble();
