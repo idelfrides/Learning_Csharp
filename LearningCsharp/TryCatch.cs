@@ -49,7 +49,7 @@ class TryCatch
     class TryCatchMainClass
     {
 
-        public static void Main(string[] args)
+        public static void MainTC(string[] args)
         {
 
             #region bloco introdução: ------------- INICIO APP ----------------
