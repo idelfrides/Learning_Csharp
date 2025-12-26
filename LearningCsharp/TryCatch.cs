@@ -63,24 +63,25 @@ class TryCatch
 
             #region bloco da app propriamente dita
 
-            int[] myNumbers = {1, 2, 3, 7, 9, 15, 87, 65, 10}; // Length 9
+            ijlibs.CustomWait(tempoEmMinutos: 2);
+
+            int[] myNumbers = { 1, 11, 54, 96, 7, 2, 20, 77, 1533, 33, 15, 3, 7, 9, 15, 87, 65, 10 }; // Length 18
             Random random = new Random();
 
             // var itemsList = Enumerable.Range(1, 30);
             // Console.WriteLine($"itemsList: {itemsList}");
-             int tempoSleepSegundos = 30;
+             int tempoSleepSegundos = 60;
 
-            // ijlibs.ShowPrettyInfo()
 
             /*
             Gera um número inteiro aleatório dentro de um intervalo específico (ex: 1 a 12)
             O limite superior é exclusivo, então 13 produz números até 12
             */
 
-            int indexArr = random.Next(0, myNumbers.Length+10);
-            
-            Console.WriteLine("myNumbers: {1, 2, 3, 7, 9, 15, 87, 65, 10};");
-            Console.WriteLine($"Número aleatório [0; {myNumbers.Length}]: {indexArr}");
+            int indexArr = random.Next(0, myNumbers.Length+15);  // '+15' para possa ocorrer o erro "Index was outside the bounds of the array"
+
+            Console.WriteLine("myNumbers: { 1, 11, 54, 96, 7, 2, 20, 77, 1533, 33, 15, 3, 7, 9, 15, 87, 65, 10 };");
+            Console.WriteLine($"TAMANHO ARRAY: {myNumbers.Length}  | INDEX ANGE [0, 1, 2, 3, . . ., {myNumbers.Length - 1}] | INDICE ESCOLHIDO --> {indexArr}");
 
             try
             {
@@ -114,9 +115,9 @@ class TryCatch
                 return;
             }
 
-            //ijlibs.CheckAge(17);    // will return error
-            //ijlibs.CheckAge(22);      // success
-            ijlibs.CheckAge(18);      // success
+            //ijlibs.CheckAge(17);     // will return error
+            //ijlibs.CheckAge(22);     // success
+            ijlibs.CheckAge(18);       // success
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
