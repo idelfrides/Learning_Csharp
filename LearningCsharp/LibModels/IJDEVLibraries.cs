@@ -174,6 +174,19 @@
             Console.WriteLine("Pausa assíncrona terminada.");
         }
 
+        public async void CustomWait(int tempoEmMinutos)
+        {
+
+            int tempoConvertidoSegundos;
+            tempoConvertidoSegundos = tempoEmMinutos * 60;   // converte minutos para segundos
+            Console.WriteLine($"Aguardando {tempoEmMinutos}min assincronamente para executar ação solicitada . . .");
+
+            // O valor é em milissegundos
+            Thread.Sleep(tempoConvertidoSegundos * 1000);
+
+            Console.WriteLine("Pausa assíncrona Finalizada.");
+        }
+
         public void CheckAge(int age)
         {
             if (age < 18)
