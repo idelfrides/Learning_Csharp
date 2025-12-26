@@ -209,8 +209,6 @@
         public IJCustomExceptions(int code, string message) : base(message)
         {
             ExCode = code;
-            //this.ExMsg = message;
-
         }
 
         public int ExCode { get; }
