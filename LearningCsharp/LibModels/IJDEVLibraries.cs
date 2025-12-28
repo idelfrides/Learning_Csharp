@@ -132,11 +132,59 @@
         }
 
         
-        public void ProcessList(List<string> myList)
+        public void ProcessList(List<string> myList, bool showIndex=true)
         {
-            for (int i = 0; i < myList.Count; i++) { Console.WriteLine($"\t{i} :::>> {myList[i]}"); }            
+
+            switch (showIndex)
+            {
+                case true:
+                    for (int i = 0; i < myList.Count; i++) { Console.WriteLine($"\t{i} | {i + 1} ::>> {myList[i]}"); }
+                    break;
+                case false:
+                    foreach (string item in myList) { Console.WriteLine($"\t{item}"); }
+                    break;
+                default:
+                    Console.WriteLine("DEFAULT OPTION");
+                    break;
+            }
         }
-        
+
+        public void ProcessArrays(string[] myArray, bool showIndex=true)
+        {
+            switch (showIndex)
+            {
+                case true:
+                    for (int i = 0; i < myArray.Length; i++) { Console.WriteLine($"\t{i} | {i + 1} ::> {myArray[i]}"); }
+                    break;
+                case false:
+                    foreach (var item in myArray) { Console.WriteLine($"\t{item}\n"); }
+                    break;
+                default:
+                    Console.WriteLine("DEFAULT OPTION");
+                    break;
+            }
+        }
+
+        public void ProcessDicionary(Dictionary<string, int> myDict, bool showKeys=true)
+        {
+
+            switch (showKeys)
+            {
+                case true:
+                    Console.WriteLine("Pares chave-valor do dicionário recebido:");
+                    foreach (var par in myDict) {Console.WriteLine($"Chave: {par.Key}, Valor: {par.Value}");}
+                    break;
+                case false:
+                    foreach (var par in myDict) { Console.WriteLine($"Valor: {par.Value}"); }
+                    break;
+                default:
+                    Console.WriteLine("DEFAULT OPTION");
+                    break;
+
+            }
+        }
+
+
         public void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0)
         {
             if (vspace > 0)
