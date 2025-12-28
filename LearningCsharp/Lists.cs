@@ -36,8 +36,6 @@
 
 
 
-
-
 using System;
 using System.Security.Cryptography;
 using LearningCsharp;      //include the System.IO namespace
@@ -87,7 +85,6 @@ public class Lists
             var allMethodsInfo = $"C# METHODS OF List<T>: \n\n {AllListMethods}";
             ijlibs.ShowPrettyInfo(allMethodsInfo, lineShape, 60);
 
-
             List<string> brActors = new List<string>
             {
                 "Fernanda Torres", "Deborah Bloch", "Lázaro Ramos",
@@ -99,66 +96,25 @@ public class Lists
 
             var totalbrActors = brActors.Count;
             Console.WriteLine($"\nTotal brActors in the list: {totalbrActors}\n");
-            /*
-            Console.WriteLine("\nLISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using 'foreach loop' \n");
-            foreach (var p in brActors)
-            {
-                Console.WriteLine($"ACTOR/ACTRESS NAME IS:  {p}");
-            }
-            */
-            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using 'For loop'";
+                     
+            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using my method 'ProcessList'";
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
-
-            // ijlibs.ShowContentOfArrayList(brActors, "List");
-
-            for (int i = 0; i < totalbrActors; i++) { 
-                Console.WriteLine($"\t{i + 1} :::>> {brActors[i]}"); 
-            }
-
-
-            // Console.WriteLine($"brActors type 1: {brActors.GetType().Name}");
-            // Console.WriteLine($"brActors type 2: {brActors.GetType().ToString()}");
-            // Console.WriteLine($"brActors type 3: {brActors.GetType().FullName}");
-
-
-            string[] CSharpMethodsOfList =
-            {
-                 "Add -> Adds an object to the end of the List<T>",
-                 "AddRange -> Adds the elements of the specified collection to the end of the List<T>",
-                 "Clear -> Removes all elements from the List<T>",
-                 "Contains -> Determines whether the List<T> contains a specific value",
-                 "CopyTo -> Copies the entire List<T> to a compatible one-dimensional array, starting at the specified array index",
-                 "Exists -> Determines whether the List<T> contains elements that match the conditions defined by the specified predicate",
-                 "Find -> Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire List<T>",
-                 "FindAll -> Retrieves all the elements that match the conditions defined by the specified predicate",
-                 "IndexOf -> Searches for the specified object and returns the zero-based index of the first occurrence within the entire List<T>",
-                 "Insert -> Inserts an element into the List<T> at the specified index",
-                 "InsertRange -> Inserts the elements of a collection into the List<T> at the specified index",
-                 "LastIndexOf -> Searches for the specified object and returns the zero-based index of the last occurrence within the entire List<T>",
-                 "Remove -> Removes the first occurrence of a specific object from the List<T>",
-                 "RemoveAll -> Removes all the elements that match the conditions defined by the specified predicate",
-                 "RemoveAt -> Removes the element at the specified index",
-                 "RemoveRange -> Removes a range of elements from the List<T>",
-                 "Reverse -> Reverses the order of the elements in the entire List<T>",
-                 "Sort -> Sorts the elements in the entire List<T> using the default comparer",
-                 "ToArray -> Copies the elements of the List<T> to a new array",
-                 "TrimExcess -> Sets the capacity to the actual number of elements in the List<T>, if that number is less than 90 percent of the current capacity.",
-            };
-
+            Console.WriteLine("\tIndex | Human ::>> LIST VALUE");
+            ijlibs.ProcessList(brActors);
 
             // Now, let's test all methods of List<T>
-
 
             #region bloco: ------------- TESTING CATEGORY: CREATE (Add/Insert elements):  ----------------
             infos = "TESTING CATEGORY: CREATE (Add/Insert elements):";
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
+            // Add -> Adds an object to the end of the List<T>.
             brActors.Add("Benvinda Papai");
             brActors.Add("Fernanda Montenegro");
             brActors.Add("IRINA Papai");
             Console.WriteLine($"\nTotal brActors in the list after Add() 3 elements: {brActors.Count}");
 
-            // Method AddRange
+            // AddRange -> Adds the elements of the specified collection to the end of the List<T>.
             List<string> newActors = [
                 "Bruna Marquezine", "Larissa Manoela", "Maisa Silva", "Maisa Silva"
             ];
@@ -177,9 +133,8 @@ public class Lists
             brActors.InsertRange(1, new List<string> { "Mariana Rios", "Sandy Leah" });
             Console.WriteLine($"\nTotal brActors in the list after add InsertRange() index = 1 with 2 more: {brActors.Count}");
 
-
             Console.WriteLine("\n\nUPDATED LIST AFTER CREATE CATEGORY\n\n");
-
+            
             ijlibs.ProcessList(brActors);
             //for (int i = 0; i < brActors.Count; i++) { Console.WriteLine($"\t{i + 1} :::>> {brActors[i]}"); }
 
