@@ -45,7 +45,7 @@ public class Lists
 {
 	class ListProgram
 	{
-		public static void Main(string[] args)
+		public static void MainList(string[] args)
         {
             #region bloco ------------- introdução: INICIO APP ----------------
             var infos = "ESTUDANDO COLEÇÕES EM C#: LISTS \n\tMAIN CLASS:  ListProgram\n\tAUXILIAR CLASS: Lists";
@@ -133,10 +133,8 @@ public class Lists
             brActors.InsertRange(1, new List<string> { "Mariana Rios", "Sandy Leah" });
             Console.WriteLine($"\nTotal brActors in the list after add InsertRange() index = 1 with 2 more: {brActors.Count}");
 
-            Console.WriteLine("\n\nUPDATED LIST AFTER CREATE CATEGORY\n\n");
-            
+            Console.WriteLine("\n\nUPDATED LIST AFTER CREATE CATEGORY\n\n");            
             ijlibs.ProcessList(brActors);
-            //for (int i = 0; i < brActors.Count; i++) { Console.WriteLine($"\t{i + 1} :::>> {brActors[i]}"); }
 
             #endregion
 
