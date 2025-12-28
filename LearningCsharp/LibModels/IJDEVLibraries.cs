@@ -165,25 +165,39 @@
             }
         }
 
-        public void ProcessDicionary(Dictionary<string, int> myDict, bool showKeys=true)
+        public void ProcessDicionaryInt(Dictionary<string, int> myDict, bool showKeys=true)
         {
 
             switch (showKeys)
             {
                 case true:
-                    Console.WriteLine("Pares chave-valor do dicionário recebido:");
-                    foreach (var par in myDict) {Console.WriteLine($"Chave: {par.Key}, Valor: {par.Value}");}
+                    // foreach (var par in myDict) {Console.WriteLine($"\tChave: {par.Key}, Valor: {par.Value}");}
+                    foreach (var par in myDict) {Console.WriteLine($"\t{par.Key} => {par.Value}"); }
                     break;
                 case false:
-                    foreach (var par in myDict) { Console.WriteLine($"Valor: {par.Value}"); }
+                    foreach (var par in myDict) { Console.WriteLine($"\tValor: {par.Value}"); }
                     break;
                 default:
-                    Console.WriteLine("DEFAULT OPTION");
-                    break;
+                    throw new IJCustomExceptions(3, "GIVEN OPTION NOT FOUND -> Status 404");
 
             }
         }
 
+        public void ProcessDicionaryStr(Dictionary<string, string> myDict, bool showKeys = true)
+        {
+            switch (showKeys)
+            {
+                case true:
+                    // foreach (var par in myDict) { Console.WriteLine($"\tChave: {par.Key}, Valor: {par.Value}"); }
+                    foreach (var par in myDict) { Console.WriteLine($"\t{par.Key} ::> {par.Value}"); }
+                    break;
+                case false:
+                    foreach (var par in myDict) { Console.WriteLine($"\tValor: {par.Value}"); }
+                    break;
+                default:
+                    throw new IJCustomExceptions(3, "GIVEN OPTION NOT FOUND -> Status 404");
+            }
+        }
 
         public void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0)
         {
@@ -267,7 +281,6 @@
                 Console.WriteLine("Access granted - You are old enough!");
             }
         }
-
 
     }
     public class IJCustomExceptions : Exception
