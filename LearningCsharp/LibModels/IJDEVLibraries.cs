@@ -131,6 +131,12 @@
             this.BuildLines(lineShape, lineLen, 0, hspace);
         }
 
+        
+        public void ProcessList(List<string> myList)
+        {
+            for (int i = 0; i < myList.Count; i++) { Console.WriteLine($"\t{i} :::>> {myList[i]}"); }            
+        }
+        
         public void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0)
         {
             if (vspace > 0)
@@ -179,7 +185,7 @@
 
             int tempoConvertidoSegundos;
             tempoConvertidoSegundos = tempoEmMinutos * 60;   // converte minutos para segundos
-            Console.WriteLine($"Aguardando {tempoEmMinutos}min assincronamente para executar ação solicitada . . .");
+            Console.WriteLine($"Pausar {tempoEmMinutos} min assincronamente antes de executar ação solicitada . . .");
 
             // O valor é em milissegundos
             Thread.Sleep(tempoConvertidoSegundos * 1000);
