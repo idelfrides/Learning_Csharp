@@ -1,1 +1,27 @@
-conteudo do arquivo teste 06conteudo do arquivo teste 06 - UPDATE
+---
+- Luiz Inácio Lula da Silva   | 80 anos  
+- Donald Trump   | 79 anos  
+- Claudia Sheinbaum   | 63 anos  
+- Javier Milei   | 55 anos  
+- Gabriel Boric   | 39 anos  
+- Gustavo Petro   | 65 anos  
+---
+- Cyril Ramaphosa   | 73 anos  
+- Bola Tinubu   | 73 anos  
+- Abdel Fattah el-Sisi   | 71 anos  
+- William Ruto   | 59 anos  
+- Sahle-Work Zewde   | 71 anos  
+---
+- Xi Jinping   | 72 anos  
+- Droupadi Murmu   | 67 anos  
+- Fumio Kishida   | 68 anos  
+- Yoon Suk-yeol   | 64 anos  
+- Prabowo Subianto   | 74 anos  
+---
+- Emmanuel Macron   | 47 anos  
+- Frank-Walter Steinmeier   | 69 anos  
+- Sergio Mattarella   | 84 anos  
+- Pedro Sánchez   | 53 anos  
+- Marcelo Rebelo de Sousa   | 77 anos  
+- Volodymyr Zelensky   | 47 anos  
+---
