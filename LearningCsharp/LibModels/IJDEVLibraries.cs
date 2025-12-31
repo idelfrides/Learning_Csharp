@@ -116,6 +116,55 @@
         }
     }
 
+    public class FilesManager
+    {
+    
+        public string filePath;
+        //public string filetype = ".txt";
+        public string defaultContent = "Default file content from IJDEVLibs.cs: FilesManager class.";
+
+        public FilesManager(string fileName, string? content)
+        {
+            this.filePath = $"STAGE/{fileName}.txt";
+            //this.defaultContent = content;
+
+        }
+
+        public string GetFileContent()
+        {
+            string content = File.ReadAllText(this.filePath);
+            return content;
+        }
+
+        public void ShowFileInfo()
+        {
+            string content = this.GetFileContent();
+            Console.WriteLine($"File Content: {content}");
+        }
+
+        public void CreateFile()
+        {
+            // Create a file to write to.
+            //this.filetype
+            File.WriteAllText(this.filePath, this.defaultContent);
+            Console.WriteLine($"File created at: {this.filePath}");
+        }
+
+        public void CreateFileWithContent(string content)
+        {
+            // Create a file and write a content to it now.
+            // verify if content is null or empty
+            if (string.IsNullOrEmpty(content))
+            {
+                throw new IJCustomExceptions(4, "Content is null or empty.");
+            }
+
+            File.WriteAllText(this.filePath, content);
+            Console.WriteLine($"File created with content successfuly at: {this.filePath}");
+        }
+
+    }
+
     public class IJDEVLibs
     {
 
@@ -131,7 +180,30 @@
             this.BuildLines(lineShape, lineLen, 0, hspace);
         }
 
-        
+
+        public int[] GenerateIntValuesArray(int qtd, int maxValue, int minValue = 0)
+        {
+            Random rand = new Random();
+
+            int[] valuesArr = new int[qtd];
+            for (int i = 0; i < qtd ; i++)
+            {
+                valuesArr[i] = rand.Next(minValue, maxValue + 1); // Scores between 0 and maxScore
+            }
+            return valuesArr;
+        }
+
+        public List<int> GenerateStudentAgesList(int numberOfStudents, int minAge, int maxAge)
+        {
+            Random rand = new Random();
+            List<int> StudentAges = new List<int>();
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                StudentAges.Add(rand.Next(minAge, maxAge + 1)); // Ages between minAge and maxAge
+            }
+            return StudentAges;
+        }
+
         public void ProcessList(List<string> myList, bool showIndex=true)
         {
 
@@ -283,6 +355,7 @@
         }
 
     }
+    
     public class IJCustomExceptions : Exception
     {
 
