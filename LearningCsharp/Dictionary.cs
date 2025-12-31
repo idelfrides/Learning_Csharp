@@ -36,7 +36,7 @@ namespace LearningCsharp
     {
         class DictionaryProgram
         {
-            public static void Main(string[] args)
+            public static void MainDict(string[] args)
             {
                 #region bloco --------------- Introdução: INICIO APP ----------------
                 var infos = "ESTUDANDO COLEÇÕES EM C#: DICIONÁRIOS\n\tMAIN CLASS: DictionaryProgram\n\tAUXILIAR CLASS: Dictionary";
