@@ -168,11 +168,12 @@
     public class IJDEVLibs
     {
 
-        // IJDEVLibraries
+        // constructor <IJDEVLibs>
         public IJDEVLibs()
         {
-            Console.WriteLine("CONSTRUTOR <IJDEVLibs>");
+            Console.WriteLine("\n\n\t CONSTRUTOR <IJDEVLibs>\n\n\n");
         }
+
         public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0)
         {
             this.BuildLines(lineShape, lineLen, vspace, hspace);
@@ -180,17 +181,30 @@
             this.BuildLines(lineShape, lineLen, 0, hspace);
         }
 
-
         public int[] GenerateIntValuesArray(int qtd, int maxValue, int minValue = 0)
         {
             Random rand = new Random();
 
+            if (minValue >= maxValue)
+            {
+                throw new IJCustomExceptions(5, "minValue must be less than maxValue.");
+            }
             int[] valuesArr = new int[qtd];
             for (int i = 0; i < qtd ; i++)
             {
                 valuesArr[i] = rand.Next(minValue, maxValue + 1); // Scores between 0 and maxScore
             }
             return valuesArr;
+        }
+
+        public int GetRandomIntValue(int maxValue, int minValue = 1)
+        {
+            Random rand = new Random();
+            if (minValue >= maxValue)
+            {
+                throw new IJCustomExceptions(5, "minValue must be less than maxValue.");
+            }
+            return rand.Next(minValue, maxValue + 1); // a value between minValue and maxValue
         }
 
         public List<int> GenerateStudentAgesList(int numberOfStudents, int minAge, int maxAge)
@@ -352,6 +366,15 @@
             {
                 Console.WriteLine("Access granted - You are old enough!");
             }
+        }
+
+        public void FinishProgram()
+        {
+            Console.Write("\n\n\n============================= END OF THE APP ================================\n\n");
+            Console.Write($"{Environment.NewLine}\nPressione any key leave  . . .\n\n\n\n");
+
+            Console.ReadKey(true);
+            Environment.Exit(0);
         }
 
     }
