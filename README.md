@@ -4,11 +4,11 @@
 
 Learnig Csharp programming language for my new role at my job.
 
-### 🚀 LINK PARA DOWNLOAD E TUDO SOBRE DO DOTNET 
-- [microsoft .NET documentation](https://dotnet.microsoft.com/pt-br/download)
+### 🚀 LINK PARA DOWNLOAD E OUTRAS FERRAMENTAS 
+- [Download .NET](https://dotnet.microsoft.com/pt-br/download)
 
 ### 🚀 APRENDER E EVOLUIR EM .NET 
-- [Aprenda .NET](https://dotnet.microsoft.com/pt-br/learn)
+- [Mergulhe no universo .NET](https://dotnet.microsoft.com/pt-br/learn)
 
 Tutoriais gratuitos, vídeos, cursos e muito mais para iniciantes através dos desenvolvedores .NET avançados.
 
