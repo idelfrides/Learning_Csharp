@@ -1,4 +1,10 @@
-﻿namespace LearningCsharp
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+
+
+namespace LearningCsharp
 {
     public class MyClassOfCars
     {
@@ -251,6 +257,58 @@
             }
         }
 
+        /// <sumary>
+        /// Generic method that prints elements of any collection
+        /// </sumary>
+        public void ProcessCollections<T>(IEnumerable<T> inputCollection, bool showIndex = false, string orientation = "vertical")
+        {
+            if (orientation == "vertical")
+            {
+                Console.WriteLine("\t Vertical orientation ... \n\n");
+                switch (showIndex)
+                {
+                    case true:
+                        foreach (var pair in inputCollection.Select((item, index) => new { item, index }))
+                        {
+                            Console.WriteLine($"\t[{pair.index}] -> {pair.item}");
+                        }
+                        break;
+                    case false:
+                        foreach (var item in inputCollection) Console.WriteLine($"\t{item}");
+                        break;
+                    default:
+                        Console.WriteLine("DEFAULT OPTION IS FALSE");
+                        break;
+                }
+            }
+            else if (orientation == "horizontal")
+            {
+                Console.WriteLine("\t Horizontal orientation ... \n\n");
+                Console.Write("\t :::>>  ");
+
+                switch (showIndex)
+                {
+                    case true:
+                        foreach (var pair in inputCollection.Select((item, index) => new { item, index }))
+                        {
+                            Console.Write($"[{pair.index}]:{pair.item};  ");
+                        }
+                        break;
+                    case false:
+                        foreach (var item in inputCollection) Console.Write($"{item};  ");
+                        break;
+                    default:
+                        Console.WriteLine("DEFAULT OPTION IS FALSE");
+                        break;
+
+                }
+            }
+            else
+            {
+                throw new IJCustomExceptions(3, "Parameter value NOT FOUND -> Status 404. Parameter 'orientation' must be 'vertical' or 'horizontal'");
+            }
+        }
+
         public void ProcessDicionaryInt(Dictionary<string, int> myDict, bool showKeys=true)
         {
 
@@ -325,7 +383,7 @@
             // O valor é em milissegundos
             await Task.Delay(TimeSpan.FromSeconds(tempoSegundos));
 
-            Console.WriteLine("Pausa assíncrona terminada.");
+            Console.WriteLine("Pausa assíncrona com Task terminada.");
         }
 
         public async void CustomWait(int tempoEmMinutos)
@@ -338,7 +396,7 @@
             // O valor é em milissegundos
             Thread.Sleep(tempoConvertidoSegundos * 1000);
 
-            Console.WriteLine("Pausa assíncrona Finalizada.");
+            Console.WriteLine("Pausa com Thread  Finalizada.");
         }
 
         public void CheckAge(int age)
@@ -371,7 +429,7 @@
         public void FinishProgram()
         {
             Console.Write("\n\n\n============================= END OF THE APP ================================\n\n");
-            Console.Write($"{Environment.NewLine}\nPressione any key leave  . . .\n\n\n\n");
+            Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");
 
             Console.ReadKey(true);
             Environment.Exit(0);
