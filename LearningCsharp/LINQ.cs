@@ -6,6 +6,7 @@ using System.Linq;
 using LearningCsharp;      //include the System.IO namespace
 
 
+
 class LINQExamplesProgram
 {
     public class LINQMainClass
@@ -58,7 +59,7 @@ class LINQExamplesProgram
                 -> Excelente (701 a 1000): Indica risco muito baixo de inadimplência; maior probabilidade de aprovação de crédito.  
             */
 
-            var SerasaScores =  ijlibs.GenerateIntValuesArray(qtd: 25, maxValue: 1000);
+            var SerasaScores =  ijlibs.GenerateIntValuesArray(qtd: 15, maxValue: 1000);
 
             var scoresBaixo = from v in SerasaScores
                              where v >= 0 && v <= 300
@@ -84,6 +85,45 @@ class LINQExamplesProgram
             Console.WriteLine("\n\tScores - Bom (501 a 700): " + string.Join(", ", scoresBom));
             Console.WriteLine("\n\tScores - Excelente (701 a 1000): " + string.Join(", ", scoresExcelente));
 
+            // Testing method ProcessCollections from IJDEVLibs
+            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <SERASA SCORES>", lineShape, 65);
+            ijlibs.ProcessCollections(SerasaScores, true); // true to show indexes. SerasaScores is an array of int
+
+            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT GRADES>", lineShape, 65);
+            ijlibs.ProcessCollections(StudentGradesArray, orientation: "horizontal"); // StudentGradesArray is an array of int
+
+            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT AGES>", lineShape, 65);
+            ijlibs.ProcessCollections(agesList, false, "horizontal");  // true to show indexes. agesList is a List<int>
+
+            // making a test for a dictionary
+
+            var carOwners = new Dictionary<string, string>
+            {
+                { "ABC1234", "John Doe" },
+                { "XYZ5678", "Jane Smith" },
+                { "LMN9012", "Sam Brown" }
+            };
+            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <CAR OWNERS DICTIONARY>", lineShape, 70);
+            ijlibs.ProcessCollections(carOwners, true);  // carOwners is a Dictionary<string, string>
+
+            var studentScoresDict = new Dictionary<string, int>();
+            studentScoresDict.Add("Rainha Ramonda", StudentGradesArray[0]);
+            studentScoresDict.Add("Okoye", StudentGradesArray[1]);
+            studentScoresDict.Add("Super Girl", StudentGradesArray[2]);
+            studentScoresDict.Add("Wonderful Woman", StudentGradesArray[3]);
+            studentScoresDict.Add("Captain Marvel", StudentGradesArray[4]);
+            studentScoresDict.Add("Wanda Maximoff", StudentGradesArray[5]);
+            studentScoresDict.Add("Viúva Negra", StudentGradesArray[6]);
+            studentScoresDict.Add("Mulher-Hulk", StudentGradesArray[7]);
+            studentScoresDict.Add("Valkirie", StudentGradesArray[8]);
+            studentScoresDict.Add("Shuri", StudentGradesArray[9]);
+
+            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT SCORES DICTIONARY>", lineShape, 70);
+            ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "vertical");
+            //ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "subir"); // will thow an exception message
+
+            // Await a custom wait time before next section
+             ijlibs.CustomWait(tempoEmMinutos: 1);
 
             #region block -------------- Testando outras cláusulas do LINQ ------------------------
 
