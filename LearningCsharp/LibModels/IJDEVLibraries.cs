@@ -262,7 +262,7 @@ namespace LearningCsharp
         /// </sumary>
         public void ProcessCollections<T>(IEnumerable<T> inputCollection, bool showIndex = false, string orientation = "vertical")
         {
-            if (orientation == "vertical")
+            if (orientation.ToLower() == "vertical")
             {
                 Console.WriteLine("\t Vertical orientation ... \n\n");
                 switch (showIndex)
@@ -281,7 +281,7 @@ namespace LearningCsharp
                         break;
                 }
             }
-            else if (orientation == "horizontal")
+            else if (orientation.ToLower() == "horizontal")
             {
                 Console.WriteLine("\t Horizontal orientation ... \n\n");
                 Console.Write("\t :::>>  ");
