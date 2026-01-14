@@ -2,10 +2,12 @@
 
 using System;
 using System.Collections.Generic;
+using LearningCsharp;                          //include the System.IO namespace
 using System.Linq;
-using LearningCsharp;      //include the System.IO namespace
 
 
+namespace LEARN_CSHARP_LANGUAGE.LearningCsharp;
+    
 
 class LINQExamplesProgram
 {
@@ -31,7 +33,7 @@ class LINQExamplesProgram
 
             // Generate random scores and ages
             var StudentGradesArray = ijlibs.GenerateIntValuesArray(qtd: studentCount, maxValue: 10);
-            var agesList = ijlibs.GenerateStudentAgesList(numberOfStudents: studentCount, minAge: 1, maxAge: 25);
+            var agesList = ijlibs.GenerateStudentAgesList(numberOfStudents: studentCount, minAge: 4, maxAge: 15);
 
             Console.WriteLine("\n\tGenerated Students Grades: " + string.Join(", ", StudentGradesArray));
             Console.WriteLine("\n\tGenerated Students Ages: " + string.Join(", ", agesList));
