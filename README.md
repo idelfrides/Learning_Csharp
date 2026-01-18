@@ -67,6 +67,11 @@ NuGet é um gerenciador de pacotes do .NET
 
 1 -> COLLECTIONS IN C# : DICTIONARY  and  LISTS :  `DONE ( today, 2025-12-28 )`
 
-2 ->  LEARN LINQ  : `DONE ( today, 2026-01-06 )`
+2 -> LEARN LINQ  : `DONE ( today, 2026-01-06 )`
 
-3 ->  PARALELISMO EN C# : `PENDING`
+3 -> LEARN UNIT TESTING IN C# : `DONE ( today, 2026-01-07 )`
+        - Write unit tests using MSTest framework. (DONE)
+        - NUnit framework (PENDING)
+        - xUnit framework (PENDING)
+
+4 -> PARALELISMO EN C# : `PENDING`
