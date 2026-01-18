@@ -1,10 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-
-
-namespace LearningCsharp
+﻿namespace LearningCsharp
 {
     public class MyClassOfCars
     {
@@ -399,7 +393,7 @@ namespace LearningCsharp
             Console.WriteLine("Pausa com Thread  Finalizada.");
         }
 
-        public void CheckAge(int age)
+        public static void CheckAge(int age)
         {
             if (age < 18)
             {
@@ -410,7 +404,7 @@ namespace LearningCsharp
             }
         }
 
-        public void CheckAgeCustom(int age)
+        public static void CheckAgeCustom(int age)
         {
             if (age < 18)
             {
@@ -426,7 +420,7 @@ namespace LearningCsharp
             }
         }
 
-        public void FinishProgram()
+        public static void FinishProgram()
         {
             Console.Write("\n\n\n============================= END OF THE APP ================================\n\n");
             Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");

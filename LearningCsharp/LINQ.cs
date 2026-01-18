@@ -346,7 +346,7 @@ class LINQExamplesProgram
 
             #region bloco ---------------- Conclusion: END OF APP --------------------
 
-            ijlibs.FinishProgram();
+            IJDEVLibs.FinishProgram();
 
             #endregion
         }

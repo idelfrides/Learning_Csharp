@@ -105,7 +105,7 @@ class TryCatch
 
             try
             {
-                ijlibs.CheckAgeCustom(randAge);
+                IJDEVLibs.CheckAgeCustom(randAge);
             }
             catch (IJCustomExceptions ex)
             {
@@ -117,7 +117,7 @@ class TryCatch
 
             //ijlibs.CheckAge(17);     // will return error
             //ijlibs.CheckAge(22);     // success
-            ijlibs.CheckAge(18);       // success
+            IJDEVLibs.CheckAge(18);       // success
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
