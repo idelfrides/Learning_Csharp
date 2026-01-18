@@ -1,7 +1,7 @@
 ﻿/* 
  ::::::::::::::  Project Overview :::::::::::::
 
-  This project is a library that contains unit tests for a simple bank account class using MSTest framework.
+  This project is one that contains unit tests for a simple bank account class using MSTest framework.
 
 
 ::::::::::::  Create and run unit tests for .NET :::::::::::::
