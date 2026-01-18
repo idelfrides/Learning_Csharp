@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="BankAccountConsApp/BankAccountConsApp.csproj" Id="0f90a8dc-5fa7-4d79-a6e9-792024a8d963" />
+  <Project Path="BankProject/BankProject.csproj" Id="bc4cbc50-c411-4d8a-b380-aa5072b40999" />
+  <Project Path="BankTests/BankTests.csproj" />
+  <Project Path="LearningCsharp/LearningCsharp.csproj" />
 </Solution>
