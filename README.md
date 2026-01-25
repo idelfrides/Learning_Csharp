@@ -1,9 +1,33 @@
 # Learning C# ( Csharp )
 
-**Year: 2025**
+-----------------------------------------------
 
-Learnig Csharp programming language for my new role at my job.
+### ℹ️ REPOSITORY INFORMATION
+- **Author**: Idelfrides Jorge
+- **Year**: 2025
+- **Version**: 1.0.0
+- **Status**: In Progress
+- **Description**: Learning Csharp programming language for my new role at my job. 
+- **License**: MIT License
+- **GitHub Repository**: [Learning CSharp Repository](https://github.com/idelfrides/Learning_CSharp)
+- **Contact**: eng.idelfridesjorge@gmail.com
+- **LinkedIn**: [Eng. Idelfrides Jorge Profile](https://www.linkedin.com/in/engidelfridesjorge/)
+- **Solution Name**: LEARN_CSHARP_LANGUAGE.slnx
+- **Projects Inside The Solution**:
+    - BankAccountConsApp ( Console Application )
+    - LearningCsharp ( Console Application )
+    - BankProject ( Class Library )
+    - BankTests ( Unit Test Project )
 
+### TOOLS/PLATFORM INFORMATION
+ - Platform: .NET 10.0
+ - Programming Language: C# ( Csharp )
+ - IDE: Microsoft Visual Studio Community 2026
+ - IDE Version: 18.2.0
+
+
+
+    ----------------------------------------------
 ### 🚀 LINK PARA DOWNLOAD E OUTRAS FERRAMENTAS 
 - [Download .NET](https://dotnet.microsoft.com/pt-br/download)
 
