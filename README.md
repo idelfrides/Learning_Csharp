@@ -3,12 +3,12 @@
 -----------------------------------------------
 
 ### ℹ️ REPOSITORY INFORMATION
-- **Author**: Idelfrides Jorge
+- **Author**: Eng. Idelfrides Jorge
 - **Year**: 2025
 - **Version**: 1.0.0
 - **Status**: In Progress
 - **Description**: Learning Csharp programming language for my new role at my job. 
-- **License**: MIT License
+- **License**: None
 - **GitHub Repository**: [Learning CSharp Repository](https://github.com/idelfrides/Learning_CSharp)
 - **Contact**: eng.idelfridesjorge@gmail.com
 - **LinkedIn**: [Eng. Idelfrides Jorge Profile](https://www.linkedin.com/in/engidelfridesjorge/)
@@ -27,6 +27,9 @@
  - Csharp Version: 14.0
  - IDE: Microsoft Visual Studio Community 2026
  - IDE Version: 18.2.0
+
+### 🌟 LAST UPDATE
+- Date: 2026-01-25
 
 ----------------------------------------------
 ### 🚀 LINK PARA DOWNLOAD E OUTRAS FERRAMENTAS 
