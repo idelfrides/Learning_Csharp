@@ -18,16 +18,17 @@
     - LearningCsharp ( Console Application )
     - BankProject ( Class Library )
     - BankTests ( Unit Test Project )
+      - Dependency: BankProject
 
-### TOOLS/PLATFORM INFORMATION
+### ⚙️ TOOLS/PLATFORM INFORMATION
  - Platform: .NET 10.0
+ - SDK Version: 10.0.102
  - Programming Language: C# ( Csharp )
+ - Csharp Version: 14.0
  - IDE: Microsoft Visual Studio Community 2026
  - IDE Version: 18.2.0
 
-
-
-    ----------------------------------------------
+----------------------------------------------
 ### 🚀 LINK PARA DOWNLOAD E OUTRAS FERRAMENTAS 
 - [Download .NET](https://dotnet.microsoft.com/pt-br/download)
 
@@ -93,9 +94,12 @@ NuGet é um gerenciador de pacotes do .NET
 
 2 -> LEARN LINQ  : `DONE ( today, 2026-01-06 )`
 
-3 -> LEARN UNIT TESTING IN C# : `DONE ( today, 2026-01-07 )`
+3 - CREATE A CLASS LIBRARY PROJECT : `PENDING`
+
+4 -> LEARN UNIT TESTING IN C# : `DONE ( today, 2026-01-07 )`
         - Write unit tests using MSTest framework. (DONE)
         - NUnit framework (PENDING)
         - xUnit framework (PENDING)
 
-4 -> PARALELISMO EN C# : `PENDING`
+5 -> PARALELISMO EN C# : `PENDING`
+
