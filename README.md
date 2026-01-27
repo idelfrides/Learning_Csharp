@@ -29,7 +29,7 @@
  - IDE Version: 18.2.0
 
 ### 🌟 LAST UPDATE
-- Date: 2026-01-25
+- Date: 2026-01-26
 
 ----------------------------------------------
 ### 🚀 LINK PARA DOWNLOAD E OUTRAS FERRAMENTAS 
@@ -90,19 +90,63 @@ NuGet é um gerenciador de pacotes do .NET
 
 10 - `Ctrl + F` -> Abre uma caixa de substuição de valores
 
+11 - `Ctrl + K + C` -> Comentar o código selecionado
+
+12 - `Ctrl + K + U` -> Descomentar o código selecionado
+
+13 - `Ctrl + .` -> Abre o menu de ações rápidas e refatoração
+
+14 - `Ctrl + Shift + B` -> Compilar o projeto/solução
+
+15 - `F5` -> Iniciar a depuração (Debugging)
+
+16 - `Ctrl + F5` -> Iniciar sem depuração
+
+17 - `Shift + F5` -> Parar a depuração (Debugging)
+
+18 - `F9` -> Definir/Remover um ponto de interrupção (breakpoint)
+
+19 - `Ctrl + K + D` -> Indenta/Formatar o documento/arquivo atual
+
+20 - `Ctrl + K + E` -> Indenta corretamente o código inteiro do arquivo atual e remove as usings não utilizadas 
+
+21 - `Ctrl + Alt + L` -> Abre o Gerenciador de Soluções (Solution Explorer)
+
+22 - `Ctrl + W + S` -> Abre o Gerenciador de Servidores (Server Explorer)
+
+23 - `Ctrl + Alt + X` -> Abre o Gerenciador de Pacotes NuGet
+
+24 - `Ctrl + Q` -> Abre a caixa de busca global do Visual Studio
+
+25 - `Ctrl + Shift + F` -> Abre a caixa de busca global em todos os arquivos do projeto/solução
+
+26 - `Ctrl + Shift + H` -> Abre a caixa de substituição global em todos os arquivos do projeto/solução
+
+27 - `Ctrl + Shift + S` -> Salvar todos os arquivos abertos e modificados
+
 
 ### 🚀 TODO ( NEXT STEPS ) 
 
-1 -> COLLECTIONS IN C# : DICTIONARY  and  LISTS :  `DONE ( today, 2025-12-28 )`
+1 -> COLLECTIONS IN C# : DICTIONARY  and  LISTS :  `DONE ( 2025-12-28 )`
 
-2 -> LEARN LINQ  : `DONE ( today, 2026-01-06 )`
+2 -> LEARN LINQ  : `DONE ( 2026-01-06 )`
 
-3 - CREATE A CLASS LIBRARY PROJECT : `PENDING`
+3 - CREATE A CLASS LIBRARY PROJECT : `DONE ( 2026-01-25 )`
 
-4 -> LEARN UNIT TESTING IN C# : `DONE ( today, 2026-01-07 )`
+4 -> LEARN UNIT TESTING IN C# : `DONE ( 2026-01-07 )`
         - Write unit tests using MSTest framework. (DONE)
         - NUnit framework (PENDING)
         - xUnit framework (PENDING)
 
 5 -> PARALELISMO EN C# : `PENDING`
+
+6 - INTERATE WITH OPERATING SYSTEM FILES AND DIRECTORIES : `PENDING`
+
+7 - ACCESS DATABASES USING ADO.NET : `PENDING`
+
+8 - WORK WITH JSON DATA IN C# : `PENDING`
+
+9 - BUILD A SIMPLE WEB API USING ASP.NET CORE : `PENDING`
+
+10 - WORKING WITH AWS SDK FOR .NET : `PENDING`
 
