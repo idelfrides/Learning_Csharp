@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace BankAccountConsApp
 {
@@ -80,7 +75,7 @@ namespace BankAccountConsApp
             Deposit(amount);
         }
 
-        static void Main(string[] args)
+        static void MaiBApp(string[] args)
         {
             BankAccountConsoleApp ba = new BankAccountConsoleApp("Mr. Barack Obama", 7000);
 
@@ -89,7 +84,7 @@ namespace BankAccountConsApp
             ba.DisplayBalance();
             //ba.Debit(0);          // will cause exception
             //ba.Debit(-100);       // will cause exception
-            ba.Debit(1000);        // valid amount will execute the withdraw without exception
+            ba.Debit(1000);         // valid amount will execute the withdraw without exception
             //ba.DisplayBalance();
             Console.WriteLine("Current balance is ${0}", ba.Balance);
 
@@ -106,4 +101,3 @@ namespace BankAccountConsApp
         }
     }
 }
-  
