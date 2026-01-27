@@ -39,9 +39,11 @@ The throw statement is used together with an exception class. There are many exc
 Some of them are: ArithmeticException, FileNotFoundException, IndexOutOfRangeException, TimeOutException, etc:
 */
 
+
+using IJDEVLibrary;
 using System;
 using System.IO.Compression;
-using LearningCsharp;      //include the System.IO namespace
+namespace LearningCsharp;      //include the System.IO namespace
 
 class TryCatch
 {
@@ -58,7 +60,7 @@ class TryCatch
             IJDEVLibs ijlibs = new IJDEVLibs();
 
             char lineShape = '=';
-            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -101,7 +103,7 @@ class TryCatch
             int randAge = random.Next(1, 50);
 
             infos = $"RAND AGE IS: {randAge}";
-            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
 
             try
             {

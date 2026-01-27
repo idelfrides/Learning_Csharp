@@ -1,19 +1,11 @@
-﻿
-
-using System;
-using System.Collections.Generic;
-using LearningCsharp;                          //include the System.IO namespace
-using System.Linq;
-
-
-namespace LEARN_CSHARP_LANGUAGE.LearningCsharp;
-    
+﻿using IJDEVLibrary;
+namespace LearningCsharp;
 
 class LINQExamplesProgram
 {
     public class LINQMainClass
     {
-        static void Main(string[] args)
+        static void Main7777(string[] args)
         {
 
             #region bloco --------------- Introduction: START OF APP -------------------
@@ -23,7 +15,7 @@ class LINQExamplesProgram
             LINQMethodSintaxe linqObj = new LINQMethodSintaxe();
 
             char lineShape = '=';
-            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
 
@@ -39,17 +31,17 @@ class LINQExamplesProgram
             Console.WriteLine("\n\tGenerated Students Ages: " + string.Join(", ", agesList));
 
             // Demonstrate LINQ operations by using the LINQMethodSintaxe class
-            ijlibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS METHOS for SCORES", lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS METHOS for SCORES", lineShape, 60);
             linqObj.FilterExampleArr(StudentGradesArray, 7);
             linqObj.SelectExampleArr(StudentGradesArray, 8);
             linqObj.OrderByExampleArr(StudentGradesArray);
 
-            ijlibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS for AGES", lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS for AGES", lineShape, 60);
             linqObj.FilterExample(agesList, 15);
             linqObj.SelectExample(agesList, 15);
             linqObj.OrderByExample(agesList);
 
-            
+
             // Demonstrate LINQ operations by directly using LINQ query syntax
 
             /*
@@ -61,26 +53,26 @@ class LINQExamplesProgram
                 -> Excelente (701 a 1000): Indica risco muito baixo de inadimplência; maior probabilidade de aprovação de crédito.  
             */
 
-            var SerasaScores =  ijlibs.GenerateIntValuesArray(qtd: 15, maxValue: 1000);
+            var SerasaScores = ijlibs.GenerateIntValuesArray(qtd: 15, maxValue: 1000);
 
             var scoresBaixo = from v in SerasaScores
-                             where v >= 0 && v <= 300
-                             select v;
+                              where v >= 0 && v <= 300
+                              select v;
 
             var scoresRegular = from v in SerasaScores
-                               where v >= 301 && v <= 500
-                               select v;
+                                where v >= 301 && v <= 500
+                                select v;
 
             var scoresBom = from v in SerasaScores
-                           where v >= 501 && v <= 700
-                           select v;
+                            where v >= 501 && v <= 700
+                            select v;
 
             var scoresExcelente = from v in SerasaScores
-                                 where v >= 701 && v <= 1000
-                                 select v;
+                                  where v >= 701 && v <= 1000
+                                  select v;
 
 
-            ijlibs.ShowPrettyInfo("Serasa Scores Analysis:", lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo("Serasa Scores Analysis:", lineShape, 60);
 
             Console.WriteLine("\n\tScores - Baixo (0 a 300): " + string.Join(", ", scoresBaixo));
             Console.WriteLine("\n\tScores - Regular (301 a 500): " + string.Join(", ", scoresRegular));
@@ -88,13 +80,13 @@ class LINQExamplesProgram
             Console.WriteLine("\n\tScores - Excelente (701 a 1000): " + string.Join(", ", scoresExcelente));
 
             // Testing method ProcessCollections from IJDEVLibs
-            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <SERASA SCORES>", lineShape, 65);
+            IJDEVLibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <SERASA SCORES>", lineShape, 65);
             ijlibs.ProcessCollections(SerasaScores, true); // true to show indexes. SerasaScores is an array of int
 
-            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT GRADES>", lineShape, 65);
+            IJDEVLibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT GRADES>", lineShape, 65);
             ijlibs.ProcessCollections(StudentGradesArray, orientation: "horizontal"); // StudentGradesArray is an array of int
 
-            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT AGES>", lineShape, 65);
+            IJDEVLibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT AGES>", lineShape, 65);
             ijlibs.ProcessCollections(agesList, false, "horizontal");  // true to show indexes. agesList is a List<int>
 
             // making a test for a dictionary
@@ -105,7 +97,7 @@ class LINQExamplesProgram
                 { "XYZ5678", "Jane Smith" },
                 { "LMN9012", "Sam Brown" }
             };
-            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <CAR OWNERS DICTIONARY>", lineShape, 70);
+            IJDEVLibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <CAR OWNERS DICTIONARY>", lineShape, 70);
             ijlibs.ProcessCollections(carOwners, true);  // carOwners is a Dictionary<string, string>
 
             var studentScoresDict = new Dictionary<string, int>();
@@ -120,12 +112,12 @@ class LINQExamplesProgram
             studentScoresDict.Add("Valkirie", StudentGradesArray[8]);
             studentScoresDict.Add("Shuri", StudentGradesArray[9]);
 
-            ijlibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT SCORES DICTIONARY>", lineShape, 70);
+            IJDEVLibs.ShowPrettyInfo("USING IJDEVLibs PROCESSCOLLECTIONS METHOD FOR <STUDENT SCORES DICTIONARY>", lineShape, 70);
             ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "vertical");
             //ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "subir"); // will thow an exception message
 
             // Await a custom wait time before next section
-             ijlibs.CustomWait(tempoEmMinutos: 1);
+            ijlibs.CustomWait(tempoEmMinutos: 1);
 
             #region block -------------- Testando outras cláusulas do LINQ ------------------------
 
@@ -163,8 +155,8 @@ class LINQExamplesProgram
                 - JOIN
                 - etc
             """;
-            
-            ijlibs.ShowPrettyInfo(infos, lineShape, 80);
+
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 80);
 
             int qtd = ijlibs.GetRandomIntValue(minValue: 10, maxValue: 20);
             int magnitude = ijlibs.GetRandomIntValue(minValue: 50, maxValue: 100);
@@ -207,7 +199,7 @@ class LINQExamplesProgram
                                      Category = (v % 2 == 0 ? "EVEN (PAR)" : "ODD (ÍMPAR)") // CASE ... WHEN
                                  };
 
-            foreach(var r in caseWhenResult)
+            foreach (var r in caseWhenResult)
                 Console.WriteLine($"\t THE NUMBER {r.Number} IS {r.Category}");
 
 
@@ -252,12 +244,12 @@ class LINQExamplesProgram
             Console.WriteLine($"\nAVERAGE IS : {average.First()}");
 
             Console.WriteLine("\nSubconsulta 01 - maiores do que a média de todos os valores\n");
-            foreach(var mm in subqueryResults)  Console.Write($"{mm}; ");
+            foreach (var mm in subqueryResults) Console.Write($"{mm}; ");
 
             Console.WriteLine("\n\nSubconsulta 02 - menores do que a média de todos os valores\n");
-            foreach (var m in menoresQueMedia)  Console.Write($"{m}, ");
+            foreach (var m in menoresQueMedia) Console.Write($"{m}, ");
 
-            
+
             // 🔹 LIMIT (em LINQ é Take)
 
             var first5Values = (from v in otherLINQExamplesValues
@@ -269,7 +261,7 @@ class LINQExamplesProgram
 
             // 🔹 IN (usando Contains)
 
-            int[] filter = { 11 , 4, 9, 7, 10, 15, 17, 27 };
+            int[] filter = { 11, 4, 9, 7, 10, 15, 17, 27 };
 
             var selectedByINOper = from v in otherLINQExamplesValues
                                    where filter.Contains(v)  // equivalente ao operador IN ( 11, 4, 9, 7, 10, 15, 17, 27 )
@@ -281,11 +273,11 @@ class LINQExamplesProgram
 
             // 🔹 LIKE (usando StartsWith, EndsWith, Contains)
 
-            string[] names = { "Ana", "André", "Bruno", "Beatriz", "João", "Pedro", "Marcos", "Paula", "Jéssica", "Letícia", "Sarah", "Agatha", "Perpétua"};
+            string[] names = { "Ana", "André", "Bruno", "Beatriz", "João", "Pedro", "Marcos", "Paula", "Jéssica", "Letícia", "Sarah", "Agatha", "Perpétua" };
 
             var comecaComA = from nome in names
-                       where nome.StartsWith("A")  // LIKE 'A%'
-                       select nome;
+                             where nome.StartsWith("A")  // LIKE 'A%'
+                             select nome;
 
             var terminaComA = from nome in names
                               where nome.EndsWith("a")  // LIKE '%a'
@@ -336,7 +328,7 @@ class LINQExamplesProgram
                 • 	COUNT -> .Count()
             """;
 
-            ijlibs.ShowPrettyInfo(infos, lineShape, 80);
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 80);
 
 
             #endregion
@@ -346,7 +338,7 @@ class LINQExamplesProgram
 
             #region bloco ---------------- Conclusion: END OF APP --------------------
 
-            IJDEVLibs.FinishProgram();
+            IJDEVLibs.ShowAppEndInfo();
 
             #endregion
         }

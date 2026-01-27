@@ -11,7 +11,8 @@ The Math.Max(x,y) method can be used to find the highest value of x and y:
 */
 
 
-using LearningCsharp;
+using IJDEVLibrary;
+namespace LearningCsharp;
 
 class MathClass
 {
@@ -25,7 +26,7 @@ class MathClass
             IJDEVLibs ijlibs = new IJDEVLibs();
 
             char lineShape = '=';
-            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
+            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -43,7 +44,7 @@ class MathClass
 
             Console.WriteLine($"\n\tRANDOM VALUES: \n\tV = {randV}\n\tV1 = {randV1}\n\tV2 = {randV2}\n\tDV = {randDV}\n\tDVx = {randDVx}\n\tDVy = {randDVy}\n\tDVz = {randDVz}");
 
-            ijlibs.BuildLines('-', 60, 1);
+            IJDEVLibs.BuildLines('-', 60, 1);
 
             Console.WriteLine($"\n\tMAX ({randV1}, {randV2}) IS => {Math.Max(randV1, randV2)}");
             Console.WriteLine($"\n\tMIN ({randV1}, {randV2}) IS => {Math.Min(randV1, randV2)}");
@@ -80,11 +81,9 @@ class MathClass
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
+      
+            IJDEVLibs.ShowAppEndInfo();
 
-            Console.ReadKey(true);
-            ijlibs.ShowPrettyInfo("FIM DE APP", lineShape, 60);
-            ijlibs.BuildSpaces("vertical", 5);
             #endregion
 
         }
