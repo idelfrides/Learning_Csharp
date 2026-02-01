@@ -41,10 +41,10 @@ class ManageFiles
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "ESTUDANDO GERENCIAMENTO DE ARQUIVOS EM C#!\n\tMAIN CLASS:  ManageFilesMainClass\n\tAUXILIAR CLASS: ";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -73,11 +73,11 @@ class ManageFiles
                     U -> UPDATE
                     D -> DELETE            
             """;
-            IJDEVLibs.ShowPrettyInfo(crud_info, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(crud_info, lineShape, 60);
 
             // CREATE: Create a file and write the content of writeTextx to it
             infos = $"CREATE: Creating a file and write the content into it";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60, 5);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60, 5);
 
             Console.Write("\n\n\t Digite NOME do seu ARQUIVO (SEM extensão)::>>  ");
             inputContent = Console.ReadLine();
@@ -97,13 +97,13 @@ class ManageFiles
 
             // READ: Read the contents of the file
             infos = $"READ: Read the contents of the file <{fileName}>";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
             string readText = File.ReadAllText(fileFullPath);
             Console.WriteLine(readText);   // Output the content
 
             // UPDATE : Add a new content to end of the file
             infos = $"UPDATE : Add a new content to end of the file <{fileFullPath}>";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
 
             Console.Write($"\n\n\t Digite outro CONTEÚDO PARA arquivo <{fileFullPath}> ::>>  ");
             inputContent = Console.ReadLine();
@@ -118,12 +118,12 @@ class ManageFiles
 
             // DELETE : Delete the file with all it content
             infos = $"DELETE : Deleting the file with all it content <{fileName}>";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
 
-            IJDEVLibs.BuildSpaces("vertical", 3);
+            AppInputOutputManager.BuildSpaces("vertical", 3);
             await ijlibs.EsperarAsync(tempoSegundos: 60);
             // File.Delete(fileFullPath);
-            IJDEVLibs.BuildSpaces("vertical", 3);
+            AppInputOutputManager.BuildSpaces("vertical", 3);
 
             #endregion
 

@@ -5,8 +5,8 @@ public class MathUtilitiesApp
 {
      public static void Main(string[] args)
      {
-        IJDEVLibs.ShowAppInfo(title: "MATH UTILITIES APP",
-            sumary: "This application demonstrates basic and trigonometric operations using the MathUtilities library."
+        AppInputOutputManager.ShowAppInfo(title: "MATH UTILITIES APP",
+            summary: "This application demonstrates basic and trigonometric operations using the MathUtilities library."
         );
 
         // Using Calculator
@@ -31,7 +31,7 @@ public class MathUtilitiesApp
 
         #region bloco ---------------- FIM DE APP --------------------
 
-        IJDEVLibs.ShowAppEndInfo();
+        AppInputOutputManager.ShowAppEndInfo();
 
         #endregion
      }

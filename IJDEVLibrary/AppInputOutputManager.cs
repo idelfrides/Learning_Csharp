@@ -1,12 +1,25 @@
 ﻿namespace IJDEVLibrary;
 
-public class IJDEVLibs
+public class AppInputOutputManager
 {
-    public IJDEVLibs()
+    public AppInputOutputManager()
     {
-        Console.WriteLine("\n\n\t CONSTRUTOR <IJDEVLibs>\n\n\n");
+        ShowPrettyInfo("CONSTRUTOR <AppInputOutputManager>", '$', 60);
     }
 
+    public string InputContentHandler(string prompt, string defaultValue)
+    {
+
+        BuildSpaces("vertical", 2);
+        Console.Write($"\t INFORME {prompt} ::>>  ");
+        var userInput = Console.ReadLine();
+        var finalInput = string.IsNullOrWhiteSpace(userInput) ? defaultValue : userInput;
+
+        Console.WriteLine($"User entered: {userInput}");
+        Console.WriteLine($"Processed input result: {finalInput}");
+        return finalInput;
+    }
+        
     public static void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0, bool useTab=true)
     {
         BuildLines(lineShape, lineLen, vspace, hspace, useTab);
@@ -62,9 +75,6 @@ public class IJDEVLibs
             case false:
                 foreach (string item in myList) { Console.WriteLine($"\t{item}"); }
                 break;
-            default:
-                Console.WriteLine("DEFAULT OPTION");
-                break;
         }
     }
 
@@ -78,15 +88,9 @@ public class IJDEVLibs
             case false:
                 foreach (var item in myArray) { Console.WriteLine($"\t{item}\n"); }
                 break;
-            default:
-                Console.WriteLine("DEFAULT OPTION");
-                break;
         }
     }
 
-    /// <sumary>
-    /// Generic method that prints elements of any collection
-    /// </sumary>
     public void ProcessCollections<T>(IEnumerable<T> inputCollection, bool showIndex = false, string orientation = "vertical")
     {
         if (orientation.ToLower() == "vertical")
@@ -102,9 +106,6 @@ public class IJDEVLibs
                     break;
                 case false:
                     foreach (var item in inputCollection) Console.WriteLine($"\t{item}");
-                    break;
-                default:
-                    Console.WriteLine("DEFAULT OPTION IS FALSE");
                     break;
             }
         }
@@ -124,10 +125,6 @@ public class IJDEVLibs
                 case false:
                     foreach (var item in inputCollection) Console.Write($"{item};  ");
                     break;
-                default:
-                    Console.WriteLine("DEFAULT OPTION IS FALSE");
-                    break;
-
             }
         }
         else
@@ -142,15 +139,11 @@ public class IJDEVLibs
         switch (showKeys)
         {
             case true:
-                // foreach (var par in myDict) {Console.WriteLine($"\tChave: {par.Key}, Valor: {par.Value}");}
                 foreach (var par in myDict) { Console.WriteLine($"\t{par.Key} => {par.Value}"); }
                 break;
             case false:
                 foreach (var par in myDict) { Console.WriteLine($"\tValor: {par.Value}"); }
                 break;
-            default:
-                throw new IJCustomExceptions(3, "GIVEN OPTION NOT FOUND -> Status 404");
-
         }
     }
 
@@ -159,14 +152,11 @@ public class IJDEVLibs
         switch (showKeys)
         {
             case true:
-                // foreach (var par in myDict) { Console.WriteLine($"\tChave: {par.Key}, Valor: {par.Value}"); }
                 foreach (var par in myDict) { Console.WriteLine($"\t{par.Key} ::> {par.Value}"); }
                 break;
             case false:
                 foreach (var par in myDict) { Console.WriteLine($"\tValor: {par.Value}"); }
                 break;
-            default:
-                throw new IJCustomExceptions(3, "GIVEN OPTION NOT FOUND -> Status 404");
         }
     }
 
@@ -264,10 +254,10 @@ public class IJDEVLibs
         Environment.Exit(0);
     }
 
-    public static void ShowAppInfo(string title, string sumary)
+    public static void ShowAppInfo(string title, string summary)
     {
         Console.WriteLine($"\n\n=========================== {title} =========================\n");
-        Console.WriteLine($"{sumary}.");
+        Console.WriteLine($"{summary}.");
         Console.WriteLine("========================================================================\n");
     }
 }

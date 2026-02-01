@@ -5,7 +5,7 @@ public class FilesManager
 
     public string filePath;
     //public string filetype = ".txt";
-    public string defaultContent = "Default file content from IJDEVLibs.cs: FilesManager class.";
+    public string defaultContent = "Default file content from AppInputOutputManager.cs: FilesManager class.";
 
     public FilesManager(string fileName, string? content)
     {

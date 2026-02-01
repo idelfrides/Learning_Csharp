@@ -14,8 +14,9 @@
 - **LinkedIn**: [Eng. Idelfrides Jorge Profile](https://www.linkedin.com/in/engidelfridesjorge/)
 - **Solution Name**: LEARN_CSHARP_LANGUAGE.slnx
 - **Projects Inside The Solution**:
-    - BankAccountConsApp ( Console Application )
     - LearningCsharp ( Console Application )
+    - BankAccountConsApp ( Console Application )
+    - IJDEVLibrary ( Class Library )
     - BankProject ( Class Library )
     - BankTests ( Unit Test Project )
       - Dependency: BankProject

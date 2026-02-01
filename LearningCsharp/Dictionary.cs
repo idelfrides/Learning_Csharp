@@ -38,10 +38,10 @@ public class Dictionary
             #region bloco --------------- Introdução: INICIO APP ----------------
             var infos = "ESTUDANDO COLEÇÕES EM C#: DICIONÁRIOS\n\tMAIN CLASS: DictionaryProgram\n\tAUXILIAR CLASS: Dictionary";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco -------------- App propriamente dita ------------------------
@@ -88,7 +88,7 @@ public class Dictionary
                 {"New Zealand", "Wellington"}
 
             };
-            IJDEVLibs.BuildSpaces("vertical", 2);
+            AppInputOutputManager.BuildSpaces("vertical", 2);
             ijlibs.ProcessDicionaryStr(capitals);
             Console.WriteLine($"\n\nTotal Countries in the dict: {capitals.Count}");
 
@@ -168,7 +168,7 @@ public class Dictionary
             // ----------------------------------------------------------------------------------------
 
             infos = "Another way to create a new dictionary, but not inicializing it. Let's learn how it works ...";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 80);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 80);
             
             //only create a new dictionary called actorsDict
             Dictionary<string, int> actorsDict = new();
@@ -196,7 +196,7 @@ public class Dictionary
 
             #region bloco ---------------- FIM DE APP --------------------
             
-            IJDEVLibs.ShowAppEndInfo();
+            AppInputOutputManager.ShowAppEndInfo();
 
             #endregion
         }

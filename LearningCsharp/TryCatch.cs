@@ -57,10 +57,10 @@ class TryCatch
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "ESTUDANDO ERROS E EXCEÇÕES EM C#!\n\tMAIN CLASS:  TryCatchMainClass\n\tAUXILIAR CLASS: ";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -103,11 +103,11 @@ class TryCatch
             int randAge = random.Next(1, 50);
 
             infos = $"RAND AGE IS: {randAge}";
-            IJDEVLibs.ShowPrettyInfo(infos, lineShape, 60);
+            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
 
             try
             {
-                IJDEVLibs.CheckAgeCustom(randAge);
+                AppInputOutputManager.CheckAgeCustom(randAge);
             }
             catch (IJCustomExceptions ex)
             {
@@ -119,7 +119,7 @@ class TryCatch
 
             //ijlibs.CheckAge(17);     // will return error
             //ijlibs.CheckAge(22);     // success
-            IJDEVLibs.CheckAge(18);       // success
+            AppInputOutputManager.CheckAge(18);       // success
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------

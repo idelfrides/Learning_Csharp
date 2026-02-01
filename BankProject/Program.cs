@@ -1,20 +1,16 @@
 ﻿/*
  
-  This project is a library that contains class and methods to be tested with unit tests at other project created specificaly for that purpose
-for a simple bank account class using MSTest framework.
+  This project is a library that contains class and methods to be tested with unit tests 
+  at other project created specificaly for that purpose for a simple bank account class 
+  using MSTest framework.
 
 */
 
-
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BankAccountNS
+namespace BankAccountLibrary
 {
+
     /// <summary>
     /// Bank account demo class.
     /// </summary>
@@ -24,7 +20,7 @@ namespace BankAccountNS
         private double m_balance;
 
         // constructor
-        private BankAccount() { }
+        //private BankAccount() { }
 
         public BankAccount(string customerName, double balance)
         {
@@ -34,7 +30,7 @@ namespace BankAccountNS
 
         public string CustomerName
         {
-            get { return m_customerName;  }
+            get { return m_customerName; }
         }
 
         // automatic property for Balance
@@ -50,7 +46,8 @@ namespace BankAccountNS
             if (amount >= 0)
             {
                 m_balance += amount;
-            } else
+            }
+            else
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Deposit amount must be greater than zero");
             }
@@ -67,7 +64,7 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException(nameof(amount), "Withdrawal amount must be positive");
             }
             m_balance -= amount;    // corret operation
-            //m_balance += amount;   // intentionally incorrect operation
+                                    //m_balance += amount;   // intentionally incorrect operation
         }
 
         public void DisplayBalance()
@@ -86,29 +83,6 @@ namespace BankAccountNS
         {
             Console.WriteLine($"\n\n ACION: Credit of {amount} \n");
             Deposit(amount);
-        }
-
-        static void Main(string[] args)
-        {
-            BankAccount ba = new BankAccount("Mr. Barack Obama", 7000);
-
-            ba.DisplayBalance();
-            ba.Credit(1000);
-            ba.DisplayBalance();
-            ba.Debit(10000);
-            ba.DisplayBalance();
-            Console.WriteLine("Current balance is ${0}", ba.Balance);
-
-
-            #region bloco ---------------- Conclusion: END OF APP --------------------
-            
-            Console.Write("\n\n\n============================= END OF THE APP ================================\n\n");
-            Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");
-
-            Console.ReadKey(true);
-            Environment.Exit(0);
-
-            #endregion
         }
     }
 }

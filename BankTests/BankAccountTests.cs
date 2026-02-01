@@ -33,9 +33,9 @@ A test method must meet the following requirements:
  */
 
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BankAccountNS;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BankAccountLibrary;
 
 
 namespace BankTests
