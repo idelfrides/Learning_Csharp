@@ -27,25 +27,21 @@ For a full list of File methods, go to Microsoft .Net File Class Reference.
 */
 
 
-using System.IO;
-using System.Threading.Tasks;
-using LearningCsharp;      //include the System.IO namespace
-
-// File.SomeFileMethod();  // use the file class with methods
+using IJDEVLibrary;
+namespace LearningCsharp;
 
 class ManageFiles
 {
-    
     class ManageFilesMainClass
     {
-        
+
         public static async Task MainFiles(string[] args)
         {
-        
+
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "ESTUDANDO GERENCIAMENTO DE ARQUIVOS EM C#!\n\tMAIN CLASS:  ManageFilesMainClass\n\tAUXILIAR CLASS: ";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
@@ -87,8 +83,8 @@ class ManageFiles
             inputContent = Console.ReadLine();
             var fileName = string.IsNullOrEmpty(inputContent) ? defaultFileName : inputContent;
 
-            var fileFullPath = $"STAGE/{fileName}.txt";     
-           
+            var fileFullPath = $"STAGE/{fileName}.txt";
+
             // Create a text string
             string lorenIpsumText = """What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.""";
 
@@ -112,7 +108,7 @@ class ManageFiles
             Console.Write($"\n\n\t Digite outro CONTEÚDO PARA arquivo <{fileFullPath}> ::>>  ");
             inputContent = Console.ReadLine();
 
-            var fileContent2 = string.IsNullOrEmpty(inputContent)?whyDoWeUseIt:inputContent;
+            var fileContent2 = string.IsNullOrEmpty(inputContent) ? whyDoWeUseIt : inputContent;
 
             File.AppendAllText(fileFullPath, fileContent2);
             Console.Write($"\n\n\tCONTEÚDO do arquivo <{fileFullPath}> ATUALIZADO \n\n");
@@ -128,15 +124,11 @@ class ManageFiles
             await ijlibs.EsperarAsync(tempoSegundos: 60);
             // File.Delete(fileFullPath);
             ijlibs.BuildSpaces("vertical", 3);
-            
+
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
-
-            Console.ReadKey(true);
-
-            Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

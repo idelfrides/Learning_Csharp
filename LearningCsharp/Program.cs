@@ -1,23 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using IJDEVLibrary;
 using System.Data;
 using System.Text;
 
 namespace LearningCsharp
-{   
+{
     public class Program
-    {   
-        public static void Main0078(string[] args)
+    {
+        public static void Main001(string[] args)
         {
             #region bloco introdução: ------------- INICIO APP ----------------
             Console.WriteLine($"\n\nHello, World!{Environment.NewLine}Eu sou o IJDEV PRO. Este é o meu app em C#!");
 
             var infos = "ESTUDANDO .NET E C# EM DEZEMBRO DE 2025!\n\tNAMESPACE: LearningCsharp\n\tMAIN CLASS: Program\n\tAUXILIAR CLASS: ";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
-            #endregion  
+            #endregion
 
             #region bloco de comentários de documentação
             /*
@@ -58,7 +58,7 @@ namespace LearningCsharp
             /// mais uma linha do comentário XML
             /// fim do comentário XML
             /// </summary>  
-            
+
             #endregion
 
             #region Atribuição de valores na Declaração de variáveis em C#
@@ -72,7 +72,7 @@ namespace LearningCsharp
             char caractere = 'I'; // Exemplo de variável do tipo char que representa um único caractere
             char numericoConvertido = (char)65; // Atribuição de valor numérico convertido para char (representa 'A')
             char caractereSimbolo = '#'; // Exemplo de variável do tipo char com um símbolo
-            // char variavelChar = "P"; // Isso causará um erro de compilação, pois aspas duplas são usadas para strings, não para char
+                                         // char variavelChar = "P"; // Isso causará um erro de compilação, pois aspas duplas são usadas para strings, não para char
 
             byte byteNumero = 255; // Exemplo de variável do tipo byte
             long numeroLongo = 12345678901234L;
@@ -99,7 +99,7 @@ namespace LearningCsharp
             booleanFalse = false;
             outroTexto = "Outro texto em C# que não foi atribuído na declaração";
             numeroDecimal = 1000.50m; // O sufixo 'm' indica que é um valor decimal
-            // decimal decimalSemf = 500.75; // Isso causará um erro de compilação, pois o sufixo 'f' é obrigatório para float
+                                      // decimal decimalSemf = 500.75; // Isso causará um erro de compilação, pois o sufixo 'f' é obrigatório para float
 
             // System.String mensagem = "Mensagem usando o namespace System"; // System.String é equivalente a string em C#
             // string saudacao = "Olá, Mundo!";
@@ -136,15 +136,15 @@ namespace LearningCsharp
 
             #region bloco de varias aulas 
             Console.WriteLine("\n\t ===== CONVERSÕES DE TIPOS DE VARIÁVEIS EM C# =====");
-            
+
             // parse : converter string para int ou para o tipo desejado
             Console.WriteLine("\n\t ******* CONVERTENDO DE STRING PARA INT *******");
             string numeroString = "957";
             int numeroParte = int.Parse(numeroString);
-            Console.WriteLine("\t Número convertido de <string> para <int> utilizando o metodo Parse() é: " + numeroParte); 
+            Console.WriteLine("\t Número convertido de <string> para <int> utilizando o metodo Parse() é: " + numeroParte);
 
             // usando Convert : converter string para int, double, float, long, decimal
-            Console.WriteLine("\n\t ******* CONVERTENDO DE STRING PARA OUTROS TIPOS *******");        
+            Console.WriteLine("\n\t ******* CONVERTENDO DE STRING PARA OUTROS TIPOS *******");
             int numeroConvertido = Convert.ToInt32("850");
             double doubleConvertido = Convert.ToDouble("12345.67");
             float floatConvertido = Convert.ToSingle("345.67");
@@ -170,7 +170,7 @@ namespace LearningCsharp
 
             // Operadores logicos: && (E), || (OU), ! (NÃO)
             int a = 10;
-            int b = 20; 
+            int b = 20;
             bool resultadoE = (a < b) && (b > 15); // true && true -> true
             bool resultadoOu = (a > b) || (b > 15); // false || true -> true
             bool resultadoNao = !(a > b); // !(false) -> true    
@@ -192,21 +192,22 @@ namespace LearningCsharp
 
             Console.WriteLine("\t Resultados dos operadores lógicos e de comparação:\n\n");
             Console.WriteLine($"\t Resultado do operador E (&&): {resultadoE}");
-            Console.WriteLine($"\t Resultado do operador OU (||): {resultadoOu}"); 
+            Console.WriteLine($"\t Resultado do operador OU (||): {resultadoOu}");
             Console.WriteLine($"\t Resultado do operador NÃO (!): {resultadoNao}");
             Console.WriteLine($"\t Resultado do operador IGUAL (==): {igual}");
             Console.WriteLine($"\t Resultado do operador DIFERENTE (!=): {diferente}");
             Console.WriteLine($"\t Resultado do operador MAIOR (>): {maior}");
             Console.WriteLine($"\t Resultado do operador MENOR (<): {menor}");
             Console.WriteLine($"\t Resultado do operador MAIOR OU IGUAL (>=): {maiorOuIgual}");
-            Console.WriteLine($"\t Resultado do operador MENOR OU IGUAL (<=): {menorOuIgual}"); 
+            Console.WriteLine($"\t Resultado do operador MENOR OU IGUAL (<=): {menorOuIgual}");
+
+            string autorName = "IDELFRIDES JORGE FERNANDES PAPAI";
 
             // if em C#
             Console.WriteLine("\n\t Exemplo de uso do if em C#:\n\n");
 
-            Console.Write("\t Digite seu NOME ::>>  ");
+            var inputNome = ijlibs.InputContentHandler("Seu NOME", autorName);
 
-            var inputNome = Console.ReadLine() ?? string.Empty;
             var currentDatetime = DateTime.Now;
 
             Console.WriteLine("\n\tOlá, " + inputNome + "!\n\tSeja bem-vindo(a) ao meu app em C#!");
@@ -218,13 +219,11 @@ namespace LearningCsharp
 
             try
             {
-                Console.Write("\n\n\t Informe sua IDADE ::>>  ");
-                var inputIdade = Console.ReadLine();
+                var inputIdade = ijlibs.InputContentHandler("Sua IDADE", "36");
                 idade = Convert.ToInt32(inputIdade);
                 int.TryParse(inputIdade, out idade2);
-
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 Console.WriteLine($"Something went wrong. ---> {e.Message}");
                 idade = 0;
@@ -246,8 +245,9 @@ namespace LearningCsharp
                 Console.WriteLine("\t Você é menor de idade.");
             }
 
-            Console.Write("\n\n\t Digite seu PAÍS DE NASCIMENTO ::>>  ");
-            var inputPais = Console.ReadLine() ?? string.Empty;
+            //Console.Write("\n\n\t Digite seu PAÍS DE NASCIMENTO ::>>  ");
+
+            var inputPais = ijlibs.InputContentHandler("Seu PAÍS DE NASCIMENTO", "Brasil");
 
             /*
             var country = inputPais?.Trim();
@@ -332,15 +332,19 @@ namespace LearningCsharp
                     break;
             }
 
+            var defaultCounter = ijlibs.GetRandomIntValue(10, 1).ToString();
+            var userInputProcessed = "userInputProcessed"; 
+
             // uso de while em C#
-            Console.Write("\n=====================================\n\n"); 
+            Console.Write("\n=====================================\n\n");
             Console.WriteLine("Exemplo de uso do WHILE em C#:");
             Console.Write("\n=====================================\n\n");
 
-            Console.Write("DIGITE O NÚMERO MAXIMO DA CONTAGEM ::>>  ");
-            var inputContador = Console.ReadLine() ?? string.Empty; 
-            int maximoContagem = Convert.ToInt32(inputContador);   
-           
+
+            var promptForInput = $"NÚMERO MAXIMO DA CONTAGEM ( WHILE )::>>  (padrão é {defaultCounter}) ";
+            userInputProcessed = ijlibs.InputContentHandler(promptForInput, defaultCounter);
+            int maximoContagem = Convert.ToInt32(userInputProcessed);
+
             int contador = 1;
             while (contador <= maximoContagem)
             {
@@ -349,14 +353,13 @@ namespace LearningCsharp
             }
 
             // uso de for em C#
-            Console.Write("\n=====================================\n\n");   
+            Console.Write("\n=====================================\n\n");
             Console.WriteLine("Exemplo de uso do FOR em C#:");
             Console.Write("\n=====================================\n\n");
-            
-            Console.Write("DIGITE O NÚMERO MAXIMO DA CONTAGEM ::>>  ");
-            
-            var inputContadorFor = Console.ReadLine() ?? string.Empty;
-            int maximoContagemFor = Convert.ToInt32(inputContadorFor);
+
+            promptForInput = "NÚMERO MAXIMO DA CONTAGEM ( FOR ) ::>>  ";
+            userInputProcessed = ijlibs.InputContentHandler(promptForInput, defaultCounter);
+            int maximoContagemFor = Convert.ToInt32(userInputProcessed);
 
             for (int i = 1; i <= maximoContagemFor; i++)
             {
@@ -367,11 +370,10 @@ namespace LearningCsharp
             Console.Write("\n=====================================\n\n");
             Console.WriteLine("Exemplo de uso do DO...WHILE em C#:");
             Console.Write("\n=====================================\n\n");
-            
-            Console.Write("DIGITE O MAXIMO DA CONTAGEM ::>>  ");
 
-            var inputContadorDoWhile = Console.ReadLine() ?? string.Empty;
-            int maximoContagemDoWhile = Convert.ToInt32(inputContadorDoWhile);
+            promptForInput = "NÚMERO MAXIMO DA CONTAGEM ( DO...WHILE ) ::>>  ";
+            userInputProcessed = ijlibs.InputContentHandler(promptForInput, defaultCounter);
+            int maximoContagemDoWhile = Convert.ToInt32(userInputProcessed);
             int contadorDoWhile = 1;
 
             do
@@ -398,7 +400,7 @@ namespace LearningCsharp
             var varNname = "varNname";
             // constAutor = strNname;  // não é permitido. erro CS0131
             // constAutor = varNname;  // não é permitido. erro CS0131
-            
+
             const string streetName = "RUA INACIO DE ARAUJO";
             const int houseNumber = 20;
 
@@ -430,14 +432,14 @@ namespace LearningCsharp
             */
             var tipoInterpolacao = "string.Format";
             Console.WriteLine(string.Format("Tipo interpolação é -> {0}", tipoInterpolacao));
-            
+
             tipoInterpolacao = "$'{ ... }'";
             Console.WriteLine($"Tipo interpolação é -> {tipoInterpolacao}");
 
             tipoInterpolacao = "Concatenação: Operador '+'";
             Console.WriteLine("Tipo interpolação é -> " + tipoInterpolacao);
 
-            tipoInterpolacao = "Concatenação: string.Concat"; 
+            tipoInterpolacao = "Concatenação: string.Concat";
             Console.WriteLine(
                 string.Concat("Tipo interpolação é -> ", tipoInterpolacao));
 
@@ -503,7 +505,7 @@ namespace LearningCsharp
 
             // operador ternário
             fieldIdade = fieldIdade >= 18 ? fieldIdade : 0;
-            
+
             Console.WriteLine($"IDADE INFORMADA É  {fieldIdade}");
 
             infos = "FAZENDO ESTA ALTERAÇÃO POR MEIO DO IDE VISUAL STUDIO COMMUNITY 2026";
@@ -512,10 +514,9 @@ namespace LearningCsharp
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\n\nPressione qualquer tecla para sair...");
-            Console.ReadKey(true);
-            ijlibs.ShowPrettyInfo("FIM DE APP", lineShape, 60);
-            ijlibs.BuildSpaces("vertical", 5);
+      
+            ijlibs.ShowAppEndInfo();
+
             #endregion
 
         }

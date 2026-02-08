@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PasswordGenerator" Version="2.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\BankProject\BankAccountLibrary.csproj" />
     <ProjectReference Include="..\IJDEVLibrary\IJDEVLibrary.csproj" />
   </ItemGroup>
 

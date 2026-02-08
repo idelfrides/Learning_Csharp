@@ -32,4 +32,5 @@ appsettings.local.json
 Thumbs.db
 
 # Project specific
+IJDEV_Experiments/
 IJDEV_TESTS/

@@ -39,9 +39,11 @@ The throw statement is used together with an exception class. There are many exc
 Some of them are: ArithmeticException, FileNotFoundException, IndexOutOfRangeException, TimeOutException, etc:
 */
 
+
+using IJDEVLibrary;
 using System;
 using System.IO.Compression;
-using LearningCsharp;      //include the System.IO namespace
+namespace LearningCsharp;      //include the System.IO namespace
 
 class TryCatch
 {
@@ -55,7 +57,7 @@ class TryCatch
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "ESTUDANDO ERROS E EXCEÇÕES EM C#!\n\tMAIN CLASS:  TryCatchMainClass\n\tAUXILIAR CLASS: ";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
@@ -121,11 +123,7 @@ class TryCatch
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
-
-            Console.ReadKey(true);
-
-            Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

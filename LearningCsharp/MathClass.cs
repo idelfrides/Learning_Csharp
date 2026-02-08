@@ -11,7 +11,8 @@ The Math.Max(x,y) method can be used to find the highest value of x and y:
 */
 
 
-using LearningCsharp;
+using IJDEVLibrary;
+namespace LearningCsharp;
 
 class MathClass
 {
@@ -22,7 +23,7 @@ class MathClass
             #region bloco introdução: ------------- INICIO APP ----------------
             var infos = "STUDING MATH CLASS AND IT METHODS EM C#!\n\tMAIN CLASS:  Program\n\tAUXILIAR CLASS: MathClass";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
@@ -58,33 +59,32 @@ class MathClass
             Thread.Sleep(tempoSleepSegundos * 1000);
             //Thread.Sleep(30000);
 
-            Console.WriteLine($"\n\tSQUARE ROOT OF V1 IS => {Math.Sqrt(randV1)}");
-            Console.WriteLine($"\n\tSQUARE ROOT OF V2 IS => {Math.Sqrt(randV2)}");
-            Console.WriteLine($"\n\tABSOLUTE VALUE => {Math.Abs(randV)}");
-            Console.WriteLine($"\n\tABS VALUE : V1 - V2 => {Math.Abs(randV1 - randV2)}");
-            Console.WriteLine($"\n\tOPERATION: V2 - V => {randV2 - randV}");
-            Console.WriteLine($"\n\tFusedMultiplyAdd OF VDx, VDy, VDz IS => {Math.FusedMultiplyAdd(randDVx, randDVy, randDVz)}");
-            Console.WriteLine($"\n\tSINE OF VALUE IS => {Math.Sin(randV)}");
-            Console.WriteLine($"\n\tCOSINE OF VALUE IS => {Math.Cos(randV)}");
-            Console.WriteLine($"\n\tTANGENT OF VALUE IS => {Math.Tan(randV)}");
-            Console.WriteLine($"\n\tTRUNCATE VALUE => {Math.Truncate((decimal)randV)}");
-            Console.WriteLine($"\n\tPI VALUE IS => {Math.PI}");
-            Console.WriteLine($"\n\tPOWER 2 OF VALUE IS => {Math.Pow(randV, 2)}");
-            Console.WriteLine($"\n\tEXP IS => {Math.ILogB(randDV)}");
-            Console.WriteLine($"\n\tROUND OF VALUE IS => {Math.Round((decimal)randV)}");
-            Console.WriteLine($"\n\tFLOOR OF VALUE IS => {Math.Floor((decimal)randV)}");
-            Console.WriteLine($"\n\tLOG OF DOUBLE VALUE IS => {Math.Log(randDV)}");
-            Console.WriteLine($"\n\tLOG10 OF DOUBLE VALUE IS => {Math.Log10(randDV)}");
-            Console.WriteLine($"\n\tLOG2 OF DOUBLE VALUE IS => {Math.Log2(randDV)}");
-
+            Console.WriteLine($"\n\t SQUARE ROOT OF V1 IS => {Math.Sqrt(randV1)}");
+            Console.WriteLine($"\n\t SQUARE ROOT OF V2 IS => {Math.Sqrt(randV2)}");
+            Console.WriteLine($"\n\t ABSOLUTE VALUE => {Math.Abs(randV)}");
+            Console.WriteLine($"\n\t ABS VALUE : V1 - V2 => {Math.Abs(randV1 - randV2)}");
+            Console.WriteLine($"\n\t OPERATION: V2 - V => {randV2 - randV}");
+            Console.WriteLine($"\n\t FusedMultiplyAdd OF VDx, VDy, VDz IS => {Math.FusedMultiplyAdd(randDVx, randDVy, randDVz)}");
+            Console.WriteLine($"\n\t SINE OF VALUE IS => {Math.Sin(randV)}");
+            Console.WriteLine($"\n\t COSINE OF VALUE IS => {Math.Cos(randV)}");
+            Console.WriteLine($"\n\t TANGENT OF VALUE IS => {Math.Tan(randV)}");
+            Console.WriteLine($"\n\t TRUNCATE VALUE => {Math.Truncate((decimal)randV)}");
+            Console.WriteLine($"\n\t PI VALUE IS => {Math.PI}");
+            Console.WriteLine($"\n\t POWER 2 OF VALUE IS => {Math.Pow(randV, 2)}");
+            Console.WriteLine($"\n\t EXP IS => {Math.ILogB(randDV)}");
+            Console.WriteLine($"\n\t ROUND OF VALUE IS => {Math.Round((decimal)randV)}");
+            Console.WriteLine($"\n\t FLOOR OF VALUE IS => {Math.Floor((decimal)randV)}");
+            Console.WriteLine($"\n\t CEILING OF VALUE IS => {Math.Ceiling((decimal)randV)}");
+            Console.WriteLine($"\n\t LOG OF DOUBLE VALUE IS => {Math.Log(randDV)}");
+            Console.WriteLine($"\n\t LOG10 OF DOUBLE VALUE IS => {Math.Log10(randDV)}");
+            Console.WriteLine($"\n\t LOG2 OF DOUBLE VALUE IS => {Math.Log2(randDV)}");
+                                     
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
 
-            Console.ReadKey(true);
-            ijlibs.ShowPrettyInfo("FIM DE APP", lineShape, 60);
-            ijlibs.BuildSpaces("vertical", 5);
+            ijlibs.ShowAppEndInfo();
+
             #endregion
 
         }

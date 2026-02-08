@@ -35,10 +35,10 @@
 
 
 
-
+using IJDEVLibrary;
 using System;
 using System.Security.Cryptography;
-using LearningCsharp;      //include the System.IO namespace
+namespace LearningCsharp;      //include the System.IO namespace
 
 
 public class Lists 
@@ -50,7 +50,7 @@ public class Lists
             #region bloco ------------- introdução: INICIO APP ----------------
             var infos = "ESTUDANDO COLEÇÕES EM C#: LISTS \n\tMAIN CLASS:  ListProgram\n\tAUXILIAR CLASS: Lists";
 
-            IJDEVLibs ijlibs = new IJDEVLibs();
+            AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
@@ -97,10 +97,10 @@ public class Lists
             var totalbrActors = brActors.Count;
             Console.WriteLine($"\nTotal brActors in the list: {totalbrActors}\n");
                      
-            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using my method 'ProcessList'";
+            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using my method 'ProcessListOfStrings'";
             ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             Console.WriteLine("\tIndex | Human ::>> LIST VALUE");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Now, let's test all methods of List<T>
 
@@ -134,7 +134,7 @@ public class Lists
             Console.WriteLine($"\nTotal brActors in the list after add InsertRange() index = 1 with 2 more: {brActors.Count}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER CREATE CATEGORY\n\n");            
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
@@ -172,7 +172,7 @@ public class Lists
             Console.WriteLine($"\nConverted brActors to toArray. toArray length: {toArray.Length}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER READ CATEGORY\n\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
@@ -183,12 +183,12 @@ public class Lists
             // Method Reverse
             brActors.Reverse();
             Console.WriteLine("\nList after Reverse():");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method Sort
             brActors.Sort();
             Console.WriteLine("\nList after Sort():\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method TrimExcess
             brActors.TrimExcess();
@@ -219,24 +219,27 @@ public class Lists
             Console.WriteLine($"\nTotal brActors in the list after RemoveRange() [0,2]: {brActors.Count}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER DELETE CATEGORY:\n\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method Clear
             brActors.Clear();
             Console.WriteLine("\n LIST DETAILS AFTER Clear():\n\n");
             Console.WriteLine($"\nTotal brActors: {brActors.Count}");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
             #endregion  // Fim do bloco da app propriamente dita
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
+            /*
+             Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
 
             Console.ReadKey(true);
 
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            */
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

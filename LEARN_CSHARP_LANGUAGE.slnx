@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BankAccountConsoleApp/BankAccountConsoleApp.csproj" Id="b73ae719-0c1b-4e4a-864e-542fd4da9887" />
+  <Project Path="BankProject/BankAccountLibrary.csproj" Id="bc4cbc50-c411-4d8a-b380-aa5072b40999" />
+  <Project Path="BankTests/BankTests.csproj" />
+  <Project Path="IJDEVLibrary/IJDEVLibrary.csproj" Id="cc91b955-416d-4864-825d-6268b3759775" />
+  <Project Path="LearningCsharp/LearningCsharp.csproj" />
+</Solution>
