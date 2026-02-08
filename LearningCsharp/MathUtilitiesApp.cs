@@ -3,11 +3,16 @@ namespace LearningCsharp;
 
 public class MathUtilitiesApp
 {
-     public static void Main(string[] args)
+     public static void MainMU(string[] args)
      {
-        AppInputOutputManager.ShowAppInfo(title: "MATH UTILITIES APP",
+        #region bloco ---------------- INICIO DE APP ----------------
+
+        AppInputOutputManager ijlibs = new AppInputOutputManager();
+
+        ijlibs.ShowAppInfo(title: "MATH UTILITIES APP",
             summary: "This application demonstrates basic and trigonometric operations using the MathUtilities library."
         );
+        #endregion
 
         // Using Calculator
         Console.WriteLine("\n\n==================== BASIC OPERATIONS ====================\n");
@@ -31,7 +36,7 @@ public class MathUtilitiesApp
 
         #region bloco ---------------- FIM DE APP --------------------
 
-        AppInputOutputManager.ShowAppEndInfo();
+        ijlibs.ShowAppEndInfo();
 
         #endregion
      }

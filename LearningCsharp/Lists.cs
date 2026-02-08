@@ -53,7 +53,7 @@ public class Lists
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             //ijlibs.CustomWait(tempoEmMinutos: 1);
             #endregion
@@ -83,7 +83,7 @@ public class Lists
              """;
 
             var allMethodsInfo = $"C# METHODS OF List<T>: \n\n {AllListMethods}";
-            AppInputOutputManager.ShowPrettyInfo(allMethodsInfo, lineShape, 60);
+            ijlibs.ShowPrettyInfo(allMethodsInfo, lineShape, 60);
 
             List<string> brActors = new List<string>
             {
@@ -97,16 +97,16 @@ public class Lists
             var totalbrActors = brActors.Count;
             Console.WriteLine($"\nTotal brActors in the list: {totalbrActors}\n");
                      
-            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using my method 'ProcessList'";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            infos = "LISTING ALL MOST FAMOUS BRASILIAN ACTORS IN 2025 IN THE LIST CALLED brActors using my method 'ProcessListOfStrings'";
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             Console.WriteLine("\tIndex | Human ::>> LIST VALUE");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Now, let's test all methods of List<T>
 
             #region bloco: ------------- TESTING CATEGORY: CREATE (Add/Insert elements):  ----------------
             infos = "TESTING CATEGORY: CREATE (Add/Insert elements):";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             // Add -> Adds an object to the end of the List<T>.
             brActors.Add("Benvinda Papai");
@@ -134,13 +134,13 @@ public class Lists
             Console.WriteLine($"\nTotal brActors in the list after add InsertRange() index = 1 with 2 more: {brActors.Count}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER CREATE CATEGORY\n\n");            
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
             #region bloco  ------------- TESTING CATEGORY: READ (Search/Retrieve elements):  ----------------
             infos = "TESTING CATEGORY: READ (Search/Retrieve elements):";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             // Method Contains
             Console.WriteLine($"\nExists actor with 'Cauã Reymond' in the name?  {brActors.Contains("Cauã Reymond")}");
             bool exists = brActors.Exists(actor => actor.Contains("Marques"));
@@ -172,23 +172,23 @@ public class Lists
             Console.WriteLine($"\nConverted brActors to toArray. toArray length: {toArray.Length}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER READ CATEGORY\n\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
             #region bloco: ------------- TESTING CATEGORY: UPDATE (Modify structure/order):  ----------------
             infos = "TESTING CATEGORY: UPDATE (Modify structure/order):";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             // Method Reverse
             brActors.Reverse();
             Console.WriteLine("\nList after Reverse():");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method Sort
             brActors.Sort();
             Console.WriteLine("\nList after Sort():\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method TrimExcess
             brActors.TrimExcess();
@@ -197,7 +197,7 @@ public class Lists
             
             #region bloco: ------------- TESTING CATEGORY: DELETE (Remove elements):  ----------------
             infos = "TESTING CATEGORY: DELETE (Remove elements):";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             // Method Remove  
             brActors.Remove("Dina Menezes");
@@ -219,13 +219,13 @@ public class Lists
             Console.WriteLine($"\nTotal brActors in the list after RemoveRange() [0,2]: {brActors.Count}");
 
             Console.WriteLine("\n\nUPDATED LIST AFTER DELETE CATEGORY:\n\n");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             // Method Clear
             brActors.Clear();
             Console.WriteLine("\n LIST DETAILS AFTER Clear():\n\n");
             Console.WriteLine($"\nTotal brActors: {brActors.Count}");
-            ijlibs.ProcessList(brActors);
+            ijlibs.ProcessListOfStrings(brActors);
 
             #endregion
 
@@ -239,7 +239,7 @@ public class Lists
 
             Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
             */
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

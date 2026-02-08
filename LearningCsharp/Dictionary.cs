@@ -41,7 +41,7 @@ public class Dictionary
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco -------------- App propriamente dita ------------------------
@@ -88,7 +88,7 @@ public class Dictionary
                 {"New Zealand", "Wellington"}
 
             };
-            AppInputOutputManager.BuildSpaces("vertical", 2);
+            ijlibs.BuildSpaces("vertical", 2);
             ijlibs.ProcessDicionaryStr(capitals);
             Console.WriteLine($"\n\nTotal Countries in the dict: {capitals.Count}");
 
@@ -168,7 +168,7 @@ public class Dictionary
             // ----------------------------------------------------------------------------------------
 
             infos = "Another way to create a new dictionary, but not inicializing it. Let's learn how it works ...";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 80);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 80);
             
             //only create a new dictionary called actorsDict
             Dictionary<string, int> actorsDict = new();
@@ -196,7 +196,7 @@ public class Dictionary
 
             #region bloco ---------------- FIM DE APP --------------------
             
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
 
             #endregion
         }

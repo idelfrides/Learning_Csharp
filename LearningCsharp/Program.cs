@@ -16,7 +16,7 @@ namespace LearningCsharp
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco de comentários de documentação
@@ -476,7 +476,7 @@ namespace LearningCsharp
             double -> float -> long -> int -> char
             """;
 
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             // IMPLICIT CASTING:  smaller type to a larger type 
             int myIntV = 7;
@@ -509,13 +509,13 @@ namespace LearningCsharp
             Console.WriteLine($"IDADE INFORMADA É  {fieldIdade}");
 
             infos = "FAZENDO ESTA ALTERAÇÃO POR MEIO DO IDE VISUAL STUDIO COMMUNITY 2026";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 67);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 67);
 
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
       
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
 
             #endregion
 

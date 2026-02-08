@@ -44,7 +44,7 @@ class ManageFiles
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -73,11 +73,11 @@ class ManageFiles
                     U -> UPDATE
                     D -> DELETE            
             """;
-            AppInputOutputManager.ShowPrettyInfo(crud_info, lineShape, 60);
+            ijlibs.ShowPrettyInfo(crud_info, lineShape, 60);
 
             // CREATE: Create a file and write the content of writeTextx to it
             infos = $"CREATE: Creating a file and write the content into it";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60, 5);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60, 5);
 
             Console.Write("\n\n\t Digite NOME do seu ARQUIVO (SEM extensão)::>>  ");
             inputContent = Console.ReadLine();
@@ -97,13 +97,13 @@ class ManageFiles
 
             // READ: Read the contents of the file
             infos = $"READ: Read the contents of the file <{fileName}>";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             string readText = File.ReadAllText(fileFullPath);
             Console.WriteLine(readText);   // Output the content
 
             // UPDATE : Add a new content to end of the file
             infos = $"UPDATE : Add a new content to end of the file <{fileFullPath}>";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             Console.Write($"\n\n\t Digite outro CONTEÚDO PARA arquivo <{fileFullPath}> ::>>  ");
             inputContent = Console.ReadLine();
@@ -118,21 +118,17 @@ class ManageFiles
 
             // DELETE : Delete the file with all it content
             infos = $"DELETE : Deleting the file with all it content <{fileName}>";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
-            AppInputOutputManager.BuildSpaces("vertical", 3);
+            ijlibs.BuildSpaces("vertical", 3);
             await ijlibs.EsperarAsync(tempoSegundos: 60);
             // File.Delete(fileFullPath);
-            AppInputOutputManager.BuildSpaces("vertical", 3);
+            ijlibs.BuildSpaces("vertical", 3);
 
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
-
-            Console.ReadKey(true);
-
-            Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

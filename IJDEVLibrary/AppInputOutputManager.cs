@@ -19,8 +19,8 @@ public class AppInputOutputManager
         Console.WriteLine($"Processed input result: {finalInput}");
         return finalInput;
     }
-        
-    public static void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0, bool useTab=true)
+
+    public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0, bool useTab = true)
     {
         BuildLines(lineShape, lineLen, vspace, hspace, useTab);
         Console.WriteLine($"\t{info}");
@@ -64,7 +64,7 @@ public class AppInputOutputManager
         return StudentAges;
     }
 
-    public void ProcessList(List<string> myList, bool showIndex = true)
+    public void ProcessListOfStrings(List<string> myList, bool showIndex = true)
     {
 
         switch (showIndex)
@@ -78,7 +78,7 @@ public class AppInputOutputManager
         }
     }
 
-    public void ProcessArrays(string[] myArray, bool showIndex = true)
+    public void ProcessArraysOfStrings(string[] myArray, bool showIndex = true)
     {
         switch (showIndex)
         {
@@ -160,7 +160,7 @@ public class AppInputOutputManager
         }
     }
 
-    public static void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0, bool useTab=true)
+    public void BuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0, bool useTab = true)
     {
         if (vspace > 0)
         {
@@ -172,11 +172,11 @@ public class AppInputOutputManager
         }
         string lineFormatted = new string(lineShape, lineLength);
 
-        if(useTab == true) Console.WriteLine($"\t{lineFormatted}");
-        if(useTab == false) Console.WriteLine($"{lineFormatted}");
+        if (useTab == true) Console.WriteLine($"\t{lineFormatted}");
+        if (useTab == false) Console.WriteLine($"{lineFormatted}");
     }
 
-    public static void BuildSpaces(string spOrientation, int spLen)
+    public void BuildSpaces(string spOrientation, int spLen)
     {
         switch (spOrientation)
         {
@@ -217,7 +217,7 @@ public class AppInputOutputManager
         Console.WriteLine("Pausa com Thread  Finalizada.");
     }
 
-    public static void CheckAge(int age)
+    public void CheckAge(int age)
     {
         if (age < 18)
         {
@@ -229,7 +229,7 @@ public class AppInputOutputManager
         }
     }
 
-    public static void CheckAgeCustom(int age)
+    public void CheckAgeCustom(int age)
     {
         if (age < 18)
         {
@@ -245,7 +245,7 @@ public class AppInputOutputManager
         }
     }
 
-    public static void ShowAppEndInfo()
+    public void ShowAppEndInfo()
     {
         ShowPrettyInfo("\t\tEND OF THE APPLICATION", '$', 75, 3, 0, false);
         Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");
@@ -254,7 +254,7 @@ public class AppInputOutputManager
         Environment.Exit(0);
     }
 
-    public static void ShowAppInfo(string title, string summary)
+    public void ShowAppInfo(string title, string summary)
     {
         Console.WriteLine($"\n\n=========================== {title} =========================\n");
         Console.WriteLine($"{summary}.");

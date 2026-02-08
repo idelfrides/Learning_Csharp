@@ -7,16 +7,16 @@ namespace BankAccountConsoleApp
     /// <summary>
     /// Bank account console application to demonstrate basic banking operations using the BankAccountLibrary.
     /// </summary>
-    public class BankAccountConsoleAppk
+    public class BankAccountConsoleApp
     {
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             #region bloco ------------------ START OF APP ----------------------
-            AppInputOutputManager ijlibs = new AppInputOutputManager();
+            AppInputOutputManager ijlibs = new();
 
-            AppInputOutputManager.ShowAppInfo(
+            ijlibs.ShowAppInfo(
                 title: "Bank Account Console Application",
                 summary: "This App simulates basic banking operations using the BankAccountLibrary."
             );
@@ -38,7 +38,7 @@ namespace BankAccountConsoleApp
 
             #region bloco ------------------ Conclusion: END OF APP --------------------
 
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
 
             #endregion
         }

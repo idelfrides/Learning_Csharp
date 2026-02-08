@@ -15,7 +15,7 @@
 - **Solution Name**: LEARN_CSHARP_LANGUAGE.slnx
 - **Projects Inside The Solution**:
     - LearningCsharp ( Console Application )
-    - BankAccountConsApp ( Console Application )
+    - BankAccountConsoleApp ( Console Application )
     - IJDEVLibrary ( Class Library )
     - BankProject ( Class Library )
     - BankTests ( Unit Test Project )
@@ -55,7 +55,7 @@ NuGet é um gerenciador de pacotes do .NET
 
 - [NuGet](https://www.nuget.org)
 
-
+ 
 ### 🚀 COMANDOS C#
 
 1 - Criar e inicializar um app/projeto
@@ -68,6 +68,8 @@ NuGet é um gerenciador de pacotes do .NET
 2 - Rodar a aplicação localmente 
 
 `dotnet run`
+
+---
 
 ### 🚀 DICAS E ATALHOS DE PRODUTIVIDADE NO VISUAL STUDIO
 
@@ -125,6 +127,7 @@ NuGet é um gerenciador de pacotes do .NET
 
 27 - `Ctrl + Shift + S` -> Salvar todos os arquivos abertos e modificados
 
+---
 
 ### 🚀 TODO ( NEXT STEPS ) 
 

@@ -26,7 +26,7 @@ class MathClass
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -44,7 +44,7 @@ class MathClass
 
             Console.WriteLine($"\n\tRANDOM VALUES: \n\tV = {randV}\n\tV1 = {randV1}\n\tV2 = {randV2}\n\tDV = {randDV}\n\tDVx = {randDVx}\n\tDVy = {randDVy}\n\tDVz = {randDVz}");
 
-            AppInputOutputManager.BuildLines('-', 60, 1);
+            ijlibs.BuildLines('-', 60, 1);
 
             Console.WriteLine($"\n\tMAX ({randV1}, {randV2}) IS => {Math.Max(randV1, randV2)}");
             Console.WriteLine($"\n\tMIN ({randV1}, {randV2}) IS => {Math.Min(randV1, randV2)}");
@@ -83,7 +83,7 @@ class MathClass
 
             #region bloco ---------------- FIM DE APP --------------------
 
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
 
             #endregion
 

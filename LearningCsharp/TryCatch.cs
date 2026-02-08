@@ -60,7 +60,7 @@ class TryCatch
             AppInputOutputManager ijlibs = new AppInputOutputManager();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
             #region bloco da app propriamente dita
@@ -103,11 +103,11 @@ class TryCatch
             int randAge = random.Next(1, 50);
 
             infos = $"RAND AGE IS: {randAge}";
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
 
             try
             {
-                AppInputOutputManager.CheckAgeCustom(randAge);
+                ijlibs.CheckAgeCustom(randAge);
             }
             catch (IJCustomExceptions ex)
             {
@@ -119,15 +119,11 @@ class TryCatch
 
             //ijlibs.CheckAge(17);     // will return error
             //ijlibs.CheckAge(22);     // success
-            AppInputOutputManager.CheckAge(18);       // success
+            ijlibs.CheckAge(18);       // success
             #endregion
 
             #region bloco ---------------- FIM DE APP --------------------
-            Console.Write($"{Environment.NewLine}\nPressione qualquer tecla para sair ...  ");
-
-            Console.ReadKey(true);
-
-            Console.Write("\n\n\n==================== FIM DE APP ====================\n\n\n\n");
+            ijlibs.ShowAppEndInfo();
             #endregion
 
         }

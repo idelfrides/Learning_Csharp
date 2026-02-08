@@ -15,7 +15,7 @@ class LINQExamplesProgram
             LINQMethodSintaxe linqObj = new LINQMethodSintaxe();
 
             char lineShape = '=';
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 60);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 60);
             #endregion
 
 
@@ -31,12 +31,12 @@ class LINQExamplesProgram
             Console.WriteLine("\n\tGenerated Students Ages: " + string.Join(", ", agesList));
 
             // Demonstrate LINQ operations by using the LINQMethodSintaxe class
-            AppInputOutputManager.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS METHOS for SCORES", lineShape, 60);
+            ijlibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS METHOS for SCORES", lineShape, 60);
             linqObj.FilterExampleArr(StudentGradesArray, 7);
             linqObj.SelectExampleArr(StudentGradesArray, 8);
             linqObj.OrderByExampleArr(StudentGradesArray);
 
-            AppInputOutputManager.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS for AGES", lineShape, 60);
+            ijlibs.ShowPrettyInfo("LINQ OPERATIONS USING LINQMethodSintaxe CLASS for AGES", lineShape, 60);
             linqObj.FilterExample(agesList, 15);
             linqObj.SelectExample(agesList, 15);
             linqObj.OrderByExample(agesList);
@@ -72,7 +72,7 @@ class LINQExamplesProgram
                                   select v;
 
 
-            AppInputOutputManager.ShowPrettyInfo("Serasa Scores Analysis:", lineShape, 60);
+            ijlibs.ShowPrettyInfo("Serasa Scores Analysis:", lineShape, 60);
 
             Console.WriteLine("\n\tScores - Baixo (0 a 300): " + string.Join(", ", scoresBaixo));
             Console.WriteLine("\n\tScores - Regular (301 a 500): " + string.Join(", ", scoresRegular));
@@ -80,13 +80,13 @@ class LINQExamplesProgram
             Console.WriteLine("\n\tScores - Excelente (701 a 1000): " + string.Join(", ", scoresExcelente));
 
             // Testing method ProcessCollections from AppInputOutputManager
-            AppInputOutputManager.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <SERASA SCORES>", lineShape, 65);
+            ijlibs.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <SERASA SCORES>", lineShape, 65);
             ijlibs.ProcessCollections(SerasaScores, true); // true to show indexes. SerasaScores is an array of int
 
-            AppInputOutputManager.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT GRADES>", lineShape, 65);
+            ijlibs.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT GRADES>", lineShape, 65);
             ijlibs.ProcessCollections(StudentGradesArray, orientation: "horizontal"); // StudentGradesArray is an array of int
 
-            AppInputOutputManager.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT AGES>", lineShape, 65);
+            ijlibs.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT AGES>", lineShape, 65);
             ijlibs.ProcessCollections(agesList, false, "horizontal");  // true to show indexes. agesList is a List<int>
 
             // making a test for a dictionary
@@ -97,7 +97,7 @@ class LINQExamplesProgram
                 { "XYZ5678", "Jane Smith" },
                 { "LMN9012", "Sam Brown" }
             };
-            AppInputOutputManager.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <CAR OWNERS DICTIONARY>", lineShape, 70);
+            ijlibs.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <CAR OWNERS DICTIONARY>", lineShape, 70);
             ijlibs.ProcessCollections(carOwners, true);  // carOwners is a Dictionary<string, string>
 
             var studentScoresDict = new Dictionary<string, int>();
@@ -112,7 +112,7 @@ class LINQExamplesProgram
             studentScoresDict.Add("Valkirie", StudentGradesArray[8]);
             studentScoresDict.Add("Shuri", StudentGradesArray[9]);
 
-            AppInputOutputManager.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT SCORES DICTIONARY>", lineShape, 70);
+            ijlibs.ShowPrettyInfo("USING AppInputOutputManager PROCESSCOLLECTIONS METHOD FOR <STUDENT SCORES DICTIONARY>", lineShape, 70);
             ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "vertical");
             //ijlibs.ProcessCollections(studentScoresDict, showIndex: true, orientation: "subir"); // will thow an exception message
 
@@ -156,7 +156,7 @@ class LINQExamplesProgram
                 - etc
             """;
 
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 80);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 80);
 
             int qtd = ijlibs.GetRandomIntValue(minValue: 10, maxValue: 20);
             int magnitude = ijlibs.GetRandomIntValue(minValue: 50, maxValue: 100);
@@ -328,7 +328,7 @@ class LINQExamplesProgram
                 • 	COUNT -> .Count()
             """;
 
-            AppInputOutputManager.ShowPrettyInfo(infos, lineShape, 80);
+            ijlibs.ShowPrettyInfo(infos, lineShape, 80);
 
 
             #endregion
@@ -338,7 +338,7 @@ class LINQExamplesProgram
 
             #region bloco ---------------- Conclusion: END OF APP --------------------
 
-            AppInputOutputManager.ShowAppEndInfo();
+            ijlibs.ShowAppEndInfo();
 
             #endregion
         }

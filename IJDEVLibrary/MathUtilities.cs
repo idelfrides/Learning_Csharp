@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 
 namespace IJDEVLibrary
 {
@@ -68,5 +70,36 @@ namespace IJDEVLibrary
             return Math.Tan(angleInRadians);
         }
     }
-    
+
+    public class MathUtils
+    {
+         // Median → Not provided by LINQ or Array.You need to implement it manually:
+        public static double Median(int[] numbers)
+        {
+            var sorted = numbers.OrderBy(n => n).ToArray();
+            int size = sorted.Length;
+            int mid = size / 2;
+
+            if (size % 2 == 0)
+                return (sorted[mid - 1] + sorted[mid]) / 2.0;
+            else
+                return sorted[mid];
+        }
+
+        //- Standard Deviation → Also not built-in. You can implement it:
+
+        public static double StandardDeviation(int[] numbers)
+        {
+            double avg = numbers.Average();
+            double sumOfSquares = numbers.Select(n => Math.Pow(n - avg, 2)).Sum();
+            return Math.Sqrt(sumOfSquares / numbers.Length);
+        }
+
+        // Mean → Built-in with LINQ
+        public static double Mean(int[] numbers)
+        {
+            return numbers.Average();
+        }
+    }
+
 }
