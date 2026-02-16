@@ -14,7 +14,7 @@ You learned from the previous chapter that private variables can only be accesse
 
 A property is like a combination of a variable and a method, and it has two methods: a get and a set method:
 
-Example explained : class Person
+Example explained : class PersonDescription
 The Name property is associated with the name field. It is a good practice to use the same name for both the property and the private field, but with an uppercase first letter.
 
 The get method returns the value of the variable name.
@@ -23,9 +23,9 @@ The set method assigns a value to the name variable. The value keyword represent
 
 If you don't fully understand it, take a look at the example below.
 
-Now we can use the Name property to access and update the private field of the Person class:
+Now we can use the Name property to access and update the private field of the PersonDescription class:
 
-Now we can use the Name property to access and update the private field of the Person class: see class PersonWithProperties
+Now we can use the Name property to access and update the private field of the PersonDescription class: see class PersonWithProperties
 
 3- Why Encapsulation?
     - Better control of class members (reduce the possibility of yourself (or others) to mess up the code)

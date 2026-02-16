@@ -118,7 +118,6 @@ namespace LearningCsharp
             {
                 return succeed ? OperationStatus.Success : OperationStatus.Failure;
             }
-
             // 3.3 Using a Custom class
             public class OperationResult
             {
@@ -140,6 +139,45 @@ namespace LearningCsharp
                 {
                     return new OperationResult(false, "Operation failed.");
                 }
+            }
+
+            //3.4 Using a Custom method with class return type : EP2511 Model Response
+            public class ModeloEP2511Response(string taxId, char risk, decimal score)
+            {
+                public string TaxId { get; protected set; } = taxId;
+                public char Risk { get; protected set; } = risk;
+                public decimal Score { get; protected set; } = score;
+            }
+
+            public ModeloEP2511Response GetModeloEP2511Response(string taxId, char risk, decimal score)
+            {
+                return new ModeloEP2511Response(taxId, risk, score);
+            }
+
+            public ModeloEP2511Response MockModeloEP2511Response(string TaxId)
+            {
+                char[] mockRisk = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M' };
+                int randIndex = new Random().Next(0, mockRisk.Length);
+                Dictionary<char, decimal> tableModel = new();
+
+                tableModel.TryAdd('A', 969);
+                tableModel.TryAdd('B', 953);
+                tableModel.TryAdd('C', 923);
+                tableModel.TryAdd('D', 913);
+                tableModel.TryAdd('E', 893);
+                tableModel.TryAdd('F', 870);
+                tableModel.TryAdd('G', 853);
+                tableModel.TryAdd('H', 835);
+                tableModel.TryAdd('I', 815);
+                tableModel.TryAdd('J', 801);
+                tableModel.TryAdd('K', 792);
+                tableModel.TryAdd('L', 742);
+                tableModel.TryAdd('M', 0);
+
+                char risk = mockRisk[randIndex];
+                decimal score = tableModel[risk];
+
+                return new ModeloEP2511Response(TaxId, risk, score);
             }
 
 
@@ -174,7 +212,7 @@ namespace LearningCsharp
             }
         }
 
-        public static void Main(string[] args)
+        public static void MainRVT(string[] args)
         {
 
             #region bloco ------------------ START OF APP ----------------------
@@ -243,6 +281,29 @@ namespace LearningCsharp
             Console.WriteLine($"\nOperation Result: Success={operationResultSuccess.IsSuccessful}, Message='{operationResultSuccess.Message}'");
             var operationResultFailure = dt.ExecuteClassOperation(false);
             Console.WriteLine($"\nOperation Result: Success={operationResultFailure.IsSuccessful}, Message='{operationResultFailure.Message}'");
+
+            // 3.4 Using a Custom method with class return type : GetModeloEP2511Response()
+            infos = "3.4. Using a Custom method with class return type:  GetModeloEP2511Response() and MockModeloEP2511Response()";
+            iom.ShowPrettyInfo(infos, lineShape, infos.Length + 5);
+
+            Console.WriteLine("\n3.4 Using a Custom method with class return type: GetModeloEP2511Response()");
+            var modeloResponse = dt.GetModeloEP2511Response("98123456701", 'B', 953);
+            Console.WriteLine($"\nModelo EP2511 Response: TaxId={modeloResponse.TaxId}, Risk={modeloResponse.Risk}, Score={modeloResponse.Score}");
+
+            // 3.4 Using a Custom method with class return type : MockModeloEP2511Response
+            Console.WriteLine("\n3.4 Using a Custom method with class return type: MockModeloEP2511Response()");
+            var mockEP2511 = dt.MockModeloEP2511Response("12345678994");
+            Console.WriteLine($"\nMock Modelo EP2511 Response: TaxId={mockEP2511.TaxId}, Risk={mockEP2511.Risk}, Score={mockEP2511.Score}");
+
+            mockEP2511 = dt.MockModeloEP2511Response("12386456789");
+            Console.WriteLine($"\nMock Modelo EP2511 Response: TaxId={mockEP2511.TaxId}, Risk={mockEP2511.Risk}, Score={mockEP2511.Score}");
+
+            mockEP2511 = dt.MockModeloEP2511Response("06465146772");
+            Console.WriteLine($"\nMock Modelo EP2511 Response: TaxId={mockEP2511.TaxId}, Risk={mockEP2511.Risk}, Score={mockEP2511.Score}");
+
+            mockEP2511 = dt.MockModeloEP2511Response("32141098736");
+            Console.WriteLine($"\nMock Modelo EP2511 Response: TaxId={mockEP2511.TaxId}, Risk={mockEP2511.Risk}, Score={mockEP2511.Score}");
+
 
             // ----------------------------------------------------------------
             // 4. Using Object (not recommended)

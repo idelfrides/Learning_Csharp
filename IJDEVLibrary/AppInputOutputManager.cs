@@ -2,10 +2,7 @@
 
 public class AppInputOutputManager
 {
-    public AppInputOutputManager()
-    {
-        ShowPrettyInfo("CONSTRUTOR <AppInputOutputManager>", '$', 60);
-    }
+    public AppInputOutputManager() { }
 
     public string InputContentHandler(string prompt, string defaultValue)
     {
@@ -20,11 +17,25 @@ public class AppInputOutputManager
         return finalInput;
     }
 
-    public void ShowPrettyInfo(string info, char lineShape, int lineLen, int vspace = 3, int hspace = 0, bool useTab = true)
+    public void ShowPrettyInfo(string info, char lineShape = '*', int lineLen = 0, int vspace = 3, int hspace = 0, bool useTab = true)
     {
-        BuildLines(lineShape, lineLen, vspace, hspace, useTab);
-        Console.WriteLine($"\t{info}");
-        BuildLines(lineShape, lineLen, 0, hspace, useTab);
+        if (lineLen == 0) {
+            lineLen = CalculateStringLength(info);
+        }
+
+        if (useTab == true)
+        {
+            BuildLines(lineShape, lineLen, vspace, hspace, useTab);
+            Console.WriteLine($"\t{info}");
+            BuildLines(lineShape, lineLen, 0, hspace, useTab);
+
+        } else
+        {
+            BuildLines(lineShape, lineLen, vspace, hspace, useTab);
+            Console.WriteLine($"{info}");
+            BuildLines(lineShape, lineLen, 0, hspace, useTab);
+        }
+
     }
 
     public int[] GenerateIntValuesArray(int qtd, int maxValue, int minValue = 0)
@@ -176,6 +187,24 @@ public class AppInputOutputManager
         if (useTab == false) Console.WriteLine($"{lineFormatted}");
     }
 
+    public string GetBuildLines(char lineShape, int lineLength, int vspace = 3, int hspace = 0, bool useTab = true)
+    {
+
+        if (vspace > 0)
+        {
+            BuildSpaces("vertical", vspace);
+        }
+        else if (hspace > 0)
+        {
+            BuildSpaces("horizontal", hspace);
+        }
+
+        string lineFormatted = new string(lineShape, lineLength);
+
+        return (useTab == true) ? $"\t{lineFormatted}" : $"{lineFormatted}";
+
+    }
+
     public void BuildSpaces(string spOrientation, int spLen)
     {
         switch (spOrientation)
@@ -247,7 +276,7 @@ public class AppInputOutputManager
 
     public void ShowAppEndInfo()
     {
-        ShowPrettyInfo("\t\tEND OF THE APPLICATION", '$', 75, 3, 0, false);
+        ShowPrettyInfo("\t\tEND OF THE APPLICATION", '$', 60, 3, 0, false);
         Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");
 
         Console.ReadKey(true);
@@ -256,8 +285,29 @@ public class AppInputOutputManager
 
     public void ShowAppInfo(string title, string summary)
     {
-        Console.WriteLine($"\n\n=========================== {title} =========================\n");
-        Console.WriteLine($"{summary}.");
-        Console.WriteLine("========================================================================\n");
+        title = title.Trim();
+        summary = summary.Trim();
+        
+        int titleLen = CalculateStringLength(title);
+        int summaryLen = CalculateStringLength(summary);
+
+        int oper = summaryLen - titleLen;
+        int sidesLen = oper / 2;
+
+        // Console.WriteLine($"\n\n=========================== {title} =========================\n");
+        // Console.WriteLine($"{summary}.");
+
+        string titleLine = GetBuildLines(lineShape: '$', lineLength: sidesLen, useTab: false);
+        string bottomLine = GetBuildLines(lineShape: '$', lineLength: summaryLen + 2, useTab: false);
+
+        Console.WriteLine($"{titleLine} {title} {titleLine}");
+        Console.WriteLine($"\n{summary}\n");
+        Console.WriteLine($"{bottomLine}");
+
+    }
+
+    public int CalculateStringLength(string str) 
+    {
+        return str.Length; 
     }
 }

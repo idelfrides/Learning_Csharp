@@ -120,7 +120,7 @@ public class Lists
             ];
             brActors.AddRange(new List<string> { "Sérgio Malandro", "Dina Menezes" });
             Console.WriteLine($"\nTotal brActors in the list after AddRange() 2 more: {brActors.Count}");
-            brActors.AddRange(newActors);
+             brActors.AddRange(newActors);
             Console.WriteLine($"\nTotal brActors in the list after AddRange() 4 more: {brActors.Count}");
             brActors.AddRange("Dina Menezes 222");
             Console.WriteLine($"\nTotal brActors in the list after AddRange() 1 more single element is possible: {brActors.Count}");
