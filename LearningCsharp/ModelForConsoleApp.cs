@@ -6,10 +6,11 @@
 */
 
 
+using IJDEVLibrary;
+using IJDEVLibrary.LogsHandler;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using IJDEVLibrary;
 
 
 namespace LearningCsharp
@@ -23,11 +24,14 @@ namespace LearningCsharp
         {
 
             #region block ------------------ START OF APP ----------------------
-            AppInputOutputManager iom = new();
 
+            // Create an instance of your custom logger
+            JCustomLogger logger = new("ModelForConsoleApp");
+
+            AppInputOutputManager iom = new();
             var infos = "TITLE OF YOU APP HERE";
             char lineShape = '*';
-            int lineLen = 80;
+            int lineLen = 0;
 
             iom.ShowAppInfo(
                 title: infos,
@@ -38,9 +42,11 @@ namespace LearningCsharp
 
             #region block ------------------ THE LOGIC OF APP GOES HERE ----------------------
 
+            logger.Info("Application starting...");
+
             // THE LOGIC OF APP GOES HERE
             infos = "THE LOGIC OF APP GOES HERE";
-            iom.ShowPrettyInfo(infos, lineShape, lineLen);
+            iom.ShowPrettyInfo(infos, lineShape, lineLen, 2, 0, false);
             
 
             #endregion
