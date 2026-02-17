@@ -294,9 +294,6 @@ public class AppInputOutputManager
         int oper = summaryLen - titleLen;
         int sidesLen = oper / 2;
 
-        // Console.WriteLine($"\n\n=========================== {title} =========================\n");
-        // Console.WriteLine($"{summary}.");
-
         string titleLine = GetBuildLines(lineShape: '$', lineLength: sidesLen, useTab: false);
         string bottomLine = GetBuildLines(lineShape: '$', lineLength: summaryLen + 2, useTab: false);
 
