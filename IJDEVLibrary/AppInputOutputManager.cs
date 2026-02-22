@@ -7,7 +7,7 @@ public class AppInputOutputManager
     public string InputContentHandler(string prompt, string defaultValue)
     {
 
-        BuildSpaces("vertical", 2);
+        BuildExternalSpaces("vertical", 2);
         Console.Write($"\t INFORME {prompt} ::>>  ");
         var userInput = Console.ReadLine();
         var finalInput = string.IsNullOrWhiteSpace(userInput) ? defaultValue : userInput;
@@ -175,11 +175,11 @@ public class AppInputOutputManager
     {
         if (vspace > 0)
         {
-            BuildSpaces("vertical", vspace);
+            BuildExternalSpaces("vertical", vspace);
         }
         else if (hspace > 0)
         {
-            BuildSpaces("horizontal", hspace);
+            BuildExternalSpaces("horizontal", hspace);
         }
         string lineFormatted = new string(lineShape, lineLength);
 
@@ -192,11 +192,11 @@ public class AppInputOutputManager
 
         if (vspace > 0)
         {
-            BuildSpaces("vertical", vspace);
+            BuildExternalSpaces("vertical", vspace);
         }
         else if (hspace > 0)
         {
-            BuildSpaces("horizontal", hspace);
+            BuildExternalSpaces("horizontal", hspace);
         }
 
         string lineFormatted = new string(lineShape, lineLength);
@@ -205,7 +205,7 @@ public class AppInputOutputManager
 
     }
 
-    public void BuildSpaces(string spOrientation, int spLen)
+    public void BuildExternalSpaces(string spOrientation, int spLen)
     {
         switch (spOrientation)
         {
@@ -276,8 +276,12 @@ public class AppInputOutputManager
 
     public void ShowAppEndInfo()
     {
-        ShowPrettyInfo("\t\tEND OF THE APPLICATION", '$', 60, 3, 0, false);
-        Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .\n\n\n\n");
+        BuildExternalSpaces("vertical", 3);
+        
+        ShowPrettyInfo("\t\tEND OF THE APPLICATION", '$', 60, 0, 0, false);
+        Console.Write($"{Environment.NewLine}\nPress any Key to Leave the APP . . .");
+        
+        BuildExternalSpaces("vertical", 3);
 
         Console.ReadKey(true);
         Environment.Exit(0);
@@ -295,11 +299,13 @@ public class AppInputOutputManager
         int sidesLen = oper / 2;
 
         string titleLine = GetBuildLines(lineShape: '$', lineLength: sidesLen, useTab: false);
-        string bottomLine = GetBuildLines(lineShape: '$', lineLength: summaryLen + 2, useTab: false);
+        string bottomLine = GetBuildLines(lineShape: '$', lineLength: summaryLen + 1, useTab: false);
 
         Console.WriteLine($"{titleLine} {title} {titleLine}");
         Console.WriteLine($"\n{summary}\n");
         Console.WriteLine($"{bottomLine}");
+
+        BuildExternalSpaces("vertical", 2);
 
     }
 

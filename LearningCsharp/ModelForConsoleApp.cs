@@ -3,7 +3,7 @@
 
     MAKE THE DESCRIPTION OF YOUR CODE HERE 
 
-    :::> COPY THIS FILE AND THEN EDIT IT FOR YOU PURPOSE  <:::
+    :::> COPY THIS FILE AND THEN CHANGE IT NAME AND EDIT IT CONTENT FOR YOU PURPOSE <:::
 
 */
 
@@ -25,17 +25,20 @@ namespace LearningCsharp
         public static void MainMCA(string[] args)
         {
 
-            #region block code --------- START OF APP ----------------------
+            #region block code 1 --------- START OF APP ----------------------
 
             // Instance section
             // In this section, you can instantiate all the classes you will use in the application.
-            JCustomLogger logger = new("ModelForConsoleApp");
+            JCustomLogger logger = new("YOUR MAIN CLASS NAME HERE");
             AppInputOutputManager iom = new();
 
             // Value definition for Constants and fields section
             var infos = "TITLE OF YOU APP HERE";
             char lineShape = '*';
             int lineLen = 0;
+            int vspace = 2;
+            int hspace = 0;
+            bool useTab = false;
 
             // Instance member call section
             iom.ShowAppInfo(
@@ -43,22 +46,22 @@ namespace LearningCsharp
                 summary: "This App attempts to show how we can use Special type - record in C#."
             );
 
-            #endregion // --- starting region ends here ---
+            #endregion // --- starting app region ends here ---
 
 
-            #region block code --------- THE LOGIC OF APP GOES HERE --------
+            #region block code 2 --------- THE LOGIC OF APP GOES HERE --------
 
             logger.Info("Application starting...");
 
             // THE LOGIC OF APP GOES HERE
             infos = "THE LOGIC OF APP GOES HERE";
-            iom.ShowPrettyInfo(infos, lineShape, lineLen, 2, 0, false);
+            iom.ShowPrettyInfo(infos, lineShape, lineLen, vspace, hspace, useTab);
 
 
-            #endregion // --- the real app region ends here ---
+            #endregion // --- the logic of app region ends here ---
 
 
-            #region block code --------- END OF APP ------------------------
+            #region block code 3 --------- END OF APP ------------------------
 
             iom.ShowAppEndInfo();
 
@@ -67,3 +70,4 @@ namespace LearningCsharp
         }
     }
 }
+    

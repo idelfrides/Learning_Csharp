@@ -88,7 +88,7 @@ public class Dictionary
                 {"New Zealand", "Wellington"}
 
             };
-            ijlibs.BuildSpaces("vertical", 2);
+            ijlibs.BuildExternalSpaces("vertical", 2);
             ijlibs.ProcessDicionaryStr(capitals);
             Console.WriteLine($"\n\nTotal Countries in the dict: {capitals.Count}");
 

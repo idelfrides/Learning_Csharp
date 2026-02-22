@@ -127,10 +127,10 @@ class ManageFiles
             infos = $"DELETE : Deleting the file with all it content <{tfm.FullFilePath}>";
             iomo.ShowPrettyInfo(infos, lineShape, 60);
 
-            iomo.BuildSpaces("vertical", 3);
+            iomo.BuildExternalSpaces("vertical", 3);
             await iomo.EsperarAsync(tempoSegundos: 60);
             // File.Delete(tfm.FullFilePath);
-            iomo.BuildSpaces("vertical", 3);
+            iomo.BuildExternalSpaces("vertical", 3);
 
             #endregion
 

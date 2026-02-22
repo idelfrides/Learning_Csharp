@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using IJDEVLibrary.DataTimeManager;
 
 
 namespace IJDEVLibrary.LogsHandler
@@ -11,7 +12,7 @@ namespace IJDEVLibrary.LogsHandler
         Critical = 1,
         Error = 2,
         Warning = 3,
-        Information = 4,
+        Info = 4,
         Debug = 5,
         Trace = 6
     }
@@ -65,6 +66,7 @@ namespace IJDEVLibrary.LogsHandler
     public class JCustomLogger : IJCustomLogger
     {
         private readonly string _loggerName;
+        private readonly DateTimeConverter dtc = new();
 
         public JCustomLogger(string loggerName = "DefaultLogger")
         {
@@ -76,18 +78,19 @@ namespace IJDEVLibrary.LogsHandler
                         Exception? exception = null,
                         string memberName = "", string filePath = "", int lineNumber = 0)
         {
-            var timestamp = DateTime.UtcNow.ToString("o"); // ISO 8601 format
+         
+            var brasiliaTime = dtc.ConvertUtcToTimeZone(DateTime.UtcNow, "E. South America Standard Time");
             var className = System.IO.Path.GetFileNameWithoutExtension(filePath);
             var structuredProps = properties != null
                 ? string.Join(", ", properties.Select(p => $"{p.Key}={p.Value}"))
                 : string.Empty;
 
-            var logEntry = $"[{timestamp}] [{_loggerName}] [{level}] " +
-                            $"Class={className}, Method={memberName}, Line={lineNumber} | {message}" +
+            var logEntry = $"[{brasiliaTime}][{_loggerName}][{level}: " +
+                            $"Class={className}, Method={memberName}, Line={lineNumber}]\n\n\t:::>> {message}" +
                             (string.IsNullOrWhiteSpace(structuredProps) ? "" : $" | {structuredProps}") +
                             (exception != null ? $" | Exception: {exception}" : "");
-
-            Console.WriteLine(logEntry);
+            
+            Console.WriteLine($"\n{logEntry}");
         }
 
         public void Trace(string message, 
@@ -98,7 +101,6 @@ namespace IJDEVLibrary.LogsHandler
                          [CallerLineNumber] int lineNumber = 0)
             => Log(LogLevel.Trace, message, properties, exception, memberName, filePath, lineNumber);
 
-        // Dictionary<string, object>? properties = null, 
         public void Debug(string message, 
                          Dictionary<string, object>? properties = null,
                          Exception? exception = null,
@@ -114,7 +116,7 @@ namespace IJDEVLibrary.LogsHandler
                         [CallerFilePath] string filePath = "",
                         [CallerLineNumber] int lineNumber = 0)
         {
-            Log(LogLevel.Information, message, properties, exception, memberName, filePath, lineNumber);
+            Log(LogLevel.Info, message, properties, exception, memberName, filePath, lineNumber);
         }
 
         public void Warn(string message, 

@@ -75,27 +75,23 @@ namespace LearningCsharp
         }
     }
 
-    public class BestFootballClubInWorld
+    public class BestFootballClubInWorld(JCustomLogger logger)
     {
-        private readonly JCustomLogger _logger;
-        public BestFootballClubInWorld(JCustomLogger logger)
-        {
-            _logger = logger;
-        }
         public void PerformAction(string clubName)
         {
-            _logger.Info($"Showing the best football club in the world.", new Dictionary<string, object> { { "Best Football club", clubName } });
+            logger.Info($"Showing the best football club in the world.", new Dictionary<string, object> { { "Best Football club", clubName } });
         }
     }
     
    
-
     public class JCLDemoProgram
     {
-        public static void MainCLD(string[] args)
+        public static void MainICLD(string[] args)
         {
 
             #region block ------------------ START OF APP ----------------------
+            // Create an instance of your custom logger
+            JCustomLogger logger = new("JCustomLogger");
             AppInputOutputManager iom = new();
 
             var infos = "JCustomLogger DEMO CONSOLE APP";
@@ -109,8 +105,6 @@ namespace LearningCsharp
 
             #region block ------------------ DEMO OF USING THE LOGGER ----------------------
 
-            // Create an instance of your custom logger
-            JCustomLogger logger = new("JCustomLogger");
             
             #region Demonstrate all log levels 
             logger.Info("INFO: Application starting...");
@@ -133,9 +127,11 @@ namespace LearningCsharp
             var best_football_club = new BestFootballClubInWorld(logger);
             best_football_club.PerformAction("Real Madrid");
 
-            iom.ShowPrettyInfo("Application finished successfully.", lineShape, 60);            
+            iom.ShowPrettyInfo("Application finished successfully.", lineShape, 60);  
+            //logger.Info("INFO: Application finished successfully...");
 
-            #endregion      
+
+            #endregion
 
             #region block ------------------ Conclusion: END OF APP --------------------
 
