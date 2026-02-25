@@ -10,7 +10,7 @@ namespace LearningCsharp;
 public class DateTimeConverterDemo
 {
 
-    public static void Main(string[] args)
+    public static void MainDTC(string[] args)
     {
 
         #region block code 1 --------- START OF APP ------------------------
