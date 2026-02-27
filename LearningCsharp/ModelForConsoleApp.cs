@@ -34,6 +34,7 @@ namespace LearningCsharp
 
             // Value definition for Constants and fields section
             var infos = "TITLE OF YOU APP HERE";
+            var summary = "This App attempts to show how we can use Special type - record in C#.";
             char lineShape = '*';
             int lineLen = 0;
             int vspace = 2;
@@ -41,10 +42,7 @@ namespace LearningCsharp
             bool useTab = false;
 
             // Instance member call section
-            iom.ShowAppInfo(
-                title: infos,
-                summary: "This App attempts to show how we can use Special type - record in C#."
-            );
+            iom.ShowAppInfo(title: infos, summary: summary);
 
             #endregion // --- starting app region ends here ---
 

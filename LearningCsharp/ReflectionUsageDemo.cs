@@ -58,7 +58,7 @@ public class ReflectionUsageDemo
         }
     }
 
-    public static void Main(string[] args)
+    public static void MainRUD(string[] args)
     {
 
         #region block code 1 --------- START OF APP ----------------------
@@ -69,7 +69,7 @@ public class ReflectionUsageDemo
         AppInputOutputManager iom = new();
 
         // Value definition for Constants and fields section
-        var infos = "LEARNING REFLECTION IN C#";
+        var info = "LEARNING REFLECTION IN C#";
         var summary = "This App attempts to show how we can use concepts of Reflection in .NET";
         char lineShape = '*';
         int lineLen = 0;
@@ -78,7 +78,7 @@ public class ReflectionUsageDemo
         bool useTab = false;
 
         // Instance member call section
-        iom.ShowAppInfo(title: infos, summary:  summary);
+        iom.ShowAppInfo(title: info, summary: summary);
 
         #endregion // --- starting app region ends here ---
 

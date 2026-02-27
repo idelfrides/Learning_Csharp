@@ -290,10 +290,12 @@ public class AppInputOutputManager
     public void ShowAppInfo(string title, string summary)
     {
         title = title.Trim();
-        summary = summary.Trim();
-        
+        string[] summarySplit = summary.Trim().Split("\n");
+
         int titleLen = CalculateStringLength(title);
-        int summaryLen = CalculateStringLength(summary);
+        int summaryLen = summarySplit.Max().Length;
+        //int summaryLen = CalculateStringLength(summarySplit.Max());
+        //int summaryLen = CalculateStringLength(summary);
 
         int oper = summaryLen - titleLen;
         int sidesLen = oper / 2;

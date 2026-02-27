@@ -4,4 +4,5 @@
   <Project Path="BankTests/BankTests.csproj" />
   <Project Path="IJDEVLibrary/IJDEVLibrary.csproj" Id="cc91b955-416d-4864-825d-6268b3759775" />
   <Project Path="LearningCsharp/LearningCsharp.csproj" />
+  <Project Path="SOLIDProjectDemo/SOLIDProjectDemo.csproj" Id="b644ab9f-7e30-4e0d-9bc9-5c88229fd158" />
 </Solution>
