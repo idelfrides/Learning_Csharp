@@ -3,9 +3,9 @@
     public class RelatorioFinanceiroViolaSRP
     {
         /*
-         Violação de SRP (Single Responsibility Principle)
-         A classe faz várias coisas: gera relatório, salva em arquivo e envia por email.
-         Ela tem múltiplas responsabilidades.
+             Violação de SRP (Single Responsibility Principle)
+             A classe faz várias coisas: gera relatório, salva em arquivo e envia por email.
+             Ela tem múltiplas responsabilidades.
          */
 
         public string GerarRelatorio()

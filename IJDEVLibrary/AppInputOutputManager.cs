@@ -52,17 +52,51 @@ public class AppInputOutputManager
             valuesArr[i] = rand.Next(minValue, maxValue + 1); // Scores between 0 and maxScore
         }
         return valuesArr;
+
     }
 
     public int GetRandomIntValue(int maxValue, int minValue = 1)
     {
-        Random rand = new Random();
+
         if (minValue >= maxValue)
         {
             throw new IJCustomExceptions(5, "minValue must be less than maxValue.");
         }
+        return GenerateIntValue(minValue, maxValue);
+    }
+
+    private int GenerateIntValue(int minValue = 1, int maxValue = 1000)
+    {
+        Random rand = new Random();         
         return rand.Next(minValue, maxValue + 1); // a value between minValue and maxValue
     }
+
+    /*
+    public decimal GetRandomValue(int maxValue, int minValue = 1, string type_ = "int")
+    {
+
+        if (minValue >= maxValue)
+        {
+            throw new IJCustomExceptions(5, "minValue must be less than maxValue.");
+        }
+        return GenerateIntValue(minValue, maxValue + 1); // a value between minValue and maxValue
+
+        
+        //switch (type_.ToLower())
+        //{
+            //case "int":
+                //return GenerateIntValue(minValue, maxValue + 1); // a value between minValue and maxValue
+            //case "float":
+                //return GenerateIntValue(minValue, maxValue + 1);
+            //case "double":
+                //return GenerateIntValue(minValue, maxValue + 1);
+            //case "decimal":
+                //return GenerateIntValue(minValue, maxValue + 1);
+            //default:
+                //throw new IJCustomExceptions(7, "Value Type not found.");
+        //}
+        
+    }*/
 
     public List<int> GenerateStudentAgesList(int numberOfStudents, int minAge, int maxAge)
     {

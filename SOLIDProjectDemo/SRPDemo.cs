@@ -8,7 +8,7 @@ namespace SOLIDProjectDemo;
 public class SRPDemo
 {
     
-    public static void Main(string[] args)
+    public static void MainSRP(string[] args)
     {
 
         #region block code 1 --------- START OF APP ----------------------
