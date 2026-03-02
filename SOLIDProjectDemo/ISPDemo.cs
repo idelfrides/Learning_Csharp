@@ -8,7 +8,7 @@ namespace SOLIDProjectDemo
     public class ISPDemoProgram
     {
 
-        public static void Main(string[] args)
+        public static void MainISP(string[] args)
         {
 
             #region block code 1 --------- START OF APP ----------------------
