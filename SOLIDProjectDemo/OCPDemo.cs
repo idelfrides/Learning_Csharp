@@ -83,19 +83,20 @@ namespace SOLIDProjectDemo
             infos = "Demonstrating the correct application of OCP";
             iom.ShowPrettyInfo(infos, lineShape, lineLen, vspace, hspace, useTab);
             Console.WriteLine(summary);
+            
+            productPrice = iom.GetRandomIntValue(maxValue: 2000);
 
             Desconto dio = new DescontoNatal();
-            productPrice = iom.GetRandomIntValue(maxValue: 1000);
             classResult = dio.Calcular(productPrice);
             logger.Info($"Desconto de tipo <Natal> | Valor Original: {productPrice} | Com Desconto: {classResult}");
 
             dio = new DescontoBlackFriday();
-            productPrice = iom.GetRandomIntValue(maxValue: 2000);
+            //productPrice = iom.GetRandomIntValue(maxValue: 2000);
             classResult = dio.Calcular(productPrice);
             logger.Info($"Desconto de tipo <BlackFriday> | Valor Original: {productPrice} | Com Desconto: {classResult}");
 
             dio = new DescontoAnoNovo();
-            productPrice = iom.GetRandomIntValue(maxValue: 3000);
+            //productPrice = iom.GetRandomIntValue(maxValue: 3000);
             classResult = dio.Calcular(productPrice);
             logger.Info($"Desconto de tipo <AnoNovo> | Valor Original: {productPrice} | Com Desconto: {classResult}");
 

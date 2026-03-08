@@ -9,7 +9,6 @@ namespace IJDEVLibrary.SOLID_ILLustration
     // IDispositivoMultifuncionalViolaISP é uma interface genérica
     // que inclui métodos para imprimir, escanear e enviar fax.
     // A interface força a implementação de métodos que nem todas as classes precisam.
-
     public interface IDispositivoMultifuncionalViolaISP
     {
         void Imprimir(string documento);
@@ -17,7 +16,7 @@ namespace IJDEVLibrary.SOLID_ILLustration
         void Fax(string documento);
     }
     public class ImpressoraSinples : IDispositivoMultifuncionalViolaISP
-{
+    {
         public void Imprimir(string documento) => Console.WriteLine($"Imprimindo: {documento}");
 
         // Métodos desnecessários para uma impressora simples: Escanear e Fax

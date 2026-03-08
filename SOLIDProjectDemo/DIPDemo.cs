@@ -4,11 +4,11 @@ using IJDEVLibrary.SOLID_ILLustration;
 
 namespace SOLIDProjectDemo
 {
-
+     
     public class DIPDemoProgram
     {
 
-        public static void Main(string[] args)
+        public static void MainDIP(string[] args)
         {
 
             #region block code 1 --------- START OF APP ----------------------
